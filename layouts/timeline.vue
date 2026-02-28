@@ -103,7 +103,7 @@ defineProps<{
   background: var(--c-olive);
 }
 
-.tl-track--horizontal .tl-entry {
+.tl-track--horizontal :deep(.tl-entry) {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -112,13 +112,13 @@ defineProps<{
   position: relative;
 }
 
-.tl-track--horizontal .tl-entry-marker {
+.tl-track--horizontal :deep(.tl-entry-marker) {
   flex-shrink: 0;
   margin-bottom: var(--space-3);
   z-index: 1;
 }
 
-.tl-track--horizontal .tl-entry-body {
+.tl-track--horizontal :deep(.tl-entry-body) {
   text-align: center;
   padding: 0 var(--space-2);
 }
@@ -144,7 +144,7 @@ defineProps<{
   background: var(--c-olive);
 }
 
-.tl-track--vertical .tl-entry {
+.tl-track--vertical :deep(.tl-entry) {
   display: flex;
   align-items: flex-start;
   gap: var(--space-4);
@@ -152,18 +152,18 @@ defineProps<{
   position: relative;
 }
 
-.tl-track--vertical .tl-entry-marker {
+.tl-track--vertical :deep(.tl-entry-marker) {
   position: absolute;
   left: -38px;
   top: 2px;
 }
 
-.tl-track--vertical .tl-entry-body {
+.tl-track--vertical :deep(.tl-entry-body) {
   flex: 1;
 }
 
 /* ── Shared entry parts ───────────────────────────────────────────────────── */
-.tl-entry-dot {
+:deep(.tl-entry-dot) {
   width: 14px;
   height: 14px;
   border: 2px solid var(--c-red);
@@ -172,7 +172,7 @@ defineProps<{
 }
 
 /* Inner dot */
-.tl-entry-dot::after {
+:deep(.tl-entry-dot)::after {
   content: '';
   position: absolute;
   top: 50%;
@@ -183,13 +183,13 @@ defineProps<{
   background: var(--c-red);
 }
 
-.tl-entry-date {
+:deep(.tl-entry-date) {
   color: var(--c-red);
   letter-spacing: var(--tracking-widest);
   margin-bottom: var(--space-1);
 }
 
-.tl-entry-title {
+:deep(.tl-entry-title) {
   font-family: var(--font-heading);
   font-size: var(--text-md);
   font-weight: 700;
@@ -198,7 +198,7 @@ defineProps<{
   line-height: 1.2;
 }
 
-.tl-entry-desc {
+:deep(.tl-entry-desc) {
   font-family: var(--font-body);
   font-size: var(--text-sm);
   color: var(--color-fg-muted);

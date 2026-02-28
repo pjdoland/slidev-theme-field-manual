@@ -7,7 +7,7 @@ highlighter: shiki
 lineNumbers: true
 layout: cover
 docNumber: FM 21-SLIDE
-date: FEBRUARY 2026
+date: FEBRUARY 28, 2026
 classification: FOR TRAINING USE ONLY
 fonts:
   sans: Source Serif 4
@@ -17,11 +17,11 @@ fonts:
 <!-- Slide 1 — Cover -->
 
 # FM 21-SLIDE
-## Operations in the Briefing Room
+## A Field Manual for the Modern Presenter 
 
 <template v-slot:subtitle>
 
-A Field Manual for the Modern Presenter · Headquarters, Department of the Presentation
+CPT John Q. Presenter · Department of the Presentation
 
 </template>
 

@@ -162,10 +162,15 @@ defineProps<{
   text-align: right;
 }
 
+/* Subsection entries — indented under chapter headings */
+:deep(.toc-entry:not(.toc-entry--chapter)) {
+  padding-left: var(--space-6);
+}
+
 /* Chapter-level entry (bold, olive background) */
 :deep(.toc-entry--chapter) {
   background: var(--c-olive-ghost);
-  padding: var(--space-2) var(--space-2);
+  padding: var(--space-2) 0;
   border-bottom: 1px solid var(--c-khaki-dark);
 }
 

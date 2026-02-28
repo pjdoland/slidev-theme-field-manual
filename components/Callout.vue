@@ -54,6 +54,11 @@ const typeConfig = computed(() => {
   padding: 0;
   position: relative;
   overflow: hidden;
+  margin-bottom: var(--space-3);
+}
+
+.fm-callout-box:last-child {
+  margin-bottom: 0;
 }
 
 /* Type variants */

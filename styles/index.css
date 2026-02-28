@@ -231,12 +231,12 @@ h2 + h3, h3 + h4 {
   margin: 0 0 var(--space-5);
 }
 
-p {
+.slidev-layout p {
   margin: 0 0 var(--space-5);
   font-size: var(--text-base);
 }
 
-p:last-child {
+.slidev-layout p:last-child {
   margin-bottom: 0;
 }
 

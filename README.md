@@ -128,7 +128,7 @@ layout: statement
 ```
 
 #### `end`
-Final slide. END OF BRIEFING treatment with unit patch placeholder and contact block.
+Final slide. END OF BRIEFING treatment with contact block on paper background.
 
 ```md
 ---

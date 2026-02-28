@@ -173,6 +173,7 @@ defineProps<{
   flex: 1;
   overflow: hidden;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: var(--space-2);
