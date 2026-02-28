@@ -76,21 +76,21 @@ defineProps<{
 }
 
 .cmp-title-bar {
-  padding: var(--space-2) var(--space-6) 0;
+  padding: var(--space-4) var(--space-6) 0;
   flex-shrink: 0;
 }
 
 .cmp-title-rule {
   height: var(--rule-thick);
   background: var(--color-rule);
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-3);
 }
 
 .cmp-title {
   font-family: var(--font-heading);
-  font-size: var(--text-lg);
+  font-size: var(--text-xl);
   font-weight: 900;
-  margin: 0 0 var(--space-2);
+  margin: 0 0 var(--space-3);
   line-height: 1.1;
 }
 
@@ -99,7 +99,7 @@ defineProps<{
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   gap: 0;
-  padding: var(--space-2) var(--space-6) var(--space-2);
+  padding: 0 var(--space-6) var(--space-2);
   overflow: hidden;
   min-height: 0;
 }

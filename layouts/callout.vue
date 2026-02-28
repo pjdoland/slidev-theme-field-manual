@@ -78,7 +78,7 @@ defineProps<{
   font-family: var(--font-heading);
   font-size: var(--text-xl);
   font-weight: 900;
-  margin: 0 0 var(--space-4);
+  margin: 0 0 var(--space-3);
   line-height: 1.1;
 }
 

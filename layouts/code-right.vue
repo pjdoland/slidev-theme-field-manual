@@ -74,7 +74,7 @@ defineProps<{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-5);
-  padding: var(--space-4) var(--space-5) var(--space-2);
+  padding: var(--space-4) var(--space-6) var(--space-2);
   overflow: hidden;
   min-height: 0;
 }
@@ -94,7 +94,7 @@ defineProps<{
 
 .cdr-title {
   font-family: var(--font-heading);
-  font-size: var(--text-lg);
+  font-size: var(--text-xl);
   font-weight: 900;
   margin: 0 0 var(--space-3);
   line-height: 1.1;

@@ -64,7 +64,7 @@ defineProps<{
 
 .tc-title-bar {
   flex-shrink: 0;
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-3);
 }
 
 .tc-rule {

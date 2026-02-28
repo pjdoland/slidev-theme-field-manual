@@ -50,7 +50,7 @@ defineProps<{
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: var(--space-4) var(--space-7) var(--space-3);
+  padding: var(--space-4) var(--space-6) var(--space-2);
   overflow: hidden;
 }
 
@@ -65,7 +65,7 @@ defineProps<{
   font-size: var(--text-xl);
   font-weight: 900;
   color: var(--color-fg);
-  margin: 0 0 var(--space-4);
+  margin: 0 0 var(--space-3);
   line-height: 1.1;
   letter-spacing: -0.01em;
 }

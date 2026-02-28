@@ -80,7 +80,7 @@ defineProps<{
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: var(--space-3) var(--space-5) var(--space-2);
+  padding: var(--space-4) var(--space-6) var(--space-2);
   overflow: hidden;
 }
 
@@ -97,7 +97,7 @@ defineProps<{
 
 .thc-title {
   font-family: var(--font-heading);
-  font-size: var(--text-lg);
+  font-size: var(--text-xl);
   font-weight: 900;
   margin: 0;
   line-height: 1.1;

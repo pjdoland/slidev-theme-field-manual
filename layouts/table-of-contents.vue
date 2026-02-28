@@ -69,7 +69,7 @@ defineProps<{
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: var(--space-3) var(--space-7) var(--space-2);
+  padding: var(--space-3) var(--space-6) var(--space-2);
   overflow: hidden;
 }
 

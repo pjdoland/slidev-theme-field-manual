@@ -58,13 +58,13 @@ defineProps<{
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: var(--space-3) var(--space-6) var(--space-2);
+  padding: var(--space-4) var(--space-6) var(--space-2);
   overflow: hidden;
 }
 
 .tl-title-bar {
   flex-shrink: 0;
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-3);
 }
 
 .tl-rule {
