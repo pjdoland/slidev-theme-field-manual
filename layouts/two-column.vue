@@ -95,11 +95,13 @@ defineProps<{
 }
 
 .tc-col--left {
+  padding-left: var(--space-4);
   padding-right: var(--space-6);
 }
 
 .tc-col--right {
   padding-left: var(--space-6);
+  padding-right: var(--space-4);
 }
 
 .tc-divider {

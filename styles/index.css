@@ -208,6 +208,18 @@ h2 + h3, h3 + h4 {
   margin-top: var(--space-4);
 }
 
+/* Cover slide — override global h1 font for the title */
+.layout-cover h1 {
+  font-family: var(--font-condensed-sans);
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.0;
+  text-transform: uppercase;
+  color: var(--c-ink);
+  margin: 0 0 var(--space-5);
+}
+
 p {
   margin: 0 0 var(--space-3);
   font-size: var(--text-base);
@@ -233,7 +245,9 @@ a {
 }
 
 /* ── List Styles ──────────────────────────────────────────────────────────── */
-ul, ol {
+/* Scope to .slidev-layout to beat Slidev's own CSS reset (ul { padding: 0 }) */
+.slidev-layout ul,
+.slidev-layout ol {
   margin: 0 0 var(--space-3);
   padding-left: var(--space-7);
 }
