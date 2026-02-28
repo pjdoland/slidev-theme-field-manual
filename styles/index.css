@@ -248,6 +248,35 @@ h2 + h3, h3 + h4 {
   padding: 0;
 }
 
+/* Section slide — reversed hierarchy: h1 reads like cover h2, h2 reads like cover h1 */
+.layout-section h1 {
+  font-family: var(--font-condensed-sans);
+  font-size: clamp(1.1rem, 2.0vw, 1.6rem);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--c-olive-mid);
+  margin: 0 0 var(--space-2);
+  border-top: 4px solid var(--c-olive-dark);
+  padding-top: var(--space-3);
+}
+
+.layout-section h2 {
+  font-family: var(--font-condensed-sans);
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.0;
+  text-transform: uppercase;
+  color: var(--c-ink);
+  margin: 0 0 var(--space-5);
+  border-top: none;
+  padding-top: 0;
+  border-bottom: 2px solid var(--c-olive);
+  padding-bottom: var(--space-3);
+}
+
 .slidev-layout p {
   margin: 0 0 var(--space-5);
   font-size: var(--text-base);

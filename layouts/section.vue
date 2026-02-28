@@ -24,9 +24,9 @@ defineProps<{
         <span v-if="sectionNumber"> · SECTION {{ sectionNumber }}</span>
       </div>
 
-      <h2 class="section-title">
+      <div class="section-content">
         <slot />
-      </h2>
+      </div>
 
       <div class="section-descriptor">
         <slot name="descriptor" />
@@ -91,16 +91,8 @@ defineProps<{
   letter-spacing: var(--tracking-widest);
 }
 
-.section-title {
-  font-family: var(--font-heading);
-  font-size: clamp(2.0rem, 4.0vw, 3.4rem);
-  font-weight: 900;
-  line-height: 1.05;
-  color: var(--c-olive-dark);
-  letter-spacing: -0.02em;
-  margin: 0 0 var(--space-5);
+.section-content {
   max-width: 70%;
-  text-transform: uppercase;
 }
 
 .section-descriptor {
