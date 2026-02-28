@@ -28,7 +28,7 @@ defineProps<{
         <h2 class="toc-title">{{ title ?? 'TABLE OF CONTENTS' }}</h2>
         <div class="toc-col-headers">
           <span class="toc-col-section">SECTION</span>
-          <span class="toc-col-title">TITLE</span>
+          <span class="toc-col-title"></span>
           <span class="toc-col-page">PAGE</span>
         </div>
         <div class="toc-header-rule"></div>

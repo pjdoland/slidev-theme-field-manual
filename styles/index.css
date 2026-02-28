@@ -31,6 +31,9 @@
   --c-ink-muted:     #3a3830;
   --c-ink-light:     #6a6458;
 
+  --c-amber:         #b05e10;
+  --c-amber-pale:    rgba(176, 94, 16, 0.10);
+
   --c-red:           #bf2020;
   --c-red-light:     #d63030;
   --c-red-pale:      rgba(191, 32, 32, 0.12);
@@ -129,6 +132,9 @@
   --c-ink-muted:     #c8b87a;
   --c-ink-light:     #9a8c6a;
 
+  --c-amber:         #c87c30;
+  --c-amber-pale:    rgba(200, 124, 48, 0.15);
+
   --c-red:           #c04040;
   --c-red-light:     #d45555;
   --c-red-pale:      rgba(192, 64, 64, 0.15);
@@ -177,14 +183,16 @@
   inset: 0;
   pointer-events: none;
   z-index: 1000;
-  opacity: 0.035;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.30;
+  mix-blend-mode: multiply;
+  background-image: url('./texture.png');
   background-repeat: repeat;
-  background-size: 200px 200px;
+  background-size: 512px 512px;
 }
 
 .dark .slidev-layout::before {
-  opacity: 0.055;
+  opacity: 0.08;
+  mix-blend-mode: normal;
 }
 
 /* ── Base Typography ──────────────────────────────────────────────────────── */
@@ -652,6 +660,95 @@ blockquote {
 .slidev-layout .slidev-page {
   background: var(--color-bg);
 }
+
+/* ── Dark Mode Layout-Specific Overrides ─────────────────────────────────── */
+/*
+ * These override scoped component rules that hardcode palette vars which are
+ * near-black in dark mode (--c-olive-dark, --c-olive, --c-olive-mid).
+ * Selectors use 3–4 class levels to beat the scoped rule's 0,2,0 specificity.
+ * Light mode is intentionally untouched.
+ */
+
+/* ── Global heading rules ── */
+/* Cover h2 — --c-olive-mid (#2a3018) is near-invisible on dark bg */
+.dark .layout-cover h2 { color: var(--c-khaki-light); }
+
+/* Section h1 label — same; border-top also uses near-black --c-olive-dark */
+.dark .layout-section h1 {
+  color: var(--c-khaki);
+  border-top-color: var(--c-khaki-dark);
+}
+/* Section h2 border-bottom uses --c-olive which equals the dark paper bg */
+.dark .layout-section h2 { border-bottom-color: var(--c-khaki-dark); }
+
+/* ── Cover layout ── (scoped rules in cover.vue use near-black olive vars) */
+.dark .layout-cover .cover-subtitle  { color: var(--c-khaki-light); }
+.dark .layout-cover .cover-date      { color: var(--c-khaki); }
+.dark .layout-cover .cover-rule-top  { background: var(--c-khaki-dark); }
+.dark .layout-cover .cover-rule-mid  { background: var(--c-olive-light); }
+.dark .layout-cover .cover-frame     { border-color: rgba(181, 160, 96, 0.40); }
+.dark .layout-cover .cover-frame__tl,
+.dark .layout-cover .cover-frame__tr,
+.dark .layout-cover .cover-frame__bl,
+.dark .layout-cover .cover-frame__br { border-color: var(--c-khaki-dark); }
+.dark .layout-cover .cover-reticle   { opacity: 0.55; }
+.dark .layout-cover .reticle-h,
+.dark .layout-cover .reticle-v       { background: var(--c-khaki-light); }
+.dark .layout-cover .reticle-circle  { border-color: var(--c-khaki-light); }
+
+/* ── TOC chapter title — --c-olive-dark text is near-black in dark ── */
+/* :deep() scoped rules compile to [data-v-xxx] .child → 0,3,0 specificity;
+   we need 0,4,0 here to win */
+.dark .layout-toc .toc-entry--chapter .toc-entry-title { color: var(--c-khaki-light); }
+
+/* ── Callout: important type ── */
+/* All four properties use --c-olive-mid; nested scoped rules are 0,3,0 so
+   we use a 4-class chain for 0,4,0 */
+.dark .slidev-layout .callout--important {
+  border-color: var(--c-khaki);
+  background: var(--c-olive-subtle);
+}
+.dark .slidev-layout .callout--important .callout-header {
+  background: var(--c-olive-subtle);
+  border-bottom-color: var(--c-khaki);
+}
+.dark .slidev-layout .callout--important .callout-icon  { color: var(--c-khaki); }
+.dark .slidev-layout .callout--important .callout-label { color: var(--c-khaki); }
+
+/* ── Callout: caution type ── */
+/* --c-khaki-dark (#6a5c38 in dark) is too dim; swap to amber */
+.dark .slidev-layout .callout--caution {
+  border-color: var(--c-amber);
+  background: var(--c-amber-pale);
+}
+.dark .slidev-layout .callout--caution .callout-header {
+  background: var(--c-amber-pale);
+  border-bottom-color: var(--c-amber);
+}
+.dark .slidev-layout .callout--caution .callout-icon  { color: var(--c-amber); }
+.dark .slidev-layout .callout--caution .callout-label { color: var(--c-amber); }
+
+/* ── Mermaid xychart text ── */
+/* xychart-beta computes axis/title text colour from its own internal logic
+   and ignores primaryTextColor. Scoped to .cl-chart-area so other chart
+   layouts (flowchart, quadrant) keep their classDef fill colours. */
+.dark .cl-chart-area svg text,
+.dark .cl-chart-area svg tspan {
+  fill: var(--c-ink) !important;
+}
+
+/* ── Timeline spine ── */
+/* --c-olive (#1e2214) equals the dark paper background — invisible.
+   Use khaki for a visible warm-tan line in dark mode. */
+.dark .layout-timeline .tl-track--horizontal::before,
+.dark .layout-timeline .tl-track--vertical::before {
+  background: var(--c-khaki);
+}
+
+/* ── End layout ── */
+.dark .layout-end .end-eof      { color: var(--c-khaki); }
+.dark .layout-end .end-rule-top { background: var(--c-khaki-dark); }
+.dark .layout-end .end-rule-mid { background: var(--c-olive-light); }
 
 /* ── Print safe zone ─────────────────────────────────────────────────────── */
 @media print {

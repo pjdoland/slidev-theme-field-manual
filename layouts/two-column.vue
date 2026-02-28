@@ -111,17 +111,20 @@ defineProps<{
   position: relative;
 }
 
-/* Column section headings (h2) — Oswald caps with stroke lines */
-:deep(h2) {
+/* Column h2s — Slidev's own CSS (.slidev-layout h2 at 0,1,1) resets h2 to
+   font-size: inherit and font-weight: normal, overriding our theme global h2 rule
+   (0,0,1). This scoped rule (0,2,1) applies the same reset explicitly so column
+   h2s match content h2s in other layouts, then adds the border treatment. */
+:deep(.tc-col h2) {
   font-family: var(--font-condensed-sans);
-  font-size: var(--text-lg);
-  font-weight: 700;
+  font-size: inherit;
+  font-weight: 400;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--c-ink);
-  line-height: 1.1;
-  border-top: var(--rule-thick) solid var(--color-rule);
-  border-bottom: 1px solid var(--color-rule);
+  line-height: 1.15;
+  color: var(--color-fg);
+  border-top: var(--rule-thin) solid var(--color-rule);
+  border-bottom: var(--rule-thin) solid var(--color-rule);
   padding: var(--space-2) 0;
   margin: 0 0 var(--space-4);
 }

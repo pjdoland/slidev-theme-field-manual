@@ -82,8 +82,8 @@ const typeConfig = computed(() => {
 }
 
 .callout--caution {
-  border-color: var(--c-khaki-dark);
-  background: var(--c-olive-ghost);
+  border-color: var(--c-amber);
+  background: var(--c-amber-pale);
 }
 
 .callout--important {
@@ -102,7 +102,7 @@ const typeConfig = computed(() => {
 
 .callout--warning .callout-header  { background: var(--c-red-pale);   border-bottom-color: var(--c-red); }
 .callout--note .callout-header     { background: var(--c-blue-pale);  border-bottom-color: var(--c-blue); }
-.callout--caution .callout-header  { background: var(--c-olive-ghost); border-bottom-color: var(--c-khaki-dark); }
+.callout--caution .callout-header  { background: var(--c-amber-pale);  border-bottom-color: var(--c-amber); }
 .callout--important .callout-header { background: var(--c-olive-ghost); border-bottom-color: var(--c-olive-mid); }
 
 .callout-icon {
@@ -113,7 +113,7 @@ const typeConfig = computed(() => {
 
 .callout--warning .callout-icon  { color: var(--c-red); }
 .callout--note .callout-icon     { color: var(--c-blue); }
-.callout--caution .callout-icon  { color: var(--c-khaki-dark); }
+.callout--caution .callout-icon  { color: var(--c-amber); }
 .callout--important .callout-icon { color: var(--c-olive-mid); }
 
 .callout-label {
@@ -123,7 +123,7 @@ const typeConfig = computed(() => {
 
 .callout--warning .callout-label  { color: var(--c-red); }
 .callout--note .callout-label     { color: var(--c-blue); }
-.callout--caution .callout-label  { color: var(--c-khaki-dark); }
+.callout--caution .callout-label  { color: var(--c-amber); }
 .callout--important .callout-label { color: var(--c-olive-mid); }
 
 /* Content */

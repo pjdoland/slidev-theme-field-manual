@@ -109,4 +109,17 @@ defineProps<{
   margin-top: var(--space-5);
   max-width: 70%;
 }
+
+/* ── Dark Mode ────────────────────────────────────────────────────────────── */
+:global(.dark) .section-ghost-number {
+  -webkit-text-stroke: 1px rgba(181, 160, 96, 0.08);
+}
+
+:global(.dark) .section-id {
+  color: var(--c-khaki);
+}
+
+:global(.dark) .section-bottom-rule {
+  background: var(--c-olive-light);
+}
 </style>
