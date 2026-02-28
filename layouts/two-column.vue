@@ -111,6 +111,21 @@ defineProps<{
   position: relative;
 }
 
+/* Column section headings (h3) — Oswald caps with stroke lines */
+:deep(h3) {
+  font-family: var(--font-condensed-sans);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--c-ink);
+  line-height: 1.1;
+  border-top: var(--rule-thick) solid var(--color-rule);
+  border-bottom: 1px solid var(--color-rule);
+  padding: var(--space-2) 0;
+  margin: 0 0 var(--space-4);
+}
+
 /* Small diamond at midpoint of divider */
 .tc-divider::after {
   content: '◆';
