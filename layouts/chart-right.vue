@@ -61,7 +61,7 @@ defineProps<{
 .cr-body {
   flex: 1;
   display: grid;
-  grid-template-columns: 48fr 52fr;
+  grid-template-columns: 1fr 1fr;
   gap: var(--space-5);
   padding: var(--space-4) var(--space-6) var(--space-2);
   overflow: hidden;
