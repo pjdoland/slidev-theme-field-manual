@@ -983,6 +983,7 @@ layout: end
 docNumber: FM 21-SLIDE
 classification: FOR TRAINING USE ONLY
 unit: HQ, DEPT OF THE PRESENTATION
+photo: https://picsum.photos/seed/presenter/300/300
 ---
 
 <template v-slot:title>Questions?</template>

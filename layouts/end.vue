@@ -7,6 +7,7 @@ defineProps<{
   docNumber?: string
   unit?: string
   contact?: string
+  photo?: string
 }>()
 </script>
 
@@ -15,6 +16,11 @@ defineProps<{
     <ClassificationBanner :text="classification ?? 'FOR TRAINING USE ONLY'" />
 
     <div class="end-body">
+      <!-- Presenter photo (optional) -->
+      <div v-if="photo" class="end-photo-wrap">
+        <img :src="photo" alt="Presenter photo" class="end-photo" />
+      </div>
+
       <div class="end-text">
         <div class="end-rule-top"></div>
         <div class="end-eof fm-label">
@@ -52,14 +58,31 @@ defineProps<{
 .end-body {
   flex: 1;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
+  gap: var(--space-8);
   padding: var(--space-6) var(--space-8);
+}
+
+.end-photo-wrap {
+  flex-shrink: 0;
+}
+
+.end-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  border: 3px solid var(--c-olive-dark);
+  box-shadow: 0 0 0 6px var(--c-olive-ghost);
 }
 
 .end-text {
   width: 100%;
-  max-width: 640px;
+  max-width: 560px;
 }
 
 .end-rule-top {
