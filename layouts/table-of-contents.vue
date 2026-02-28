@@ -139,7 +139,6 @@ defineProps<{
   font-weight: 700;
   color: var(--c-red);
   letter-spacing: var(--tracking-wide);
-  padding-right: var(--space-3);
 }
 
 :deep(.toc-entry-title) {
@@ -165,13 +164,14 @@ defineProps<{
 
 /* Subsection entries — indented under chapter headings */
 :deep(.toc-entry:not(.toc-entry--chapter)) {
-  padding-left: var(--space-6);
+  padding-left: var(--space-4);
 }
 
 /* Chapter-level entry (bold, olive background) */
 :deep(.toc-entry--chapter) {
   background: var(--c-olive-ghost);
-  padding: var(--space-3) 0 var(--space-1);
+  padding: var(--space-1) 0;
+  padding-left: var(--space-3);
   border-bottom: 1px solid var(--c-khaki-dark);
 }
 
