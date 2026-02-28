@@ -244,6 +244,8 @@ h2 + h3, h3 + h4 {
   text-transform: uppercase;
   color: var(--c-olive-mid);
   margin: 0 0 var(--space-5);
+  border: none;
+  padding: 0;
 }
 
 .slidev-layout p {

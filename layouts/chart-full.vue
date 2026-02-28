@@ -25,7 +25,6 @@ defineProps<{
     <div class="cf-body">
       <!-- Title bar -->
       <div class="cf-title-bar">
-        <div class="cf-rule"></div>
         <h2 v-if="title" class="cf-title">{{ title }}</h2>
       </div>
 
@@ -69,12 +68,6 @@ defineProps<{
 
 .cf-title-bar {
   flex-shrink: 0;
-  margin-bottom: var(--space-3);
-}
-
-.cf-rule {
-  height: var(--rule-thick);
-  background: var(--color-rule);
   margin-bottom: var(--space-3);
 }
 

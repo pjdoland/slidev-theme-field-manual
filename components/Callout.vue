@@ -55,6 +55,15 @@ const typeConfig = computed(() => {
   position: relative;
   overflow: hidden;
   margin-bottom: var(--space-3);
+  display: flex;
+  flex-direction: column;
+}
+
+.fm-callout-box::after {
+  content: '';
+  display: block;
+  height: 1.25rem;
+  flex-shrink: 0;
 }
 
 .fm-callout-box:last-child {
@@ -119,7 +128,7 @@ const typeConfig = computed(() => {
 
 /* Content */
 .callout-body {
-  padding: var(--space-3) var(--space-4);
+  padding: var(--space-3) var(--space-4) 0;
   font-size: var(--text-sm);
   color: var(--color-fg-muted);
   line-height: 1.6;

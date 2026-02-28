@@ -327,7 +327,7 @@ docNumber: FM 21-SLIDE
 
 Slide discipline is the systematic control of slide content to ensure information density remains within the cognitive capacity of the audience.
 
-**Rule of Six.** No slide shall contain more than six primary bullet points. No bullet point shall exceed two lines of text. Violation of this rule is a violation of operational security for your audience's attention span.
+**Rule of Six.** No slide shall contain more than six primary bullet points. No bullet point shall exceed two lines of text.
 
 **The Single-Idea Principle.** Each slide communicates exactly one primary idea. Supporting points clarify or expand that idea; they do not introduce new ones.
 
@@ -428,8 +428,6 @@ Several conditions are known to degrade presentation effectiveness to a dangerou
 
 **Font fragmentation** occurs when more than three distinct typefaces are employed on a single slide. This condition creates visual noise that degrades comprehension.
 
-**Animation excess** creates cognitive loading that disrupts the audience's ability to track the primary message.
-
 <template v-slot:callout>
 
 **DEATH BY POWERPOINT IS A REAL THREAT.** More commanders have been put to sleep by slide overload than by any external adversary. Maintain slide discipline at all times. The MSRD (Maximum Safe Reading Distance) for slides is 10 meters at 24pt.
@@ -476,7 +474,6 @@ rightAccent: blue
 - High preparation time
 - Presenter may read slides instead of brief
 - Audience disengagement risk
-- Inflexible to situational changes
 
 **Verdict:** Appropriate for classroom instruction and technical training.
 
@@ -516,12 +513,11 @@ docNumber: FM 21-SLIDE
 
 ```bash
 # FM 21-SLIDE — INSTALLATION PROCEDURE
-# Execute as non-privileged user. Sudo only where required.
 
 # Step 1: Verify prerequisites
-node --version          # Required: v18.0 or higher
-npm --version           # Required: v8.0 or higher
-git --version           # Required: any version
+node --version          # v18.0 or higher
+npm --version           # v8.0 or higher
+git --version           # any version
 
 # Step 2: Install Slidev globally
 npm install -g @slidev/cli
@@ -530,16 +526,10 @@ npm install -g @slidev/cli
 npm install slidev-theme-field-manual
 
 # Step 4: Create new presentation
-npm init slidev@latest my-briefing
-cd my-briefing
+npm init slidev@latest my-briefing && cd my-briefing
 
-# Step 5: Add theme to front matter
-# Edit slides.md and add:
-#   theme: slidev-theme-field-manual
-
-# Step 6: Start development server
-npm run dev
-# Server available at http://localhost:3030
+# Step 5: Set theme: slidev-theme-field-manual in slides.md
+npm run dev             # http://localhost:3030
 ```
 
 <template v-slot:caption>
@@ -565,8 +555,6 @@ Key parameters for the field manual theme:
 - `colorSchema` — `light` (aged paper) or `dark` (night map)
 - `highlighter` — must be set to `shiki`
 - `lineNumbers` — enable globally here or per-code-block
-
-The `docNumber`, `unit`, and `classification` fields cascade to all layouts that accept them via props.
 
 <template v-slot:code>
 
@@ -605,7 +593,7 @@ docNumber: FM 21-SLIDE
 
 ## 3-3. The CodeBlock Component
 
-The `<CodeBlock>` component provides full field manual styling for inline code displays on any layout. It accepts the following props:
+The `<CodeBlock>` component provides styling for inline code displays on any layout. It accepts the following props:
 
 | PROP | TYPE | DEFAULT | DESCRIPTION |
 |------|------|---------|-------------|
@@ -619,15 +607,10 @@ The `<CodeBlock>` component provides full field manual styling for inline code d
 
 ```python
 def calculate_slide_density(words: int, bullets: int) -> str:
-    """Assess slide content load per FM 21-SLIDE para 2-1."""
+    """Assess slide content load — FM 21-SLIDE para 2-1."""
     density = words / max(bullets, 1)
-
-    if density > 20:
-        return "NON-COMPLIANT — reduce word count"
-    elif density > 12:
-        return "MARGINAL — review recommended"
-    else:
-        return "COMPLIANT — proceed with brief"
+    if density > 20: return "NON-COMPLIANT — reduce word count"
+    return "MARGINAL — review recommended" if density > 12 else "COMPLIANT"
 ```
 
 </CodeBlock>
@@ -643,7 +626,7 @@ docNumber: FM 21-SLIDE
 
 ## 3-4. Advanced Configuration
 
-The `vite.config.ts` and `setup/` directory allow deep customization of the field manual theme. Use these only when standard front matter options are insufficient for the operational requirement.
+The `vite.config.ts` and `setup/` directory allow deep customization of the theme. Use these only when standard front matter options are insufficient.
 
 **When to use custom config:**
 - Override specific CSS custom properties for a single presentation
@@ -662,7 +645,6 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   slidev: {
     // Override specific CSS custom properties
-    // to adapt the theme to your unit colors
   },
   css: {
     preprocessorOptions: {
@@ -671,7 +653,6 @@ export default defineConfig({
           :root {
             /* Override: use unit red instead of signal red */
             --c-red: #6b0000;
-            --c-red-light: #8b1111;
           }
         `
       }
@@ -684,11 +665,11 @@ export default defineConfig({
 
 ---
 layout: chart-full
-title: 3-5. BRIEFING ROOM LOAD ANALYSIS
+title: 3-5. MERMAID DIAGRAM INTEGRATION
 sectionNumber: 3-5
 docNumber: FM 21-SLIDE
 figNumber: 3-1
-figLabel: COGNITIVE LOAD BY SLIDE TYPE — COMPARATIVE ANALYSIS
+figLabel: BRIEFING WORKFLOW — GENERATED INLINE FROM MERMAID SYNTAX
 ---
 
 <template v-slot:chart>
@@ -713,30 +694,30 @@ flowchart LR
 </template>
 
 <template v-slot:source>
-SOURCE: FM 21-SLIDE, APPENDIX B — SIMULATED DATA FOR ILLUSTRATION PURPOSES
+SOURCE: MERMAID.JS — RENDERED NATIVELY BY SLIDEV — NO EXTERNAL TOOLS OR IMAGE EXPORTS REQUIRED
 </template>
 
 ---
 layout: chart-right
-title: 3-6. SLIDE COUNT DISTRIBUTION
+title: 3-6. SUPPORTED CHART TYPES
 sectionNumber: 3-6
 docNumber: FM 21-SLIDE
 figNumber: 3-2
-figLabel: OPTIMAL SLIDE COUNTS BY BRIEF TYPE
+figLabel: BRIEF TYPE MATRIX — MERMAID QUADRANTCHART
 ---
 
-## 3-6. Slide Count Distribution
+## 3-6. Supported Chart Types
 
-Research across historical briefings indicates strong correlation between slide count and audience retention. The data at right represents aggregate analysis of 247 briefings conducted at the battalion level and above.
+This theme includes **native Mermaid support** via Slidev's built-in renderer. Diagrams are declared as fenced ` ```mermaid ` code blocks in markdown.
 
-**Key findings:**
+**Supported diagram types:**
 
-- **Commander's Update Brief (CUB):** 8–12 slides optimal
-- **Operations Order (OPORD) Brief:** 15–25 slides
-- **After Action Review (AAR):** 10–18 slides
-- **Technical Training Block:** 20–40 slides
-
-Slide counts beyond the **upper threshold** of any category correlate with significant drops in audience engagement and post-brief recall scores.
+- **`flowchart`** — Process flows, decision trees
+- **`quadrantChart`** — Two-axis classification matrices
+- **`xychart-beta`** — Bar and line charts
+- **`sequenceDiagram`** — Interaction and message flows
+- **`gantt`** — Timeline and schedule displays
+- **`mindmap`** — Hierarchical concept maps
 
 <template v-slot:chart>
 
@@ -762,24 +743,26 @@ quadrantChart
 
 ---
 layout: chart-left
-title: 3-7. AUDIENCE RETENTION CURVE
+title: 3-7. DECLARING INLINE CHARTS
 sectionNumber: 3-7
 docNumber: FM 21-SLIDE
 figNumber: 3-3
-figLabel: RETENTION VS. TIME ELAPSED SINCE BRIEFING
+figLabel: RETENTION DECAY — MERMAID XYCHART-BETA
 ---
 
-## 3-7. Retention Analysis
+## 3-7. Declaring Inline Charts
 
-Audience retention follows a **predictable decay curve** post-briefing. Without a printed takeaway or recorded summary, retention drops below 30% within 72 hours.
+Charts are declared directly in slide markdown. Place a fenced Mermaid block inside a `<template v-slot:chart>` tag within any `chart-full`, `chart-right`, or `chart-left` layout.
 
-**Countermeasures:**
+**Theming.** Set `mermaid: theme: base` in your global front matter and supply `themeVariables` to match your palette. Per-diagram overrides use the `%%{init}%%` directive at the top of each block.
 
-- Distribute a 1-page **EXSUM** (Executive Summary) after each brief
-- Capture action items on a **FRAGO matrix** for distribution
-- Follow up with a written **Commander's Summary** within 24 hours
-
-The use of high-contrast visual aids (field manual style) has been shown to extend retention by up to **18%** compared to standard slide decks.
+```
+xychart-beta
+  title "Retention Rate (%)"
+  x-axis ["0h","24h","72h","1wk"]
+  y-axis "Retention %" 0 --> 100
+  bar [100, 58, 31, 22]
+```
 
 <template v-slot:chart>
 
@@ -947,7 +930,7 @@ Failure to apply proper slide classification markings constitutes a security vio
 </Callout>
 
 <Callout type="caution" title="CAUTION">
-Laser pointers shall not be aimed at personnel. Class IIIa and above pointers present an eye injury hazard. Ensure pointer is directed only toward the projection surface.
+Laser pointers shall not be aimed at personnel. Class IIIa and above pointers present an eye injury hazard.
 </Callout>
 
 <Callout type="note" title="NOTE">
@@ -955,7 +938,7 @@ The field manual template automatically applies paper grain, classification bann
 </Callout>
 
 <Callout type="important" title="IMPORTANT">
-All code listings in this manual have been tested on current production systems. Verify compatibility before applying procedures to legacy installations.
+All code listings in this manual have been tested on current production systems.
 </Callout>
 
 ---

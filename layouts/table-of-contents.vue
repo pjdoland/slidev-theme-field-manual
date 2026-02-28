@@ -129,7 +129,7 @@ defineProps<{
   grid-template-columns: 60px 1fr auto 50px;
   gap: var(--space-3);
   align-items: baseline;
-  padding: var(--space-2) 0;
+  padding: var(--space-1) 0;
   border-bottom: 1px dotted var(--c-paper-shadow);
 }
 
@@ -170,7 +170,7 @@ defineProps<{
 /* Chapter-level entry (bold, olive background) */
 :deep(.toc-entry--chapter) {
   background: var(--c-olive-ghost);
-  padding: var(--space-2) 0;
+  padding: var(--space-1) 0;
   border-bottom: 1px solid var(--c-khaki-dark);
 }
 
