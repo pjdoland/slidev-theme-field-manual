@@ -111,8 +111,8 @@ defineProps<{
   position: relative;
 }
 
-/* Column section headings (h3) — Oswald caps with stroke lines */
-:deep(h3) {
+/* Column section headings (h2) — Oswald caps with stroke lines */
+:deep(h2) {
   font-family: var(--font-condensed-sans);
   font-size: var(--text-lg);
   font-weight: 700;

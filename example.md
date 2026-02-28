@@ -348,7 +348,7 @@ docNumber: FM 21-SLIDE
 
 <template v-slot:left>
 
-### COMPLIANT
+## COMPLIANT
 
 - One clear idea per bullet
 - Action-oriented language
@@ -361,7 +361,7 @@ docNumber: FM 21-SLIDE
 
 <template v-slot:right>
 
-### NON-COMPLIANT
+## NON-COMPLIANT
 
 - Multiple ideas crammed together requiring the audience to parse complex compound sentences
 - Passive voice constructions that obscure agency and responsibility
@@ -794,13 +794,10 @@ Slidev renders mathematical notation natively via **KaTeX**. Enable it with `kat
 
 **Inline.** Wrap expressions in single dollar signs: the quadratic solution is $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$.
 
-**Display.** Double dollar signs produce a centred block. Shannon entropy — a measure of information density per slide:
+**Display.** Double dollar signs produce a centred block.
+Shannon entropy — a measure of information density per slide:
 
 $$H(X) = -\sum_{i=1}^{n} p_i \log_2 p_i$$
-
-Euler's identity, the most compact equation in mathematics:
-
-$$e^{i\pi} + 1 = 0$$
 
 <template v-slot:code>
 
@@ -809,22 +806,13 @@ $$e^{i\pi} + 1 = 0$$
 # katex: true
 
 # Inline (single $ … $)
-The solution is $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$.
+$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$.
 
 # Display block (double $$ … $$)
 $$
 H(X) = -\sum_{i=1}^{n} p_i \log_2 p_i
 $$
-
-# Aligned equations
-$$
-\begin{aligned}
-  \nabla \cdot \mathbf{E}  &= \frac{\rho}{\varepsilon_0} \\
-  \nabla \times \mathbf{B} &= \mu_0 \mathbf{J}
-\end{aligned}
-$$
 ```
-
 </template>
 
 ---
