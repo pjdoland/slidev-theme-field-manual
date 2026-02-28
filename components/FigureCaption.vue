@@ -15,7 +15,7 @@ defineProps<{
 
 <style scoped>
 .fig-caption {
-  font-family: var(--font-mono);
+  font-family: var(--font-condensed-sans);
   font-size: var(--text-xs);
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;

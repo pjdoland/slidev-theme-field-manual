@@ -43,7 +43,7 @@ defineProps<{
 }
 
 .fm-header__title {
-  font-family: var(--font-mono);
+  font-family: var(--font-condensed-sans);
   font-size: var(--text-xs);
   letter-spacing: var(--tracking-wider);
   text-transform: uppercase;

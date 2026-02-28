@@ -27,7 +27,7 @@ defineProps<{
 }
 
 .classification-banner__text {
-  font-family: var(--font-mono);
+  font-family: var(--font-condensed-sans);
   font-size: var(--text-xs);
   font-weight: 700;
   letter-spacing: var(--tracking-widest);

@@ -194,8 +194,9 @@ defineProps<{
 .db-panel-footer {
   padding: var(--space-1) var(--space-3);
   border-top: 1px solid var(--c-olive-subtle);
-  font-family: var(--font-mono);
+  font-family: var(--font-condensed-sans);
   font-size: var(--text-xs);
+  text-transform: uppercase;
   color: var(--color-fg-subtle);
   letter-spacing: var(--tracking-wide);
   flex-shrink: 0;

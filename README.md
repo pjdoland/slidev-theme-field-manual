@@ -25,7 +25,7 @@ theme: slidev-theme-field-manual
 ## Features
 
 - Muted olive / khaki / aged-paper color palette
-- Condensed serif headings (Playfair Display) + monospace body (Courier Prime)
+- Display serif headings (Playfair Display) + condensed sans labels (Oswald) + monospace body (Courier Prime)
 - Paper grain overlay via inline SVG (no external images)
 - CSS-drawn corner brackets, crosshair reticles, and thick rule dividers
 - 24 purposefully designed layouts
@@ -82,7 +82,7 @@ Content goes here.
 ```
 
 #### `cover`
-Full-bleed olive title slide. Classification banners top and bottom, corner brackets, crosshair reticles.
+Light paper title slide. Dark olive frame with corner brackets and crosshair reticles; dark classification banners top and bottom; ink-black title; signal red doc number.
 
 ```md
 ---
@@ -504,10 +504,11 @@ Override these in your presentation's `style.css` or via `:root` in a custom CSS
 
 | Variable | Value | Description |
 |----------|-------|-------------|
-| `--font-heading` | Playfair Display | Heading font stack |
+| `--font-heading` | Playfair Display | Display serif — slide titles, cover, section titles |
 | `--font-body` | Source Serif 4 | Body font stack |
 | `--font-mono` | Courier Prime | Monospace font stack |
-| `--font-label` | Courier Prime | Label/caption font |
+| `--font-label` | Courier Prime | Monospace label/caption font |
+| `--font-condensed-sans` | Oswald | Condensed sans-serif — headers, footers, labels, captions, callouts |
 
 ### Type Scale
 
@@ -561,4 +562,4 @@ _(Screenshots pending — see `example.md` for a full 30-slide showcase of every
 
 ## License
 
-MIT © pjdoland
+© pjdoland. All rights reserved.
