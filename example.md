@@ -25,10 +25,6 @@ A Field Manual for the Modern Presenter · Headquarters, Department of the Prese
 
 </template>
 
-<template v-slot:meta>
-FEBRUARY 2026
-</template>
-
 ---
 layout: table-of-contents
 docNumber: FM 21-SLIDE

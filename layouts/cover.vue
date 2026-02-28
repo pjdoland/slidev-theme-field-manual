@@ -159,12 +159,12 @@ defineProps<{
 }
 
 .cover-title {
-  font-family: var(--font-heading);
-  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
-  font-weight: 900;
-  line-height: 1.05;
+  font-family: var(--font-condensed-sans);
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  font-weight: 700;
+  line-height: 1.0;
   color: var(--c-ink);
-  letter-spacing: -0.02em;
+  letter-spacing: 0.04em;
   margin: 0 0 var(--space-5);
   text-transform: uppercase;
 }

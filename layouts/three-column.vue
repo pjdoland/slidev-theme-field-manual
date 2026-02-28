@@ -119,7 +119,7 @@ defineProps<{
 }
 
 .thc-col-header {
-  font-family: var(--font-mono);
+  font-family: var(--font-condensed-sans);
   font-size: var(--text-xs);
   font-weight: 700;
   letter-spacing: var(--tracking-wider);
@@ -135,7 +135,7 @@ defineProps<{
 .thc-col-content {
   flex: 1;
   overflow: hidden;
-  padding: 0 var(--space-3);
+  padding: 0 var(--space-4);
 }
 
 .thc-divider {
