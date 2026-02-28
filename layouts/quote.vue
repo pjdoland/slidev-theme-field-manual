@@ -35,7 +35,7 @@ defineProps<{
       </div>
     </div>
 
-    <FieldManualFooter :section-number="sectionNumber ?? ''" :unit="unit ?? ''" />
+    <FieldManualFooter :section-number="sectionNumber ?? ''" />
   </div>
 </template>
 
