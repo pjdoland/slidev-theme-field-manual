@@ -161,7 +161,7 @@
   color: var(--color-fg);
   font-family: var(--font-body);
   font-size: var(--text-base);
-  line-height: 1.65;
+  line-height: 1.5;
   width: 980px;
   height: 552px; /* 16:9 at 980px */
   overflow: hidden;
@@ -232,7 +232,7 @@ h2 + h3, h3 + h4 {
 }
 
 p {
-  margin: 0 0 var(--space-3);
+  margin: 0 0 var(--space-5);
   font-size: var(--text-base);
 }
 
