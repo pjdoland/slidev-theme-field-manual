@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Slidev build output
+dist/
+.output/
+
+# Export output
+*.pdf
+*.png
+*.pptx
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Env / secrets
+.env
+.env.*

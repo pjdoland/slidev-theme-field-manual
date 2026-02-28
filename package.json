@@ -1,0 +1,26 @@
+{
+  "name": "slidev-theme-field-manual",
+  "version": "0.1.0",
+  "description": "A Slidev theme modeled on vintage US Army field manuals (FM series, 1950s–1980s)",
+  "keywords": [
+    "slidev-theme",
+    "military",
+    "field-manual",
+    "vintage",
+    "army",
+    "technical"
+  ],
+  "homepage": "https://github.com/pjdoland/slidev-theme-field-manual",
+  "author": "pjdoland",
+  "files": [
+    "layouts/",
+    "components/",
+    "styles/",
+    "setup/",
+    "README.md"
+  ],
+  "slidev": {
+    "colorSchema": "light",
+    "highlighter": "shiki"
+  }
+}

@@ -1,0 +1,222 @@
+/**
+ * Field Manual Theme — Code Block Overrides
+ * Applied on top of Shiki highlighting to enforce the FM visual vocabulary
+ * ─────────────────────────────────────────────────────────────────────────
+ */
+
+/* ── Shiki wrapper reset ──────────────────────────────────────────────────── */
+.shiki,
+.slidev-code {
+  background: transparent !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.shiki code {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  line-height: 1.65;
+  background: transparent !important;
+  counter-reset: line;
+}
+
+/* ── Line wrapper ─────────────────────────────────────────────────────────── */
+.shiki .line {
+  display: block;
+  padding: 0 var(--space-4);
+  min-height: 1.65em;
+}
+
+.shiki .line:last-child:empty {
+  display: none;
+}
+
+/* ── Line highlight ───────────────────────────────────────────────────────── */
+.shiki .line.highlighted {
+  background: var(--c-olive-subtle);
+  border-left: 2px solid var(--color-accent);
+  padding-left: calc(var(--space-4) - 2px);
+}
+
+/* ── The FM code container ────────────────────────────────────────────────── */
+/*
+  .fm-code-container wraps everything:
+  header bar → line-number-gutter + code panel → footer caption
+*/
+.fm-code-container {
+  display: flex;
+  flex-direction: column;
+  border: var(--rule-mid) solid var(--color-rule);
+  background: var(--c-paper-dark);
+  position: relative;
+  overflow: hidden;
+  font-family: var(--font-mono);
+}
+
+.dark .fm-code-container {
+  background: var(--c-paper-deeper);
+  border-color: var(--c-olive-light);
+}
+
+/* Corner brackets on code container */
+.fm-code-container::before,
+.fm-code-container::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.fm-code-container::before {
+  top: 0; left: 0;
+  border-top: 2px solid var(--c-khaki);
+  border-left: 2px solid var(--c-khaki);
+}
+
+.fm-code-container::after {
+  top: 0; right: 0;
+  border-top: 2px solid var(--c-khaki);
+  border-right: 2px solid var(--c-khaki);
+}
+
+.fm-code-container .fm-code-bl,
+.fm-code-container .fm-code-br {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.fm-code-container .fm-code-bl {
+  bottom: 0; left: 0;
+  border-bottom: 2px solid var(--c-khaki);
+  border-left: 2px solid var(--c-khaki);
+}
+
+.fm-code-container .fm-code-br {
+  bottom: 0; right: 0;
+  border-bottom: 2px solid var(--c-khaki);
+  border-right: 2px solid var(--c-khaki);
+}
+
+/* ── Code header bar ──────────────────────────────────────────────────────── */
+.fm-code-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2) var(--space-4);
+  background: var(--c-olive);
+  border-bottom: var(--rule-thin) solid var(--c-khaki-dark);
+  flex-shrink: 0;
+}
+
+.dark .fm-code-header {
+  background: var(--c-olive-mid);
+}
+
+.fm-code-title {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--c-khaki-light);
+}
+
+.fm-code-lang-badge {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--c-khaki-dark);
+  padding: 1px 6px;
+  border: 1px solid var(--c-khaki-dark);
+}
+
+.dark .fm-code-lang-badge {
+  color: var(--c-khaki);
+  border-color: var(--c-khaki-dark);
+}
+
+/* ── Code body ────────────────────────────────────────────────────────────── */
+.fm-code-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── Line number gutter ───────────────────────────────────────────────────── */
+.fm-code-gutter {
+  display: flex;
+  flex-direction: column;
+  min-width: 2.8em;
+  padding: 0 var(--space-2);
+  border-right: var(--rule-thin) solid var(--c-khaki-dark);
+  background: var(--c-paper-deeper);
+  flex-shrink: 0;
+  user-select: none;
+  pointer-events: none;
+}
+
+.dark .fm-code-gutter {
+  background: var(--c-paper-dark);
+  border-right-color: var(--c-olive-light);
+}
+
+.fm-line-number {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  line-height: 1.65;
+  color: var(--c-khaki-dark);
+  text-align: right;
+  padding: 0 var(--space-2);
+}
+
+.dark .fm-line-number {
+  color: var(--c-olive-light);
+}
+
+/* ── Code content area ────────────────────────────────────────────────────── */
+.fm-code-content {
+  flex: 1;
+  overflow: auto;
+  padding: var(--space-2) 0;
+}
+
+/* ── 5-line ruler marks ───────────────────────────────────────────────────── */
+.fm-code-ruler-line {
+  border-top: 1px solid var(--c-olive-subtle);
+}
+
+/* ── Code footer / caption ────────────────────────────────────────────────── */
+.fm-code-footer {
+  padding: var(--space-2) var(--space-4);
+  border-top: var(--rule-thin) solid var(--c-khaki-dark);
+  background: var(--c-olive-ghost);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-fg-subtle);
+  flex-shrink: 0;
+}
+
+/* ── Full-slide code layout special sizing ────────────────────────────────── */
+.layout-code-full .fm-code-container {
+  height: 100%;
+}
+
+.layout-code-full .fm-code-content {
+  font-size: calc(var(--text-sm) * 1.05);
+}
+
+/* ── code-right layout panel sizing ──────────────────────────────────────── */
+.layout-code-right .fm-code-container,
+.layout-code-left .fm-code-container {
+  height: 100%;
+}
