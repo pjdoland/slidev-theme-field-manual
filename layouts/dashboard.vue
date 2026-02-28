@@ -37,9 +37,7 @@ defineProps<{
           </div>
           <div class="db-panel-content">
             <slot name="panel1">
-              <div class="db-panel-placeholder">
-                <span class="fm-label" style="color: var(--c-khaki-dark);">DATA</span>
-              </div>
+              <div class="db-panel-placeholder"></div>
             </slot>
           </div>
           <div class="db-panel-footer">
@@ -54,9 +52,7 @@ defineProps<{
           </div>
           <div class="db-panel-content">
             <slot name="panel2">
-              <div class="db-panel-placeholder">
-                <span class="fm-label" style="color: var(--c-khaki-dark);">DATA</span>
-              </div>
+              <div class="db-panel-placeholder"></div>
             </slot>
           </div>
           <div class="db-panel-footer">
@@ -71,9 +67,7 @@ defineProps<{
           </div>
           <div class="db-panel-content">
             <slot name="panel3">
-              <div class="db-panel-placeholder">
-                <span class="fm-label" style="color: var(--c-khaki-dark);">DATA</span>
-              </div>
+              <div class="db-panel-placeholder"></div>
             </slot>
           </div>
           <div class="db-panel-footer">
@@ -88,9 +82,7 @@ defineProps<{
           </div>
           <div class="db-panel-content">
             <slot name="panel4">
-              <div class="db-panel-placeholder">
-                <span class="fm-label" style="color: var(--c-khaki-dark);">DATA</span>
-              </div>
+              <div class="db-panel-placeholder"></div>
             </slot>
           </div>
           <div class="db-panel-footer">
@@ -185,11 +177,32 @@ defineProps<{
 }
 
 .db-panel-placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+
+.db-panel-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 10% 10% 15% 10%;
+  background: rgba(74, 74, 42, 0.22);
+  clip-path: polygon(
+    0% 100%,
+    0% 60%, 20% 60%,
+    20% 35%, 40% 35%,
+    40% 18%, 60% 18%,
+    60% 42%, 80% 42%,
+    80% 68%, 100% 68%,
+    100% 100%
+  );
+}
+
+.db-panel-placeholder::after {
+  content: '';
+  position: absolute;
+  inset: 10% 10% 15% 10%;
+  border-bottom: 1px solid var(--c-khaki-dark);
+  border-left: 1px solid var(--c-khaki-dark);
 }
 
 .db-panel-footer {

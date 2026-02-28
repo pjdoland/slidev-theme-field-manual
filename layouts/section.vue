@@ -115,6 +115,6 @@ defineProps<{
   height: 1px;
   background: var(--c-khaki-dark);
   margin-top: var(--space-5);
-  width: 50%;
+  max-width: 70%;
 }
 </style>

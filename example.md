@@ -12,6 +12,35 @@ classification: FOR TRAINING USE ONLY
 fonts:
   sans: Source Serif 4
   mono: Courier Prime
+mermaid:
+  theme: base
+  fontFamily: "'Courier Prime', monospace"
+  themeVariables:
+    background: '#f5f0e0'
+    primaryColor: '#ede8d0'
+    primaryTextColor: '#1a1a14'
+    primaryBorderColor: '#8a7a50'
+    secondaryColor: '#e0d8be'
+    tertiaryColor: '#f5f0e0'
+    lineColor: '#4a4a2a'
+    mainBkg: '#ede8d0'
+    nodeBorder: '#8a7a50'
+    clusterBkg: '#e0d8be'
+    titleColor: '#3a3a1e'
+    edgeLabelBackground: '#f5f0e0'
+    pie1: '#3a3a1e'
+    pie2: '#8a7a50'
+    pie3: '#b5a060'
+    pie4: '#8b1a1a'
+    pie5: '#2a3d5c'
+    pie6: '#ddd0a0'
+    pieStrokeColor: '#f5f0e0'
+    pieLegendTextColor: '#1a1a14'
+    pieTitleTextColor: '#3a3a1e'
+    pieSectionTextColor: '#f5f0e0'
+    xyChart:
+      backgroundColor: '#f5f0e0'
+      plotColorPalette: '#4a4a2a,#8b1a1a,#8a7a50'
 ---
 
 <!-- Slide 1 — Cover -->
@@ -665,12 +694,20 @@ figLabel: COGNITIVE LOAD BY SLIDE TYPE — COMPARATIVE ANALYSIS
 <template v-slot:chart>
 
 ```mermaid
-xychart-beta
-    title "Cognitive Load by Slide Type (Lower = Better)"
-    x-axis ["Text Only", "Text+Image", "Code Right", "Dashboard", "Statement", "Quote"]
-    y-axis "Load Units" 0 --> 100
-    bar [72, 55, 48, 65, 22, 18]
-    line [72, 55, 48, 65, 22, 18]
+%%{init: {'theme': 'base', 'flowchart': {'useMaxWidth': true}, 'themeVariables': {'background': '#f5f0e0', 'primaryColor': '#ede8d0', 'primaryTextColor': '#1a1a14', 'primaryBorderColor': '#8a7a50', 'lineColor': '#4a4a2a', 'titleColor': '#3a3a1e', 'edgeLabelBackground': '#f5f0e0'}}}%%
+flowchart LR
+    A([MISSION RECEIVED]) --> B[Outline Key Messages]
+    B --> C[Build Slides]
+    C --> D{Quality Review}
+    D -- Pass --> E[Rehearsal]
+    D -- Revise --> C
+    E --> F([BRIEF EXECUTED])
+    classDef terminal fill:#3a3a1e,stroke:#3a3a1e,color:#f5f0e0
+    classDef step fill:#ede8d0,stroke:#4a4a2a,color:#1a1a14
+    classDef decision fill:#d0c8a8,stroke:#8a7a50,color:#1a1a14
+    class A,F terminal
+    class B,C,E step
+    class D decision
 ```
 
 </template>
@@ -704,15 +741,24 @@ Slide counts beyond the **upper threshold** of any category correlate with signi
 <template v-slot:chart>
 
 ```mermaid
-pie
-    title Slide Count Distribution (247 Briefings)
-    "8-12 slides" : 42
-    "13-20 slides" : 31
-    "21-30 slides" : 18
-    "31+ slides" : 9
+%%{init: {'theme': 'base', 'quadrantChart': {'useMaxWidth': true}, 'themeVariables': {'background': '#f5f0e0', 'primaryColor': '#ede8d0', 'primaryTextColor': '#1a1a14', 'primaryBorderColor': '#8a7a50', 'lineColor': '#4a4a2a', 'titleColor': '#3a3a1e', 'quadrant1Fill': '#ede8d0', 'quadrant2Fill': '#e0d8be', 'quadrant3Fill': '#e0d8be', 'quadrant4Fill': '#ede8d0', 'quadrantPointFill': '#4a4a2a', 'quadrantPointTextFill': '#1a1a14', 'quadrantXAxisTextFill': '#3a3a1e', 'quadrantYAxisTextFill': '#3a3a1e', 'quadrantTitleFill': '#3a3a1e', 'quadrantLinesColor': '#8a7a50'}}}%%
+quadrantChart
+    title Brief Type by Duration and Audience
+    x-axis Short Duration --> Long Duration
+    y-axis Small Audience --> Large Audience
+    quadrant-1 Major Operations
+    quadrant-2 Command Briefs
+    quadrant-3 Working Groups
+    quadrant-4 Training Events
+    Staff Sync: [0.15, 0.55]
+    CUB: [0.25, 0.80]
+    AAR: [0.48, 0.60]
+    OPORD Brief: [0.60, 0.85]
+    Training Block: [0.78, 0.40]
 ```
 
 </template>
+
 
 ---
 layout: chart-left
@@ -738,14 +784,16 @@ The use of high-contrast visual aids (field manual style) has been shown to exte
 <template v-slot:chart>
 
 ```mermaid
+%%{init: {'theme': 'base', 'xyChart': {'useMaxWidth': true, 'backgroundColor': '#f5f0e0', 'plotColorPalette': '#4a4a2a'}, 'themeVariables': {'xyChart': {'backgroundColor': '#f5f0e0', 'plotColorPalette': '#4a4a2a'}}}}%%
 xychart-beta
     title "Retention Rate Over Time (%)"
     x-axis ["0h", "24h", "48h", "72h", "1wk", "1mo"]
     y-axis "Retention %" 0 --> 100
-    line [100, 58, 42, 31, 22, 14]
+    bar [100, 58, 42, 31, 22, 14]
 ```
 
 </template>
+
 
 ---
 layout: dashboard

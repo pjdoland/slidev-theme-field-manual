@@ -197,7 +197,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 { font-size: var(--text-2xl); }
-h2 { font-size: var(--text-xl); margin-bottom: var(--space-3); }
+h2 {
+  font-family: var(--font-condensed-sans);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4);
+}
+
+/* Content-area h2s only (plain markdown — layout title bars all carry a class) */
+h2:not([class]) {
+  border-top: var(--rule-thin) solid var(--color-rule);
+  border-bottom: var(--rule-thin) solid var(--color-rule);
+  padding: var(--space-2) 0;
+  margin-bottom: var(--space-4);
+}
 h3 { font-size: var(--text-lg); margin-bottom: var(--space-2); }
 h4 { font-size: var(--text-md); margin-bottom: var(--space-2); }
 
@@ -525,7 +540,7 @@ table {
   border-collapse: collapse;
   font-family: var(--font-mono);
   font-size: var(--text-sm);
-  margin: var(--space-4) 0;
+  margin: var(--space-2) 0 var(--space-4);
 }
 
 thead {
@@ -569,6 +584,37 @@ blockquote {
 /* ── Mermaid diagram overrides ────────────────────────────────────────────── */
 .mermaid {
   background: transparent !important;
+}
+
+/*
+ * Mermaid chart areas: padding + SVG sizing.
+ * - Scoped layout styles provide centering (align-items/justify-content: center)
+ *   — do NOT override those or centering breaks.
+ * - SVG: fill available width (scales up from Mermaid's fixed pixel size),
+ *   auto-height preserves aspect ratio, max-height prevents overflow.
+ *   The flex container then vertically centers the naturally-sized SVG.
+ */
+.cf-chart-area,
+.cr-chart-area,
+.cl-chart-area {
+  padding: var(--space-3) !important;
+}
+
+.cf-chart-area > *,
+.cr-chart-area > *,
+.cl-chart-area > * {
+  width: 100%;
+  max-height: 100%;
+}
+
+.cf-chart-area svg,
+.cr-chart-area svg,
+.cl-chart-area svg {
+  width: 100% !important;
+  max-width: unset !important;
+  height: auto !important;
+  max-height: 100% !important;
+  display: block;
 }
 
 /* ── Slidev transition overrides ─────────────────────────────────────────── */

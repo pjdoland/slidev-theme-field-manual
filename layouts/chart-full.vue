@@ -33,9 +33,7 @@ defineProps<{
       <div class="cf-chart-area">
         <slot name="chart">
           <slot>
-            <div class="cf-chart-placeholder">
-              <span class="fm-label" style="color: var(--c-khaki-dark);">CHART / DIAGRAM AREA</span>
-            </div>
+            <div class="cf-chart-placeholder"></div>
           </slot>
         </slot>
       </div>
@@ -104,11 +102,33 @@ defineProps<{
 }
 
 .cf-chart-placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+
+.cf-chart-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 10% 10% 15% 10%;
+  background: rgba(74, 74, 42, 0.22);
+  clip-path: polygon(
+    0% 100%,
+    0% 60%, 16.7% 60%,
+    16.7% 40%, 33.3% 40%,
+    33.3% 18%, 50% 18%,
+    50% 32%, 66.7% 32%,
+    66.7% 55%, 83.3% 55%,
+    83.3% 72%, 100% 72%,
+    100% 100%
+  );
+}
+
+.cf-chart-placeholder::after {
+  content: '';
+  position: absolute;
+  inset: 10% 10% 15% 10%;
+  border-bottom: 1px solid var(--c-khaki-dark);
+  border-left: 1px solid var(--c-khaki-dark);
 }
 
 .cf-caption-bar {
