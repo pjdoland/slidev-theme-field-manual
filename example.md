@@ -12,6 +12,7 @@ classification: FOR TRAINING USE ONLY
 fonts:
   sans: Source Serif 4
   mono: Courier Prime
+katex: true
 mermaid:
   theme: base
   fontFamily: "'Courier Prime', monospace"
@@ -779,9 +780,57 @@ xychart-beta
 
 
 ---
+layout: code-right
+title: 3-8. LATEX MATHEMATICAL NOTATION
+codeTitle: LISTING 3-8 — KATEX SYNTAX REFERENCE
+codeLang: latex
+sectionNumber: 3-8
+docNumber: FM 21-SLIDE
+---
+
+## 3-8. LaTeX Mathematical Notation
+
+Slidev renders mathematical notation natively via **KaTeX**. Enable it with `katex: true` in global front matter.
+
+**Inline.** Wrap expressions in single dollar signs: the quadratic solution is $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$.
+
+**Display.** Double dollar signs produce a centred block. Shannon entropy — a measure of information density per slide:
+
+$$H(X) = -\sum_{i=1}^{n} p_i \log_2 p_i$$
+
+Euler's identity, the most compact equation in mathematics:
+
+$$e^{i\pi} + 1 = 0$$
+
+<template v-slot:code>
+
+```tex
+# Enable in global front matter
+# katex: true
+
+# Inline (single $ … $)
+The solution is $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$.
+
+# Display block (double $$ … $$)
+$$
+H(X) = -\sum_{i=1}^{n} p_i \log_2 p_i
+$$
+
+# Aligned equations
+$$
+\begin{aligned}
+  \nabla \cdot \mathbf{E}  &= \frac{\rho}{\varepsilon_0} \\
+  \nabla \times \mathbf{B} &= \mu_0 \mathbf{J}
+\end{aligned}
+$$
+```
+
+</template>
+
+---
 layout: dashboard
 title: SITUATIONAL AWARENESS DISPLAY
-sectionNumber: 3-8
+sectionNumber: 3-9
 docNumber: FM 21-SLIDE
 panel1Label: SLIDES COMPLETED
 panel2Label: TIME REMAINING
