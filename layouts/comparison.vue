@@ -20,7 +20,7 @@ defineProps<{
     <FieldManualHeader
       :title="title ?? ''"
       :section-number="sectionNumber ?? ''"
-      :doc-number="docNumber ?? 'FM 21-SLIDE'"
+      :doc-number="docNumber ?? 'FM 24-SLIDE'"
     />
 
     <!-- Main title rule -->

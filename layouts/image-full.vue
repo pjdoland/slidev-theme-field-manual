@@ -30,7 +30,7 @@ defineProps<{
     <!-- Text block anchored bottom-left -->
     <div class="if-text-block">
       <div class="if-text-rule"></div>
-      <div class="if-doc-label fm-label">{{ docNumber ?? 'FM 21-SLIDE' }}</div>
+      <div class="if-doc-label fm-label">{{ docNumber ?? 'FM 24-SLIDE' }}</div>
       <div class="if-title">
         <slot />
       </div>

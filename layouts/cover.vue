@@ -50,7 +50,7 @@ defineProps<{
 
         <!-- Doc number -->
         <div class="cover-doc-number fm-label">
-          {{ docNumber ?? 'FM 21-SLIDE' }}
+          {{ docNumber ?? 'FM 24-SLIDE' }}
         </div>
 
         <!-- Thick top rule -->
@@ -178,7 +178,7 @@ defineProps<{
 .cover-subtitle {
   font-family: var(--font-body);
   font-size: var(--text-md);
-  color: var(--c-olive-mid);
+  color: var(--c-ink);
   margin-bottom: var(--space-4);
   line-height: 1.4;
 }
@@ -190,7 +190,7 @@ defineProps<{
 }
 
 .cover-date {
-  color: var(--c-olive-mid);
+  color: var(--c-ink);
   letter-spacing: var(--tracking-widest);
 }
 
@@ -260,13 +260,6 @@ defineProps<{
   background: var(--c-olive-light);
 }
 
-:global(.dark) .cover-subtitle {
-  color: var(--c-khaki-light);
-}
-
-:global(.dark) .cover-date {
-  color: var(--c-khaki);
-}
 
 :global(.dark) .reticle-h,
 :global(.dark) .reticle-v {

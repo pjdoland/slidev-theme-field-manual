@@ -14,7 +14,7 @@ defineProps<{
         {{ sectionNumber ?? '1-1' }}
       </span>
       <span class="fm-footer__doc fm-label">
-        {{ docLabel ?? 'FM 21-SLIDE' }}
+        {{ docLabel ?? 'FM 24-SLIDE' }}
         <span v-if="unit"> · {{ unit }}</span>
       </span>
       <span class="fm-footer__page fm-section-id">

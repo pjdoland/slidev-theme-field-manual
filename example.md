@@ -1,12 +1,12 @@
 ---
 theme: ./
-title: 'FM 21-SLIDE: Operations in the Briefing Room'
+title: 'FM 24-SLIDE: Operations in the Briefing Room'
 author: 'HQ, Department of the Presentation'
 colorSchema: light 
 highlighter: shiki
 lineNumbers: true
 layout: cover
-docNumber: FM 21-SLIDE
+docNumber: FM 24-SLIDE
 date: FEBRUARY 28, 2026
 classification: FOR TRAINING USE ONLY
 fonts:
@@ -17,36 +17,63 @@ mermaid:
   theme: base
   fontFamily: "'Courier Prime', monospace"
   themeVariables:
-    background: '#1e2214'
-    primaryColor: '#2a3018'
-    primaryTextColor: '#e8e0c8'
-    primaryBorderColor: '#3d4a22'
-    secondaryColor: '#161a0e'
-    tertiaryColor: '#1e2214'
-    lineColor: '#8a7a50'
-    mainBkg: '#2a3018'
-    nodeBorder: '#3d4a22'
-    clusterBkg: '#161a0e'
-    titleColor: '#e8e0c8'
-    edgeLabelBackground: '#1e2214'
-    pie1: '#b5a060'
+    # — light (colorSchema: light) ————————————————————————————————————————————
+    background: '#f5f0e0'
+    primaryColor: '#ede8d0'
+    primaryTextColor: '#1a1a14'
+    primaryBorderColor: '#8a7a50'
+    secondaryColor: '#e0d8be'
+    tertiaryColor: '#f5f0e0'
+    lineColor: '#4a4a2a'
+    mainBkg: '#ede8d0'
+    nodeBorder: '#8a7a50'
+    clusterBkg: '#e0d8be'
+    titleColor: '#3a3a1e'
+    edgeLabelBackground: '#f5f0e0'
+    pie1: '#3a3a1e'
     pie2: '#8a7a50'
-    pie3: '#c04040'
-    pie4: '#4a6a9a'
-    pie5: '#3d4a22'
-    pie6: '#9a8c6a'
-    pieStrokeColor: '#1e2214'
-    pieLegendTextColor: '#e8e0c8'
-    pieTitleTextColor: '#e8e0c8'
-    pieSectionTextColor: '#e8e0c8'
+    pie3: '#b5a060'
+    pie4: '#8b1a1a'
+    pie5: '#2a3d5c'
+    pie6: '#ddd0a0'
+    pieStrokeColor: '#f5f0e0'
+    pieLegendTextColor: '#1a1a14'
+    pieTitleTextColor: '#3a3a1e'
+    pieSectionTextColor: '#f5f0e0'
     xyChart:
-      backgroundColor: '#1e2214'
-      plotColorPalette: '#8a7a50,#c04040,#b5a060'
+      backgroundColor: '#f5f0e0'
+      plotColorPalette: '#4a4a2a,#8b1a1a,#8a7a50'
+    # — dark (colorSchema: dark) — swap above block with this when needed ———
+    # background: '#1e2214'
+    # primaryColor: '#2a3018'
+    # primaryTextColor: '#e8e0c8'
+    # primaryBorderColor: '#3d4a22'
+    # secondaryColor: '#161a0e'
+    # tertiaryColor: '#1e2214'
+    # lineColor: '#8a7a50'
+    # mainBkg: '#2a3018'
+    # nodeBorder: '#3d4a22'
+    # clusterBkg: '#161a0e'
+    # titleColor: '#e8e0c8'
+    # edgeLabelBackground: '#1e2214'
+    # pie1: '#b5a060'
+    # pie2: '#8a7a50'
+    # pie3: '#c04040'
+    # pie4: '#4a6a9a'
+    # pie5: '#3d4a22'
+    # pie6: '#9a8c6a'
+    # pieStrokeColor: '#1e2214'
+    # pieLegendTextColor: '#e8e0c8'
+    # pieTitleTextColor: '#e8e0c8'
+    # pieSectionTextColor: '#e8e0c8'
+    # xyChart:
+    #   backgroundColor: '#1e2214'
+    #   plotColorPalette: '#8a7a50,#c04040,#b5a060'
 ---
 
 <!-- Slide 1 — Cover -->
 
-# FM 21-SLIDE
+# FM 24-SLIDE
 ## A Field Manual for the Modern Presenter
 
 <template v-slot:subtitle>
@@ -61,7 +88,7 @@ This is the cover layout — the entry point for every Field Manual theme presen
 
 ---
 layout: table-of-contents
-docNumber: FM 21-SLIDE
+docNumber: FM 24-SLIDE
 sectionNumber: TOC
 title: TABLE OF CONTENTS
 ---
@@ -128,7 +155,7 @@ The table-of-contents layout gives you a regulation-style ToC with dot leaders, 
 ---
 layout: section
 sectionNumber: '1'
-docNumber: FM 21-SLIDE
+docNumber: FM 24-SLIDE
 ---
 
 # Chapter 1
@@ -146,7 +173,7 @@ The section layout creates a chapter divider slide. Notice the inverted heading 
 layout: default
 title: 1-1. PURPOSE AND SCOPE
 sectionNumber: 1-1
-docNumber: FM 21-SLIDE
+docNumber: FM 24-SLIDE
 ---
 
 ## 1-1. PURPOSE AND SCOPE
@@ -169,7 +196,7 @@ The default layout is the primary workhorse of the theme — standard header, fu
 layout: default
 title: 1-2. EQUIPMENT AND MATERIEL
 sectionNumber: 1-2
-docNumber: FM 21-SLIDE
+docNumber: FM 24-SLIDE
 ---
 
 ## 1-2. EQUIPMENT AND MATERIEL
@@ -194,7 +221,7 @@ Markdown tables render cleanly inside the default layout using the theme's base 
 layout: image-right
 title: 1-3. TERRAIN APPRECIATION
 sectionNumber: 1-3
-docNumber: FM 21-SLIDE
+docNumber: FM 24-SLIDE
 figNumber: 1-1
 figLabel: THE BRIEFING ROOM — STANDARD CONFIGURATION
 ---
@@ -222,7 +249,7 @@ The image-right layout gives you a text column on the left with an image panel o
 layout: image-left
 title: 1-4. OPERATOR POSITIONING
 sectionNumber: 1-4
-docNumber: FM 21-SLIDE
+docNumber: FM 24-SLIDE
 figNumber: 1-2
 figLabel: PRESENTER AT LECTERN — SIDE VIEW
 ---
@@ -248,7 +275,7 @@ The image-left layout is the exact mirror of image-right — same props, same sl
 
 ---
 layout: image-full
-docNumber: FM 21-SLIDE
+docNumber: FM 24-SLIDE
 classification: FOR TRAINING USE ONLY
 ---
 
@@ -270,7 +297,7 @@ The image-full layout is for maximum visual impact — the image fills the entir
 layout: image-top
 title: 1-5. VISUAL AIDS AND GRAPHIC INTELLIGENCE
 sectionNumber: 1-5
-docNumber: FM 21-SLIDE
+docNumber: FM 24-SLIDE
 figNumber: 1-3
 figLabel: MILS CONVERSION CHART — APPROXIMATE VALUES
 ---
@@ -294,7 +321,7 @@ The image-top layout places the image in a horizontal band across the upper port
 layout: image-bottom
 title: 1-6. TERRAIN MODEL EMPLOYMENT
 sectionNumber: 1-6
-docNumber: FM 21-SLIDE
+docNumber: FM 24-SLIDE
 figNumber: 1-4
 figLabel: SAND TABLE — OPERATIONAL AREA DETAIL
 ---
@@ -320,7 +347,7 @@ The image-bottom layout inverts image-top — content above, image below. This i
 layout: two-images
 title: 1-7. BEFORE AND AFTER — SLIDE IMPROVEMENT
 sectionNumber: 1-7
-docNumber: FM 21-SLIDE
+docNumber: FM 24-SLIDE
 fig1Number: 1-5
 fig1Label: BEFORE — UNFORMATTED SLIDE
 fig2Number: 1-6
@@ -344,7 +371,7 @@ The two-images layout places two image panels side by side, each with its own in
 ---
 layout: section
 sectionNumber: '2'
-docNumber: FM 21-SLIDE
+docNumber: FM 24-SLIDE
 ---
 
 # Chapter 2
@@ -373,7 +400,7 @@ The statement layout strips away the header and footer entirely, presenting a si
 layout: default
 title: 2-1. SLIDE DISCIPLINE
 sectionNumber: 2-1
-docNumber: FM 21-SLIDE
+docNumber: FM 24-SLIDE
 ---
 
 ## 2-1. SLIDE DISCIPLINE
@@ -399,7 +426,7 @@ Back to the default layout. This slide demonstrates that ordered lists render as
 layout: two-column
 title: 2-2. CONTENT DENSITY COMPARISON
 sectionNumber: 2-2
-docNumber: FM 21-SLIDE
+docNumber: FM 24-SLIDE
 ---
 
 <template v-slot:left>
@@ -436,7 +463,7 @@ The two-column layout splits the content area into equal halves with named left 
 layout: three-column
 title: 2-3. THE THREE PHASES OF PREPARATION
 sectionNumber: 2-3
-docNumber: FM 21-SLIDE
+docNumber: FM 24-SLIDE
 col1Header: PHASE I — RECONNAISSANCE
 col2Header: PHASE II — CONSTRUCTION
 col3Header: PHASE III — REHEARSAL
@@ -480,7 +507,7 @@ The three-column layout adds a third column and puts labeled column headers abov
 layout: callout
 title: 2-4. HAZARDOUS CONDITIONS
 sectionNumber: 2-4
-docNumber: FM 21-SLIDE
+docNumber: FM 24-SLIDE
 calloutType: warning
 calloutTitle: WARNING — SLIDE OVERLOAD
 ---
@@ -507,7 +534,7 @@ The callout layout embeds a prominent Warning, Caution, Note, or Important box a
 layout: comparison
 title: 2-5. APPROACH ANALYSIS
 sectionNumber: 2-5
-docNumber: FM 21-SLIDE
+docNumber: FM 24-SLIDE
 leftHeader: OPTION ALPHA — MINIMAL SLIDES
 rightHeader: OPTION BRAVO — COMPREHENSIVE DECK
 leftAccent: red
@@ -569,7 +596,7 @@ The quote layout is distinct from the statement layout — it attributes the quo
 ---
 layout: section
 sectionNumber: '3'
-docNumber: FM 21-SLIDE
+docNumber: FM 24-SLIDE
 ---
 
 # Chapter 3
@@ -589,11 +616,11 @@ title: 3-1. INSTALLATION PROCEDURE
 codeTitle: LISTING 3-1 — INSTALLATION PROCEDURE
 codeLang: bash
 sectionNumber: 3-1
-docNumber: FM 21-SLIDE
+docNumber: FM 24-SLIDE
 ---
 
 ```bash
-# FM 21-SLIDE — INSTALLATION PROCEDURE
+# FM 24-SLIDE — INSTALLATION PROCEDURE
 
 # Step 1: Verify prerequisites
 node --version          # v18.0 or higher
@@ -614,7 +641,7 @@ npm run dev             # http://localhost:3030
 ```
 
 <template v-slot:caption>
-SOURCE: FM 21-SLIDE, PARA 3-1 — VERIFIED ON LINUX/MACOS/WINDOWS (WSL2)
+SOURCE: FM 24-SLIDE, PARA 3-1 — VERIFIED ON LINUX/MACOS/WINDOWS (WSL2)
 </template>
 
 <!--
@@ -627,7 +654,7 @@ title: 3-2. SLIDE FRONT MATTER
 codeTitle: LISTING 3-2 — FRONT MATTER CONFIG
 codeLang: yaml
 sectionNumber: 3-2
-docNumber: FM 21-SLIDE
+docNumber: FM 24-SLIDE
 ---
 
 ## 3-2. Slide Front Matter
@@ -677,7 +704,7 @@ The code-right layout splits the slide into a text column on the left and a code
 layout: default
 title: 3-3. CODE BLOCK COMPONENT
 sectionNumber: 3-3
-docNumber: FM 21-SLIDE
+docNumber: FM 24-SLIDE
 ---
 
 ## 3-3. The CodeBlock Component
@@ -696,7 +723,7 @@ The `<CodeBlock>` component provides styling for inline code displays on any lay
 
 ```python
 def calculate_slide_density(words: int, bullets: int) -> str:
-    """Assess slide content load — FM 21-SLIDE para 2-1."""
+    """Assess slide content load — FM 24-SLIDE para 2-1."""
     density = words / max(bullets, 1)
     if density > 20: return "NON-COMPLIANT — reduce word count"
     return "MARGINAL — review recommended" if density > 12 else "COMPLIANT"
@@ -714,7 +741,7 @@ title: 3-4. JAVASCRIPT CONFIGURATION
 codeTitle: LISTING 3-4 — SLIDEV CONFIG
 codeLang: javascript
 sectionNumber: 3-4
-docNumber: FM 21-SLIDE
+docNumber: FM 24-SLIDE
 ---
 
 ## 3-4. Advanced Configuration
@@ -764,7 +791,7 @@ A second code-right example, this time showing JavaScript instead of YAML. The c
 layout: chart-full
 title: 3-5. MERMAID DIAGRAM INTEGRATION
 sectionNumber: 3-5
-docNumber: FM 21-SLIDE
+docNumber: FM 24-SLIDE
 figNumber: 3-1
 figLabel: BRIEFING WORKFLOW — GENERATED INLINE FROM MERMAID SYNTAX
 ---
@@ -772,7 +799,7 @@ figLabel: BRIEFING WORKFLOW — GENERATED INLINE FROM MERMAID SYNTAX
 <template v-slot:chart>
 
 ```mermaid
-%%{init: {'theme': 'base', 'flowchart': {'useMaxWidth': true}, 'themeVariables': {'background': '#1e2214', 'primaryColor': '#2a3018', 'primaryTextColor': '#e8e0c8', 'primaryBorderColor': '#3d4a22', 'lineColor': '#8a7a50', 'titleColor': '#e8e0c8', 'edgeLabelBackground': '#1e2214'}}}%%
+%%{init: {'theme': 'base', 'flowchart': {'useMaxWidth': true}, 'themeVariables': {'background': '#f5f0e0', 'primaryColor': '#ede8d0', 'primaryTextColor': '#1a1a14', 'primaryBorderColor': '#8a7a50', 'lineColor': '#4a4a2a', 'titleColor': '#3a3a1e', 'edgeLabelBackground': '#f5f0e0'}}}%%
 flowchart LR
     A([MISSION RECEIVED]) --> B[Outline Key Messages]
     B --> C[Build Slides]
@@ -780,9 +807,9 @@ flowchart LR
     D -- Pass --> E[Rehearsal]
     D -- Revise --> C
     E --> F([BRIEF EXECUTED])
-    classDef terminal fill:#b5a060,stroke:#b5a060,color:#1e2214
-    classDef step fill:#2a3018,stroke:#3d4a22,color:#e8e0c8
-    classDef decision fill:#161a0e,stroke:#8a7a50,color:#e8e0c8
+    classDef terminal fill:#3a3a1e,stroke:#3a3a1e,color:#f5f0e0
+    classDef step fill:#ede8d0,stroke:#4a4a2a,color:#1a1a14
+    classDef decision fill:#d0c8a8,stroke:#8a7a50,color:#1a1a14
     class A,F terminal
     class B,C,E step
     class D decision
@@ -802,7 +829,7 @@ The chart-full layout gives a Mermaid diagram the entire content area, with an o
 layout: chart-right
 title: 3-6. SUPPORTED CHART TYPES
 sectionNumber: 3-6
-docNumber: FM 21-SLIDE
+docNumber: FM 24-SLIDE
 figNumber: 3-2
 figLabel: BRIEF TYPE MATRIX — MERMAID QUADRANTCHART
 ---
@@ -823,7 +850,7 @@ This theme includes **native Mermaid support** via Slidev's built-in renderer. D
 <template v-slot:chart>
 
 ```mermaid
-%%{init: {'theme': 'base', 'quadrantChart': {'useMaxWidth': true}, 'themeVariables': {'background': '#1e2214', 'primaryColor': '#2a3018', 'primaryTextColor': '#e8e0c8', 'primaryBorderColor': '#3d4a22', 'lineColor': '#8a7a50', 'titleColor': '#e8e0c8', 'quadrant1Fill': '#2a3018', 'quadrant2Fill': '#232a15', 'quadrant3Fill': '#232a15', 'quadrant4Fill': '#2a3018', 'quadrantPointFill': '#b5a060', 'quadrantPointTextFill': '#e8e0c8', 'quadrantXAxisTextFill': '#c8b87a', 'quadrantYAxisTextFill': '#c8b87a', 'quadrantTitleFill': '#e8e0c8', 'quadrantLinesColor': '#3d4a22'}}}%%
+%%{init: {'theme': 'base', 'quadrantChart': {'useMaxWidth': true}, 'themeVariables': {'background': '#f5f0e0', 'primaryColor': '#ede8d0', 'primaryTextColor': '#1a1a14', 'primaryBorderColor': '#8a7a50', 'lineColor': '#4a4a2a', 'titleColor': '#3a3a1e', 'quadrant1Fill': '#ede8d0', 'quadrant2Fill': '#e0d8be', 'quadrant3Fill': '#e0d8be', 'quadrant4Fill': '#ede8d0', 'quadrantPointFill': '#4a4a2a', 'quadrantPointTextFill': '#1a1a14', 'quadrantXAxisTextFill': '#3a3a1e', 'quadrantYAxisTextFill': '#3a3a1e', 'quadrantTitleFill': '#3a3a1e', 'quadrantLinesColor': '#8a7a50'}}}%%
 quadrantChart
     title Brief Type by Duration and Audience
     x-axis Short Duration --> Long Duration
@@ -850,7 +877,7 @@ The chart-right layout places explanatory text on the left and a chart panel on 
 layout: chart-left
 title: 3-7. DECLARING INLINE CHARTS
 sectionNumber: 3-7
-docNumber: FM 21-SLIDE
+docNumber: FM 24-SLIDE
 figNumber: 3-3
 figLabel: RETENTION DECAY — MERMAID XYCHART-BETA
 ---
@@ -872,7 +899,7 @@ xychart-beta
 <template v-slot:chart>
 
 ```mermaid
-%%{init: {'theme': 'base', 'xyChart': {'useMaxWidth': true, 'backgroundColor': '#1e2214', 'plotColorPalette': '#8a7a50'}, 'themeVariables': {'primaryTextColor': '#e8e0c8', 'background': '#1e2214'}}}%%
+%%{init: {'theme': 'base', 'xyChart': {'useMaxWidth': true, 'backgroundColor': '#f5f0e0', 'plotColorPalette': '#4a4a2a'}, 'themeVariables': {'xyChart': {'backgroundColor': '#f5f0e0', 'plotColorPalette': '#4a4a2a'}}}}%%
 xychart-beta
     title "Retention Rate Over Time (%)"
     x-axis ["0h", "24h", "48h", "72h", "1wk", "1mo"]
@@ -893,7 +920,7 @@ title: 3-8. LATEX MATHEMATICAL NOTATION
 codeTitle: LISTING 3-8 — KATEX SYNTAX
 codeLang: latex
 sectionNumber: 3-8
-docNumber: FM 21-SLIDE
+docNumber: FM 24-SLIDE
 ---
 
 ## 3-8. LaTeX Mathematical Notation
@@ -931,7 +958,7 @@ Slidev includes KaTeX for mathematical notation — enable it once with katex: t
 layout: dashboard
 title: SITUATIONAL AWARENESS DISPLAY
 sectionNumber: 3-9
-docNumber: FM 21-SLIDE
+docNumber: FM 24-SLIDE
 panel1Label: SLIDES COMPLETED
 panel2Label: TIME REMAINING
 panel3Label: AUDIENCE ENGAGEMENT
@@ -998,7 +1025,7 @@ The dashboard layout provides a four-panel status board. Each panel's label is s
 layout: timeline
 title: A-1. OPERATION SLIDE DRAGON — EVENT SEQUENCE
 sectionNumber: A-1
-docNumber: FM 21-SLIDE
+docNumber: FM 24-SLIDE
 direction: horizontal
 ---
 
@@ -1051,7 +1078,7 @@ The timeline layout uses a class-based HTML pattern: each event is a tl-entry di
 layout: default
 title: A-2. COMPONENT REFERENCE — CODEBLOCK
 sectionNumber: A-2
-docNumber: FM 21-SLIDE
+docNumber: FM 24-SLIDE
 ---
 
 ## A-2. CodeBlock Component Examples
@@ -1065,7 +1092,7 @@ The `CodeBlock` component used standalone, demonstrating YAML config:
 theme: slidev-theme-field-manual
 colorSchema: light          # light | dark
 highlighter: shiki
-docNumber: FM 21-SLIDE
+docNumber: FM 24-SLIDE
 classification: FOR TRAINING USE ONLY
 unit: 1st PRES BDE
 ---
@@ -1081,7 +1108,7 @@ This slide demonstrates the CodeBlock component with the rulers prop enabled —
 layout: default
 title: A-3. CALLOUT BOX GALLERY
 sectionNumber: A-3
-docNumber: FM 21-SLIDE
+docNumber: FM 24-SLIDE
 ---
 
 ## A-3. Callout Box Gallery
@@ -1108,7 +1135,7 @@ All four callout types appear together here for direct comparison: warning uses 
 
 ---
 layout: end
-docNumber: FM 21-SLIDE
+docNumber: FM 24-SLIDE
 classification: FOR TRAINING USE ONLY
 unit: HQ, DEPT OF THE PRESENTATION
 photo: ./assets/presenter.jpg

@@ -19,7 +19,7 @@ defineProps<{
     <FieldManualHeader
       :title="title ?? 'TABLE OF CONTENTS'"
       :section-number="sectionNumber ?? ''"
-      :doc-number="docNumber ?? 'FM 21-SLIDE'"
+      :doc-number="docNumber ?? 'FM 24-SLIDE'"
     />
 
     <div class="toc-body">

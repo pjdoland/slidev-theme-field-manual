@@ -36,7 +36,7 @@ defineProps<{
           </slot>
         </div>
         <div class="end-doc fm-label">
-          {{ docNumber ?? 'FM 21-SLIDE' }}
+          {{ docNumber ?? 'FM 24-SLIDE' }}
           <span v-if="unit"> · {{ unit }}</span>
         </div>
       </div>

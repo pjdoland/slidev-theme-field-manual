@@ -20,7 +20,7 @@ defineProps<{
       <div class="section-top-rule"></div>
 
       <div class="section-id fm-label">
-        {{ docNumber ?? 'FM 21-SLIDE' }}
+        {{ docNumber ?? 'FM 24-SLIDE' }}
         <span v-if="sectionNumber"> · SECTION {{ sectionNumber }}</span>
       </div>
 
@@ -46,7 +46,7 @@ defineProps<{
 .layout-section {
   display: flex;
   flex-direction: column;
-  background: var(--c-paper-dark) !important;
+  background: var(--color-bg) !important;
   position: relative;
   overflow: hidden;
   padding: 0;

@@ -682,8 +682,6 @@ blockquote {
 .dark .layout-section h2 { border-bottom-color: var(--c-khaki-dark); }
 
 /* ── Cover layout ── (scoped rules in cover.vue use near-black olive vars) */
-.dark .layout-cover .cover-subtitle  { color: var(--c-khaki-light); }
-.dark .layout-cover .cover-date      { color: var(--c-khaki); }
 .dark .layout-cover .cover-rule-top  { background: var(--c-khaki-dark); }
 .dark .layout-cover .cover-rule-mid  { background: var(--c-olive-light); }
 .dark .layout-cover .cover-frame     { border-color: rgba(181, 160, 96, 0.40); }

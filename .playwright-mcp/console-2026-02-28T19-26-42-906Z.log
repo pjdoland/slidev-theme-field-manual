@@ -1,0 +1,4 @@
+[ 2174445ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3031/example.md__slidev_28.md?import&t=1772308977162:0
+[ 2174448ms] [ERROR] [vite] Failed to reload /example.md__slidev_28.md. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:3031/@vite/client:808
+[ 2177607ms] [ERROR] slide failed to load TypeError: Failed to fetch dynamically imported module: http://localhost:3031/@slidev/slides/28/md?t=1772308977162 @ http://localhost:3031/@slidev/slides?t=1772308977162:149
+[ 2177610ms] [ERROR] slide failed to load TypeError: Failed to fetch dynamically imported module: http://localhost:3031/@slidev/slides/28/md?t=1772308977162 @ http://localhost:3031/@slidev/slides?t=1772308977162:149
