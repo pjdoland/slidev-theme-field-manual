@@ -241,7 +241,7 @@ Prose/bullets left 50%, field-manual-styled code panel right 50% with title bar,
 Props: `codeTitle`, `codeLang`
 Slots: `code`, `caption`
 
-```md
+````md
 ---
 layout: code-right
 title: 3-2. SLIDE FRONT MATTER
@@ -261,7 +261,7 @@ colorSchema: light
 <template v-slot:caption>
 REPLACE PLACEHOLDERS WITH OPERATIONAL VALUES
 </template>
-```
+````
 
 #### `code-full`
 Code panel fills the entire content area with a prominent title bar and optional caption below.
@@ -269,7 +269,7 @@ Code panel fills the entire content area with a prominent title bar and optional
 Props: `codeTitle`, `codeLang`
 Slots: `caption` (code goes in the default slide body as a fenced block)
 
-```md
+````md
 ---
 layout: code-full
 codeTitle: LISTING 3-1 — INSTALLATION PROCEDURE
@@ -283,7 +283,7 @@ npm install slidev-theme-field-manual
 <template v-slot:caption>
 VERIFIED ON LINUX / MACOS / WINDOWS WSL2
 </template>
-```
+````
 
 ---
 
@@ -310,7 +310,7 @@ Diagram fills the content area. Optional source credit slot below.
 
 Slots: `chart`, `source`
 
-```md
+````md
 ---
 layout: chart-full
 figNumber: 3-1
@@ -323,7 +323,7 @@ flowchart LR
   A([START]) --> B[Outline] --> C([BRIEF])
 ```
 </template>
-```
+````
 
 #### `chart-right`
 Text/bullets left, chart panel right. Slots: `chart`
@@ -424,7 +424,7 @@ Standalone code panel — the same visual treatment used by `code-right` and `co
 | `rulers` | `boolean` | `false` | Faint horizontal rule every 5 lines |
 | `caption` | `string` | — | Footer caption text |
 
-```md
+````md
 <CodeBlock lang="bash" title="LISTING 2-1 — PROCEDURE" :rulers="false">
 
 ```bash
@@ -432,7 +432,7 @@ npm run dev
 ```
 
 </CodeBlock>
-```
+````
 
 ### `FigureCaption`
 
