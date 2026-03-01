@@ -87,7 +87,7 @@ defineProps<{
 
 .quote-text {
   font-family: var(--font-heading);
-  font-size: clamp(1.2rem, 2.2vw, 1.8rem);
+  font-size: clamp(1.4rem, 2.8vw, 2.2rem);
   font-style: italic;
   font-weight: 700;
   line-height: 1.35;
