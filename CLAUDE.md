@@ -37,7 +37,7 @@ Every layout follows this structure:
 <FieldManualFooter>   ← flex-shrink: 0, uses $nav?.currentPage for slide count
 ```
 
-The `.slidev-layout` root element is always a `display: flex; flex-direction: column` container at 980×552px. Layouts must not exceed this height.
+The `.slidev-layout` root element is always a `display: flex; flex-direction: column` container at 960×540px (16:9; renders at 1920×1080 at 2x). Layouts must not exceed this height.
 
 ### CodeBlock / code panel system
 

@@ -83,7 +83,7 @@ defineProps<{
 
 /* ── Horizontal track ─────────────────────────────────────────────────────── */
 .tl-track--horizontal {
-  flex: 1;
+  margin: auto 0;
   display: flex;
   align-items: flex-start;
   gap: 0;
@@ -125,7 +125,7 @@ defineProps<{
 
 /* ── Vertical track ───────────────────────────────────────────────────────── */
 .tl-track--vertical {
-  flex: 1;
+  margin: auto 0;
   display: flex;
   flex-direction: column;
   gap: 0;

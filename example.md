@@ -1,5 +1,6 @@
 ---
 theme: ./
+canvasWidth: 960
 title: 'FM 24-SLIDE: Operations in the Briefing Room'
 author: 'HQ, Department of the Presentation'
 colorSchema: light 
@@ -83,7 +84,13 @@ CPT John Q. Presenter · Department of the Presentation
 </template>
 
 <!--
-This is the cover layout — the entry point for every Field Manual theme presentation. The h1 renders in bold Oswald at a large size and the h2 sits beneath it in lighter weight, giving you a clear hierarchy between document designation and subtitle. The subtitle named slot puts arbitrary content below those headings — use it for presenter name, unit, or event details. All theme-wide metadata flows from front matter props: docNumber, date, and classification populate the header and footer automatically on every slide in the deck without any per-slide configuration.
+Hello, my name is PJ Doland. Today I'm going to walk you through the Field Manual theme for Slidev.
+
+I built this theme for a specific project. I had a very particular aesthetic in mind — something rooted in military document design — and I couldn't find an existing theme that matched it, so I built one. I figured if I was going to build it anyway, I should build it properly and share it.
+
+The design draws from vintage US Army field manuals — the FM series, published from roughly the 1950s through the 1980s. If you've ever looked through one of those documents, the visual language is immediately recognizable: aged cream paper, bold Oswald headings, monospace body text, olive and earth tones, classification banners running top and bottom on every page. It's a typographic system that evolved for maximum clarity under demanding conditions — field use, poor lighting, readers who need to find information fast. That combination of authority and practicality turns out to translate quite well to presentations.
+
+The theme covers 24 different layouts. There's also a dark color scheme — a night-map palette — but today we're just going to look at the light version. Let's go.
 -->
 
 ---
@@ -149,7 +156,9 @@ title: TABLE OF CONTENTS
 </div>
 
 <!--
-The table-of-contents layout gives you a regulation-style ToC with dot leaders, section numbers, and a column header row. Entries are raw HTML divs rather than Markdown so you have full control over the grid. Apply the toc-entry--chapter modifier class to chapter-level rows — they get an olive background and bold Oswald treatment that distinguishes them from subsection entries. The dot leaders are pure CSS border-bottom, so they automatically stretch to fill whatever space exists between the title and the page number column regardless of title length.
+The table of contents layout gives you a regulation-style ToC: dot leaders stretching from section title to page number, chapter-level entries visually distinct from subsection entries, and a column header row across the top. It's one of those slides that takes a few minutes to set up and immediately makes a deck feel substantially more organized — both for the audience during the presentation and for anyone who revisits the material afterward.
+
+Chapter entries get an olive background and bold treatment that distinguishes them from the subsection rows below. The dot leaders are pure CSS, so they automatically fill whatever space exists between the title and the page number column regardless of title length.
 -->
 
 ---
@@ -166,7 +175,9 @@ An introduction to purpose, scope, and the basic materiel required for effective
 </template>
 
 <!--
-The section layout creates a chapter divider slide. Notice the inverted heading hierarchy compared to the cover: h1 is the small, lightweight label ("Chapter 1") and h2 is the large, bold display title — exactly opposite of how they render on the cover slide. This mirroring is intentional and creates visual bookending across the deck. The descriptor slot holds a brief abstract in smaller body text below the title bar. Use these dividers as structural pauses between major chapters to give the audience a clear sense of where they are in a long brief.
+This is the section divider layout. It's intentionally bold and simple: the chapter number in small text above, the chapter title in large display type below, and a short descriptor underneath. The heading hierarchy here is actually inverted from the cover slide — on the cover, the large text is the document title; here it's the chapter title. That reversal is intentional and gives the two layout types a visual relationship without looking identical.
+
+These dividers function as structural pauses — a moment for the audience to close one mental chapter and open the next. You'll see several as we move through the deck.
 -->
 
 ---
@@ -189,7 +200,9 @@ This manual establishes doctrine for **operations in the briefing room**. It cov
 - Maintain **section numbering** (1-1, 1-2, A-3) throughout the document
 
 <!--
-The default layout is the primary workhorse of the theme — standard header, full-width content area, footer. Everything on this slide was written in plain Markdown with no custom HTML, named slots, or special wrappers. The title, sectionNumber, and docNumber props in the front matter populate the header automatically; the footer picks up the current slide number from Slidev's navigation context. The h2 here is classless, so it gets the global stroke-line treatment — a thick border above and a thinner one below — consistent with the theme's heading hierarchy throughout.
+This is the default layout — the primary workhorse of the theme. Everything on this slide is plain Markdown: headings, bullets, bold text. No custom HTML, no special wrappers.
+
+The header and footer populate automatically from a handful of values you set in each slide's front matter — the document number, section number, and title. That metadata flows through consistently on every slide without any per-slide work. The heading gets the theme's standard stroke-line treatment: a thick rule above and a thinner one below, consistent with how headings are styled throughout real field manuals — structural punctuation rather than decoration.
 -->
 
 ---
@@ -214,7 +227,9 @@ The following table identifies standard equipment for a field briefing:
 **COROLLARY.** Always conduct an equipment check no less than 15 minutes prior to the scheduled brief time. Failure to comply with this paragraph has historically led to catastrophic briefing failures at the O-6 level.
 
 <!--
-Markdown tables render cleanly inside the default layout using the theme's base table styles — monospace header row, consistent column alignment, and understated borders that feel native to the paper background. No special layout or component is needed for tabular data; the default layout handles it out of the box. This is the same layout as the previous slide, demonstrating that the default layout covers a wide range of content types — from prose and bullets to structured tables.
+Same default layout, this time with a Markdown table. Tables get a treatment that feels native to the aesthetic — monospace column headers in all-caps, consistent column alignment, and understated borders that don't fight with the paper background. No wrapper, no special component required. Just write a standard Markdown table.
+
+The equipment list is fictional, by the way. I'm fairly sure you don't need to file an NSN for your HDMI cable. But if you do, I would love to know.
 -->
 
 ---
@@ -242,7 +257,9 @@ The standard briefing room seats 12–24 personnel in a classroom configuration.
 </template>
 
 <!--
-The image-right layout gives you a text column on the left with an image panel on the right. Pass figNumber and figLabel as front matter props — they automatically render a standardized figure caption below the image via the FigureCaption component, so all figures across your deck use the same "FIG. X — LABEL" format consistently. The image itself goes inside the image named slot using a plain img tag. The text column accepts standard Markdown with no special wrappers needed.
+The image-right layout gives you a text column on the left and an image panel on the right. The figure caption — that "FIG. 1-1 —" label below the image — comes from two values set in the front matter: a figure number and a label. The layout renders them in a standardized format automatically.
+
+If you're building a deck with a lot of figures across many slides, they all come out with exactly the same typographic treatment without any manual management. It also makes them easy to cross-reference in the body text.
 -->
 
 ---
@@ -270,7 +287,9 @@ Maintain a **45-degree angle** to the screen, allowing simultaneous eye contact 
 </template>
 
 <!--
-The image-left layout is the exact mirror of image-right — same props, same slot names, image panel on the left. Use image-left when the visual provides context and the text follows from it, or simply when your photograph's composition reads better left to right. Both layouts share identical prop names and slot structure, so you can swap between them with a single front matter change and all content carries over with no other edits needed.
+Image-left is the mirror of image-right — the image panel moves to the left, text to the right. You switch between the two by changing a single word in the front matter. Everything else — content, captions, figure numbers — carries over unchanged.
+
+A rough guide: use image-right when the image is a result the text leads to, and image-left when the image provides the context the text then analyzes. It's a subtle distinction, but it affects how the eye moves through the slide.
 -->
 
 ---
@@ -290,7 +309,9 @@ Clarity is a force multiplier. Every unclear slide costs command decisions.
 </template>
 
 <!--
-The image-full layout is for maximum visual impact — the image fills the entire slide frame with no header or footer chrome. Title text and a subtitle overlay the image via named slots; the layout adds a translucent dark gradient to ensure legibility on any image. Use this for transition moments between chapters, dramatic reveals, or as a visual interlude to reset the audience's attention. It's intentionally stripped of all structural chrome — no section numbers, no doc number — so it functions as a beat in the information flow rather than a data delivery point.
+The image-full layout strips away all the structural chrome — no header, no footer, no section numbers — and lets the photograph fill the entire frame. A gradient behind the title text ensures legibility regardless of what the image contains. There are two content slots: a main title in large display type and a subtitle for a supporting line beneath it.
+
+Use this for transition moments between chapters, for dramatic context-setting before a major section, or as a visual reset to recapture the audience's attention. It's punctuation rather than content delivery. The absence of structure is the point.
 -->
 
 ---
@@ -314,7 +335,9 @@ Images and diagrams transmit information **faster than text** under combat condi
 </template>
 
 <!--
-The image-top layout places the image in a horizontal band across the upper portion of the slide, with the text content area below it. The image slot accepts the same img tag as the other image layouts. The figNumber and figLabel props render the figure caption in the same standardized format as image-right and image-left. This arrangement works well when the photo or chart serves as a lead-in visual and the bullets provide the analytical substance underneath it.
+Image-top places a photograph in a horizontal band across the upper portion of the slide, with the content area below. The figure caption sits between the image and the text, in the same standardized format as the other image layouts.
+
+This arrangement works well when the visual establishes the subject and the text provides the analysis. The eye naturally moves from image to caption to content — the same reading pattern as a magazine or textbook spread.
 -->
 
 ---
@@ -340,7 +363,9 @@ The terrain model (commonly "sand table") may be photographed and incorporated i
 </template>
 
 <!--
-The image-bottom layout inverts image-top — content above, image below. This is useful when the text needs to lead the narrative and the image provides supporting evidence at the base of the slide. The figure caption and props work identically to image-top. At this point in the walkthrough we've covered all six image-bearing layouts: image-right, image-left, image-full, image-top, image-bottom, and two-images coming up next.
+Image-bottom inverts that order: text above, image below. Use it when the argument needs to come first and the photograph is the evidence that lands at the end — the visual conclusion at the bottom of the slide rather than the premise at the top.
+
+That's all six image-bearing layouts: right, left, full, top, bottom, and coming up next — two images side by side.
 -->
 
 ---
@@ -365,7 +390,9 @@ The following comparison illustrates the improvement achieved by applying proper
 </template>
 
 <!--
-The two-images layout places two image panels side by side, each with its own independent figure caption. Note the prop naming convention: fig1Number, fig1Label, fig2Number, fig2Label — each panel has its own numbered set in the front matter. Images go into image1 and image2 named slots. A text area above the image pair provides a shared caption or context for both images simultaneously. This is the natural layout for before-and-after comparisons, paired diagrams, or dual reference figures.
+Two-images places two image panels side by side, each with its own independent figure caption. A shared text area above both panels provides context or framing for the pair. The natural use is before-and-after comparisons, paired photographs, or two reference diagrams that need to be seen together.
+
+The two figure captions are numbered independently — so you might have FIG. 1-5 on the left and FIG. 1-6 on the right — which keeps each one citable individually in the text.
 -->
 
 ---
@@ -382,7 +409,7 @@ Doctrine for slide sequencing, content density, callout box employment, and the 
 </template>
 
 <!--
-A second section divider using the same layout and structure as Chapter 1's. The visual treatment is identical; only the front matter props and slot content change. You can use section dividers as often as needed — they're lightweight slides that cost almost nothing to produce and give the audience a clear navigational beat. The consistent visual rhythm means the audience never has to think about the navigation structure; they simply recognize the pattern and know a new chapter is starting.
+Chapter two. Same section divider layout, same visual treatment — only the content changes. By now that consistent rhythm should be working as intended: you see this layout and you know immediately a new section is beginning, without having to consciously process it. That kind of structural legibility is one of the things the field manual typographic tradition does really well — everything has a clear place in the hierarchy, and the patterns are predictable enough to be navigated without effort.
 -->
 
 ---
@@ -393,7 +420,9 @@ sectionNumber: 2-0
 "One slide, one idea. Never shall the briefer compound two concepts upon a single frame, lest the commander be confused and the mission suffer."
 
 <!--
-The statement layout strips away the header and footer entirely, presenting a single large-type quote at center stage. There are no named slots, no figure captions, no structural chrome — just the raw Markdown content of the slide rendered in large Oswald display text. Use it for doctrine quotes, key principles, or a memorable line before transitioning into detailed content. Think of it as a beat — a moment of emphasis before the next analytical section begins.
+The statement layout strips everything away — no header, no footer, no section numbers — and presents a single piece of text in large display type, centered on the slide. Unlike the quote layout coming up later, there's no attribution here. This is a direct assertion, not a citation.
+
+Use it sparingly. The impact comes from contrast with the content-dense slides around it. If you put one between every section it becomes wallpaper. Save it for the one thing you most want the audience to carry out of the room.
 -->
 
 ---
@@ -419,7 +448,7 @@ Slide discipline is the systematic control of slide content to ensure informatio
 5. **Command and Signal** — How we communicate
 
 <!--
-Back to the default layout. This slide demonstrates that ordered lists render as numbered sequences in the body text, and that mixing prose paragraphs with bold inline labels creates the definition-paragraph style characteristic of real field manuals. The theme applies consistent typographic spacing between paragraphs and list items so you don't need to manage vertical rhythm manually — it comes from the CSS custom property system.
+Back to the default layout. This slide mixes prose paragraphs, bold inline definition labels, and a numbered list — a combination that appears constantly in field manual–style content. The typographic spacing between paragraphs and list items is handled by the theme's CSS, so the vertical rhythm stays consistent as the content varies. You don't have to nudge anything.
 -->
 
 ---
@@ -456,7 +485,9 @@ docNumber: FM 24-SLIDE
 </template>
 
 <!--
-The two-column layout splits the content area into equal halves with named left and right slots. Any h2 inside either column automatically gets the Oswald caps treatment — thick rule above, thinner rule below — the same stroke-line pattern used on section dividers. This makes column headings visually consistent with the rest of the theme's heading hierarchy without any custom per-column styling. The two columns share a dividing rule to reinforce the visual split.
+The two-column layout splits the content area into two equal halves with a dividing rule between them. Each column accepts any Markdown content — bullets, prose, headings, whatever you need. It's a general-purpose layout for anything that naturally falls into two parallel streams of content: two phases of a process, two sets of criteria, two bodies of supporting detail.
+
+Column headings use the same stroke-line treatment as section headings elsewhere in the theme — thick rule above, thinner rule below — which keeps the typographic hierarchy consistent across layout types without any extra styling. If what you actually want is a deliberate point-counterpoint with labeled, color-accented panels, the comparison layout coming up in a few slides is the better fit for that.
 -->
 
 ---
@@ -500,7 +531,9 @@ col3Header: PHASE III — REHEARSAL
 </template>
 
 <!--
-The three-column layout adds a third column and puts labeled column headers above each panel via the col1Header, col2Header, and col3Header front matter props. Each column has its own named slot and accepts standard Markdown content. The column headers render in small-caps monospace — a different style than the h2 system used in two-column — to signal they are organizational labels rather than content headings. Three columns is the practical maximum for this slide aspect ratio before line length becomes too tight to read comfortably.
+Three-column layout — same idea as two-column, with a third panel added. Each column gets a labeled header set in the front matter, separate from any headings you put inside the column content itself. The headers render in a smaller, monospace style to signal they're organizational labels rather than content headings.
+
+Three columns is about the practical limit for this slide aspect ratio. Past that, the line lengths get too short to read comfortably. Good for phase breakdowns, parallel processes, or any content that naturally comes in threes.
 -->
 
 ---
@@ -527,7 +560,9 @@ Several conditions are known to degrade presentation effectiveness to a dangerou
 </template>
 
 <!--
-The callout layout embeds a prominent Warning, Caution, Note, or Important box alongside regular slide content. Pass calloutType and calloutTitle as front matter props, then put the callout text inside the callout named slot. The four types each get a distinct color treatment: warning uses signal red, caution uses amber, note uses olive, and important uses navy blue. The callout box occupies the lower portion of the content area, leaving the upper portion for supporting prose — this slide demonstrates that layout arrangement.
+The callout layout adds a prominent alert box to a slide that also has regular text content above it. There are four types, borrowed directly from the real field manual system where these boxes have standardized meanings: Warning in red — the most serious, for conditions that can cause real harm if ignored. Caution in amber — for conditions requiring care. Note in blue — for supplementary information worth calling out. Important in olive — for things that need attention but don't rise to a warning level.
+
+Each type gets a distinct color treatment so the severity is readable at a glance without having to read the label. The box occupies the lower portion of the content area with the supporting prose above it. Coming up in the appendix, you'll also see the standalone Callout component, which lets you place any of these inline within regular slide content.
 -->
 
 ---
@@ -576,7 +611,9 @@ rightAccent: blue
 </template>
 
 <!--
-The comparison layout creates two labeled panels for side-by-side analysis. The leftHeader and rightHeader props set the panel titles; leftAccent and rightAccent accept color names — red, blue, or olive — to tint each panel's top border independently. This lets you signal positive versus negative, or simply distinguish the two options visually. Named left and right slots take standard Markdown. Use it anywhere you need a structured pros-and-cons, before-and-after, or option-A versus option-B comparison.
+The comparison layout creates two labeled panels for side-by-side analysis. Each panel has its own header and an accent color — red, blue, or olive — applied to the panel's top border and label area. That color differentiation lets you signal the relationship between the two options before the audience reads a word: red for risk or disadvantage, blue for a procedural or neutral option, olive for something recommended.
+
+It's structurally similar to two-column but with more visual weight between the panels, which makes it better suited for deliberate point-counterpoint content where the contrast between the two sides is the message.
 -->
 
 ---
@@ -590,7 +627,9 @@ sectionNumber: 2-6
 "The art of war is the art of the possible. The art of the briefing is knowing which possibles to put on the slide."
 
 <!--
-The quote layout is distinct from the statement layout — it attributes the quotation to a named source. The attribution, rank, and unit props populate the citation line beneath the quote. Note that the unit prop here belongs to the quoted source ("12th Army Group") and is intentionally not passed through to the slide footer — the footer belongs to the document metadata, not the quoted speaker. This distinction is handled by the layout explicitly omitting the unit binding from FieldManualFooter.
+The quote layout presents a quotation in large display type with a citation line below it for name, rank, and unit. The attribution is what distinguishes it from the statement layout — here, someone is being quoted; on a statement slide, you're making a direct assertion as the presenter.
+
+The citation props are independent from the slide's document metadata, so the unit shown in the attribution doesn't bleed into the footer. The footer still shows the deck's own document information, not the person being quoted.
 -->
 
 ---
@@ -607,7 +646,7 @@ Procedures for incorporating technical code, configuration listings, and command
 </template>
 
 <!--
-Chapter 3 marks the transition to the most technically complex part of the deck. The section layout is structurally identical to the previous two chapter dividers — only the front matter values and slot content change. This is intentional: the consistent visual rhythm lets the audience navigate without thinking about structure. Once they've seen one section divider, they recognize all of them.
+Chapter three covers the more technically involved layouts: code panels with syntax highlighting, Mermaid diagram integration, and mathematical notation via KaTeX. These aren't things every presentation needs, but when you do need them, having a layout designed for them makes a real difference versus trying to embed a screenshot or paste in an image. Let's look at what's available.
 -->
 
 ---
@@ -645,7 +684,9 @@ SOURCE: FM 24-SLIDE, PARA 3-1 — VERIFIED ON LINUX/MACOS/WINDOWS (WSL2)
 </template>
 
 <!--
-The code-full layout dedicates the entire content area to a syntax-highlighted code panel. Pass codeTitle and codeLang as front matter props — the title renders in the panel's header bar and codeLang drives syntax highlighting. The code itself goes in a standard fenced code block directly in the slide body; no named slot is needed. The caption named slot renders a small-caps footer below the panel. Syntax highlighting is provided by Shiki using the theme's custom color map defined in setup/shiki.ts — earth tones that match the paper background rather than the stark blues and purples of default Shiki themes.
+The code-full layout dedicates the entire content area to a syntax-highlighted code panel — title bar across the top, optional caption below, and the listing in between. The code itself is written as a standard fenced code block directly in the slide body.
+
+Syntax highlighting uses a custom Shiki theme built around the paper color palette: warm ink on aged paper rather than the high-contrast blues and purples of a typical dark-mode editor. The result is code that reads as part of the document rather than something imported from a different environment.
 -->
 
 ---
@@ -697,7 +738,9 @@ LISTING 3-2 — REPLACE PLACEHOLDERS WITH OPERATIONAL VALUES
 </template>
 
 <!--
-The code-right layout splits the slide into a text column on the left and a code panel on the right — direct analog to image-right but for code. The codeTitle and codeLang props configure the panel header; code goes inside the code named slot as a fenced block; an optional caption goes in the caption slot. This is the go-to layout for technical walkthroughs where you need to explain the code on the left while the actual listing is visible on the right.
+Code-right splits the slide into explanatory text on the left and a code panel on the right — the same structural idea as image-right, just with a code panel instead of a photograph. The split is roughly 50/50.
+
+This is the layout for technical walkthroughs where the explanation and the listing need to be visible simultaneously. The audience shouldn't have to hold one in memory while reading the other — putting them side by side eliminates that cognitive load. Which is most of the time, honestly. Nobody reads decontextualized code happily.
 -->
 
 ---
@@ -732,7 +775,9 @@ def calculate_slide_density(words: int, bullets: int) -> str:
 </CodeBlock>
 
 <!--
-The CodeBlock component can be dropped inline on any layout — it does not require the code-right or code-full layouts. Wrap it around a standard fenced code block and pass props for language, title, and optional features like the line number gutter and horizontal ruler lines every five rows. It uses the same fm-code-container CSS system as the dedicated code layouts, so the visual treatment is identical whether you use an inline component or a full layout. This slide demonstrates combining a Markdown table with an inline code component on the default layout.
+If you need a code panel on a slide that isn't using a dedicated code layout — say, alongside a table or some prose on the default layout — the CodeBlock component lets you place one inline. It accepts a language identifier for syntax highlighting, a title for the header bar, and optional features like line numbers and ruler lines every five rows.
+
+The visual treatment is identical to the dedicated code layouts. Whether code appears in a full-layout panel or an inline component, it looks the same. That consistency across contexts is part of what makes the theme feel cohesive rather than assembled from parts.
 -->
 
 ---
@@ -784,7 +829,9 @@ export default defineConfig({
 </template>
 
 <!--
-A second code-right example, this time showing JavaScript instead of YAML. The codeLang prop drives the Shiki tokenizer for each language independently — you can mix languages freely across slides without any global configuration. The layout proportions are fixed at 50/50 so the code panel always has adequate width for typical line lengths.
+Another code-right slide, this time with JavaScript. The language identifier in the front matter drives syntax highlighting independently for each slide — you can mix YAML, Bash, Python, JavaScript, and anything else Shiki supports freely across the deck without any global changes.
+
+This particular slide is also mildly recursive: a presentation about a presentation tool, showing you how to configure the tool that's currently presenting it. Which is either charming or dizzying, depending on your tolerance for that kind of thing.
 -->
 
 ---
@@ -822,7 +869,9 @@ SOURCE: MERMAID.JS — RENDERED NATIVELY BY SLIDEV — NO EXTERNAL TOOLS OR IMAG
 </template>
 
 <!--
-The chart-full layout gives a Mermaid diagram the entire content area, with an optional source credit slot below and the standard figNumber and figLabel props for the figure caption. Place a fenced mermaid block inside the chart named slot. Slidev renders Mermaid entirely in the browser — no image exports, no external services, no build step. The global mermaid front matter block pre-configures the base color variables to match the paper palette, so diagrams look native rather than pasted in from a different tool.
+Mermaid is a diagram-as-code library that Slidev renders natively in the browser. You write diagram syntax in a code fence and it renders as a vector diagram at presentation time — no image exports, no external services, no build step. The chart-full layout gives that diagram the entire content area, with a figure caption below and an optional source credit.
+
+The global front matter in this deck pre-configures Mermaid's color variables to match the paper palette. That's what makes the diagram look native to the slide rather than imported from a white-background flowchart tool. You can also add per-diagram overrides in the Mermaid init block for cases where you need more precise control over a specific chart.
 -->
 
 ---
@@ -870,7 +919,9 @@ quadrantChart
 
 
 <!--
-The chart-right layout places explanatory text on the left and a chart panel on the right — direct analog to code-right but for Mermaid diagrams. The chart named slot accepts a fenced mermaid block. This slide demonstrates the quadrantChart type, which is useful for two-axis classification matrices. Per-diagram themeVariables in the %%{init}%% directive supplement the global mermaid configuration for cases where you need fine-grained control over a specific diagram's appearance.
+Chart-right places explanatory text on the left and a Mermaid diagram on the right — the same split as code-right, applied to charts. This slide demonstrates the quadrantChart type, which is useful for two-axis classification matrices.
+
+Mermaid supports a fairly wide range of diagram types: flowcharts and decision trees, quadrant matrices, sequence diagrams for interaction flows, Gantt charts for schedules and timelines, mindmaps, and bar and line charts via the xychart renderer. You pick the diagram type by changing the first keyword inside the code fence.
 -->
 
 ---
@@ -911,7 +962,9 @@ xychart-beta
 
 
 <!--
-The chart-left layout is the mirror of chart-right — chart on the left, text on the right. This slide also demonstrates the xychart-beta diagram type, which is Mermaid's bar and line chart renderer. Notice that the text column includes a code block showing the simplified chart syntax — demonstrating that chart-left can mix a live diagram with a code snippet in the text column, using the default Markdown code fence rather than the code panel system.
+Chart-left is the mirror of chart-right. The xychart-beta type you see here is Mermaid's bar and line chart renderer — good for simple data visualization that doesn't require a full charting library.
+
+Notice the text column includes a code fence showing the simplified chart syntax. You can pair a live diagram and the source that produces it on the same slide — useful when you're walking through how something works rather than just showing the output.
 -->
 
 ---
@@ -951,7 +1004,9 @@ $$
 </template>
 
 <!--
-Slidev includes KaTeX for mathematical notation — enable it once with katex: true in global front matter and it's available on every slide. Inline expressions use single dollar signs and flow with body text; display blocks use double dollar signs and render centered at full width. This slide uses code-right to show the KaTeX syntax on the right while rendering live equations in the text column on the left — a natural pairing of explanation with working demonstration.
+Slidev includes KaTeX for mathematical notation. Enable it once with `katex: true` in the global front matter and it's available on every slide — no build step, no external dependency at presentation time.
+
+Inline expressions use single dollar signs and flow with surrounding body text. Display blocks use double dollar signs and render centered at full width. This slide uses code-right to show the KaTeX source on the right while rendering the live equations on the left — the natural pairing for any notation system you're demonstrating to an audience that might want to reproduce it themselves.
 -->
 
 ---
@@ -1018,7 +1073,9 @@ ALL SYSTEMS · GREEN
 <template v-slot:caption4>PROJECTOR: OPERATIONAL</template>
 
 <!--
-The dashboard layout provides a four-panel status board. Each panel's label is set via panelNLabel props in the front matter; panel content goes in numbered slots (panel1 through panel4); captions appear in captionN slots below each panel. The panel containers are intentionally neutral styling shells — what you put inside them is up to you. This example uses inline styles referencing the theme's CSS custom properties directly, which keeps the values consistent with the rest of the theme without requiring custom CSS.
+The dashboard layout provides a four-panel grid — two columns, two rows — with a labeled header above each panel and an optional caption below. The panel labels come from the front matter. What goes inside each panel is entirely up to you: large numbers, status indicators, charts, custom styled text. The panels are neutral containers designed to get out of the way of whatever you put in them.
+
+This is less of a narrative layout and more of a display board. Good for status readouts, metrics summaries, or any content that's meant to be scanned rather than read linearly.
 -->
 
 ---
@@ -1071,7 +1128,9 @@ direction: horizontal
 </div>
 
 <!--
-The timeline layout uses a class-based HTML pattern: each event is a tl-entry div containing a tl-entry-marker (the dot on the connecting line) and a tl-entry-body with tl-entry-date, tl-entry-title, and tl-entry-desc children. The direction: horizontal front matter prop orients the timeline left-to-right; omit it or set it to vertical for a stacked layout. This is one of the more markup-intensive layouts in the theme — the trade-off for full control over each entry's content and the ability to add arbitrary HTML inside any entry.
+The timeline layout renders events along a connecting line, each with a date marker, a title, and a short description. The connecting line runs either horizontally or vertically depending on a single front matter value — horizontal for fewer events with more content per entry, vertical when you have a longer sequence to display.
+
+It's the most markup-intensive layout in the theme — each event is its own small HTML block rather than a simple Markdown list item — but that gives you precise control over each entry, including the ability to add custom content inside an entry if the situation calls for it.
 -->
 
 ---
@@ -1101,7 +1160,9 @@ unit: 1st PRES BDE
 </CodeBlock>
 
 <!--
-This slide demonstrates the CodeBlock component with the rulers prop enabled — you'll see faint horizontal rule lines every five rows inside the code panel. The rulers option is useful for reference listings where a reader needs to count lines or identify position within a block. The component is placed inline on the default layout, mixing prose and a code panel without requiring a dedicated code layout. The appendix section is a natural place for component reference material — show the component in use rather than just describing it.
+The appendix is a good place for reference examples. Here the CodeBlock component is shown with the rulers option enabled — faint horizontal lines every five rows inside the code panel. That's useful for dense reference listings where a reader might need to count lines or identify a position in a block.
+
+This is also showing that the component works perfectly well inline on the default layout, mixed with prose above it. There's no requirement to use a dedicated code layout — the CodeBlock component is self-contained and can be placed anywhere.
 -->
 
 ---
@@ -1130,7 +1191,9 @@ All code listings in this manual have been tested on current production systems.
 </Callout>
 
 <!--
-All four callout types appear together here for direct comparison: warning uses signal red, caution uses amber, note uses olive, and important uses navy blue. The Callout component used on this slide is the inline component — placed directly in the default layout's content flow — as opposed to the callout layout used on slide 17, which embeds a single callout box as a structural sidebar alongside a full content column. Both use the same underlying component and styling; choose the layout version when the callout is the primary feature of the slide, and the inline component when it's one element among several.
+All four callout types together for direct comparison. Warning in red — the most serious. Caution in amber — for things requiring care. Note in blue — supplementary information. Important in olive — worth attention, but not alarming. The color hierarchy is consistent with how these boxes work in real field manuals, where the visual treatment carries meaning independently of the label text.
+
+The Callout component here is the inline version — placed directly in the content flow on the default layout. Compare this to the callout layout from Chapter 2, which embeds a single callout as a structural element at the bottom of a slide that also has a full content column above it. Both use the same visual treatment; choose the layout version when the callout is the primary feature of the slide, and the inline component when it's one element among several.
 -->
 
 ---
@@ -1153,5 +1216,9 @@ DSN: 555-0100
 </template>
 
 <!--
-The end layout is the formal close of the deck. The photo prop accepts a URL to the presenter's headshot — any square image is cropped to a circle by the layout's CSS, so no image preparation is needed beyond ensuring it's roughly square and head-centered. The title and contact named slots control the main headline and contact block respectively. Classification banners appear at both the top and bottom of this layout, bracketing the content as the deck's formal close — the only layout in the theme that runs banners on both edges simultaneously.
+And that's Field Manual — 24 layouts covering most of what you'll need for a structured presentation, tied together by a consistent design system and a visual language that's been refined over decades of real-world use.
+
+If you work with Slidev, I'd also mention deck2video — another project of mine that pairs well with it. deck2video converts Markdown-based presentation decks, including Slidev decks, into narrated MP4 videos using local AI voice synthesis. It reads the speaker notes from your slides, generates narration from them using Chatterbox TTS — with optional voice cloning so the result sounds like you — and assembles everything into a finished video file. There's an interactive review mode where you can listen to and approve the audio for each slide before the final render. No manual video editing, no cloud services, everything runs locally. You can find it at github.com/pjdoland/deck2video.
+
+Thanks for your time.
 -->

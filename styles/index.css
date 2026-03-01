@@ -156,8 +156,8 @@
   font-family: var(--font-body);
   font-size: var(--text-base);
   line-height: 1.5;
-  width: 980px;
-  height: 552px; /* 16:9 at 980px */
+  width: 960px;
+  height: 540px; /* 16:9 at 960px (2x → 1920×1080) */
   overflow: hidden;
   position: relative;
   box-sizing: border-box;
@@ -567,7 +567,7 @@ table {
   border-collapse: collapse;
   font-family: var(--font-mono);
   font-size: var(--text-sm);
-  margin: var(--space-2) 0 var(--space-4);
+  margin: 0 0 var(--space-4);
 }
 
 thead {
