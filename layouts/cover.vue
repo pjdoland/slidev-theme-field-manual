@@ -237,36 +237,5 @@ defineProps<{
   transform: translate(-50%, -50%);
 }
 
-/* ── Dark Mode ────────────────────────────────────────────────────────────── */
-/* cover.vue uses hardcoded --c-olive-dark / --c-olive / --c-olive-mid which
-   are all near-black in dark mode and vanish against the dark paper bg.      */
 
-:global(.dark) .cover-frame {
-  border-color: rgba(181, 160, 96, 0.22);
-}
-
-:global(.dark) .cover-frame__tl,
-:global(.dark) .cover-frame__tr,
-:global(.dark) .cover-frame__bl,
-:global(.dark) .cover-frame__br {
-  border-color: var(--c-khaki-dark);
-}
-
-:global(.dark) .cover-rule-top {
-  background: var(--c-khaki-dark);
-}
-
-:global(.dark) .cover-rule-mid {
-  background: var(--c-olive-light);
-}
-
-
-:global(.dark) .reticle-h,
-:global(.dark) .reticle-v {
-  background: var(--c-khaki-dark);
-}
-
-:global(.dark) .reticle-circle {
-  border-color: var(--c-khaki-dark);
-}
 </style>

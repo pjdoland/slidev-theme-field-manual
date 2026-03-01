@@ -54,8 +54,6 @@
   --color-accent-alt: var(--c-blue);
   --color-rule:      var(--c-olive);
   --color-rule-light: var(--c-khaki);
-  --color-header-bg: var(--c-olive);
-  --color-header-fg: var(--c-khaki-light);
 
   /* Typography */
   --font-heading:         'Playfair Display', Georgia, serif;
@@ -89,9 +87,6 @@
   --rule-thick:  3px;
   --rule-mid:    2px;
   --rule-thin:   1px;
-  --rule-color:  var(--c-olive);
-  --rule-accent: var(--c-red);
-  --border-frame: 2px solid var(--c-olive);
 
   /* Corner bracket size */
   --bracket-size: 14px;
@@ -103,10 +98,6 @@
   --tracking-wider:  0.20em;
   --tracking-widest: 0.32em;
 
-  /* Shadow */
-  --shadow-sm:   0 1px 3px rgba(26,26,20,0.15);
-  --shadow-md:   0 2px 8px rgba(26,26,20,0.20);
-  --shadow-panel: inset 0 0 0 2px var(--c-olive);
 }
 
 /* ── Dark Mode Tokens ─────────────────────────────────────────────────────── */
@@ -154,10 +145,7 @@
   --color-accent-alt: var(--c-blue);
   --color-rule:      var(--c-olive-light);
   --color-rule-light: var(--c-khaki);
-  --color-header-bg: var(--c-olive-mid);
-  --color-header-fg: var(--c-khaki-light);
 
-  --border-frame:     2px solid var(--c-olive-light);
   --bracket-color:    var(--c-olive-light);
 }
 

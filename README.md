@@ -509,8 +509,6 @@ Override in your presentation's `style.css` or via `:root {}` in a custom CSS fi
 | `--color-fg-muted` | Secondary/muted text |
 | `--color-accent` | Primary accent (red) |
 | `--color-rule` | Rule and border color |
-| `--color-header-bg` | Header bar background |
-| `--color-header-fg` | Header bar text |
 
 ### Typography
 
