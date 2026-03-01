@@ -84,7 +84,7 @@ CPT John Q. Presenter · Department of the Presentation
 <!--
 Hello, my name is PJ Doland. Today I'm going to walk you through the Field Manual theme for Slidev.
 
-I built this theme for a project I'm working on right now. I wanted something inspired by vintage military document design. I couldn't find anything that fit the bill, so I developed this from scratch, and I figured I might as well share it with the community when I was done.
+I built this theme for a project I'm working on right now. I wanted something inspired by vintage military document design. I couldn't find anything that fit the bill, so I developed this from scratch. And now I've decided to share it with the community.
 
 The design draws from US Army field manuals — the FM series, published from roughly the 1950s through the 1980s. If you've ever looked through one of those booklets, the visual language is immediately recognizable: aged cream paper, bold condensed gothic headings, simple layout, and horizontal rules. It's a typographic system that evolved for maximum clarity under demanding conditions — field use, poor lighting, readers who need to find information fast. That combination of authority and practicality turns out to translate quite well to presentations.
 
@@ -154,9 +154,13 @@ title: TABLE OF CONTENTS
 </div>
 
 <!--
-The table of contents layout gives you a regulation-style ToC: dot leaders stretching from section title to page number, chapter-level entries visually distinct from subsection entries, and a column header row across the top. It's one of those slides that takes a few minutes to set up and immediately makes a deck feel substantially more organized — both for the audience during the presentation and for anyone who revisits the material afterward.
+A table of contents does more than list what's coming. It signals that the presentation has structure. People relax when they can see the shape of something before it starts.
 
-Chapter entries get an olive background and bold treatment that distinguishes them from the subsection rows below. The dot leaders are pure CSS, so they automatically fill whatever space exists between the title and the page number column regardless of title length.
+It also gives the audience a mental map. They know where they are at any given moment. They know what's still ahead.
+
+For longer or more complex decks, that orientation is especially important. It keeps the audience from getting lost. It keeps them engaged.
+
+A good TOC takes a few minutes to put together. It earns that time back many times over.
 -->
 
 ---
@@ -198,9 +202,9 @@ This manual establishes doctrine for **operations in the briefing room**. It cov
 - Maintain **section numbering** (1-1, 1-2, A-3) throughout the document
 
 <!--
-This is the default layout — the primary workhorse of the theme. Everything on this slide is plain Markdown: headings, bullets, bold text. No custom HTML, no special wrappers.
+This is the default layout. It is the primary workhorse of the Field Manual theme. Everything on this slide is plain Markdown: headings, bullets, bold text. No custom HTML, no special wrappers.
 
-The header and footer populate automatically from a handful of values you set in the front matter — the document number, section number, and title. That metadata flows through consistently on every slide without any per-slide work. The heading gets the theme's standard stroke-line treatment.
+The header and footer populate automatically from a handful of values you set in the front matter, the document number, section number, and title. That metadata flows through consistently on every slide without any per-slide work. As you can see, the heading gets the theme's standard stroke-line treatment.
 -->
 
 ---
@@ -225,7 +229,7 @@ The following table identifies standard equipment for a field briefing:
 **COROLLARY.** Always conduct an equipment check no less than 15 minutes prior to the scheduled brief time. Failure to comply with this paragraph has historically led to catastrophic briefing failures at the O-6 level.
 
 <!--
-Same default layout, this time with a Markdown table. Tables get a treatment that feels native to the aesthetic — monospace column headers in all-caps, consistent column alignment, and understated borders that don't fight with the paper background. No wrapper, no special component required. Just write a standard Markdown table.
+This is the same default layout, but this time with a Markdown table. Tables get a treatment that feels native to the aesthetic — monospace column headers in all-caps, consistent column alignment, and understated borders that don't fight with the paper background. No wrapper or special component is required. You can just write a standard Markdown table.
 -->
 
 ---
@@ -253,7 +257,7 @@ The standard briefing room seats 12–24 personnel in a classroom configuration.
 </template>
 
 <!--
-The image-right layout gives you a text column on the left and an image panel on the right. The figure caption — that FIG. 1-1 label below the image — comes from two values set in the front matter: a figure number and a label. The layout renders them in a standardized format automatically.
+The image-right layout gives you a text column on the left and an image panel on the right. The figure caption, that FIG. 1-1 label below the image, comes from two values set in the front matter: a figure number and a label. The layout renders them in a standardized format automatically.
 
 If you're building a deck with a lot of figures across many slides, they all come out with exactly the same typographic treatment without any manual management. It also makes them easy to cross-reference in the body text.
 -->
@@ -283,9 +287,9 @@ Maintain a **45-degree angle** to the screen, allowing simultaneous eye contact 
 </template>
 
 <!--
-Image-left is the mirror of image-right — the image panel moves to the left, text to the right. You switch between the two by changing a single word in the front matter. Everything else — content, captions, figure numbers — carries over unchanged.
+As you would expect, the image-left layout is the mirror of image-right. The image panel moves to the left with the text to the right. You switch between the two by changing a single word in the front matter. Everything else — content, captions, figure numbers — carries over unchanged.
 
-A rough guide: use image-right when the image is a result the text leads to, and image-left when the image provides the context the text then analyzes. It's a subtle distinction, but it affects how the eye moves through the slide.
+Usually I decide between the two layouts based on the composition of the image.
 -->
 
 ---
@@ -305,7 +309,7 @@ Clarity is a force multiplier. Every unclear slide costs command decisions.
 </template>
 
 <!--
-The image-full layout strips away almost all the structural chrome — no header, no footer, no section numbers — and lets the photograph fill the entire frame. A gradient behind the title text ensures legibility regardless of what the image contains. There are two content slots: a main title in large display type and a subtitle for a supporting line beneath it.
+The image-full layout strips away almost all the structural chrome. There is no header, no footer, and no section numbers. It lets the photograph fill the entire frame. A gradient behind the title text ensures legibility regardless of what the image contains. There are two content slots: a main title in large display type and a subtitle for a supporting line beneath it.
 
 Use this for transition moments between chapters, for dramatic context-setting before a major section, or as a visual reset to recapture the audience's attention. It's punctuation rather than content delivery. The absence of structure is the point.
 -->
@@ -359,9 +363,9 @@ The terrain model (commonly "sand table") may be photographed and incorporated i
 </template>
 
 <!--
-Image-bottom inverts that order: text above, image below. Use it when the argument needs to come first and the photograph is the evidence that lands at the end — the visual conclusion at the bottom of the slide rather than the premise at the top.
+The image-bottom layout inverts that order, rendering the text above and the image below. Use it when the argument needs to come first and the photograph is the evidence that lands at the end — the visual conclusion at the bottom of the slide rather than the premise at the top.
 
-That's all six image-bearing layouts: right, left, full, top, bottom, and coming up next — two images side by side.
+That's all six image-bearing layouts: right, left, full, top, bottom, and coming up next, two images side by side.
 -->
 
 ---
@@ -388,7 +392,7 @@ The following comparison illustrates the improvement achieved by applying proper
 <!--
 The two-images layout places two image panels side by side, each with its own independent figure caption. A shared text area above both panels provides context or framing for the pair. The natural use is before-and-after comparisons, paired photographs, or two reference diagrams that need to be seen together.
 
-The two figure captions are numbered independently — so you might have FIG. 1-5 on the left and FIG. 1-6 on the right — which keeps each one citable individually in the text.
+The two figure captions are numbered and labeled independently, which keeps each one citable individually in the text.
 -->
 
 ---
@@ -405,7 +409,7 @@ Doctrine for slide sequencing, content density, callout box employment, and the 
 </template>
 
 <!--
-Chapter two. Same section divider layout, same visual treatment — only the content changes. By now that consistent rhythm should be working as intended: you see this layout and you know immediately a new section is beginning, without having to consciously process it. That kind of structural legibility is one of the things the field manual typographic tradition does really well — everything has a clear place in the hierarchy, and the patterns are predictable enough to be navigated without effort.
+Here you can see the same section divider layout. It has the same visual treatment, only the content changes. By now that consistent rhythm should be working as intended: you see this layout and you know immediately a new section is beginning, without having to consciously process it. That kind of structural legibility is one of the things the field manual typographic tradition does really well. Everything has a clear place in the hierarchy, and the patterns are predictable enough to be navigated without effort.
 -->
 
 ---
@@ -416,7 +420,7 @@ sectionNumber: 2-0
 "One slide, one idea. Never shall the briefer compound two concepts upon a single frame, lest the commander be confused and the mission suffer."
 
 <!--
-The statement layout strips everything away — no header, no footer, no section numbers — and presents a single piece of text in large display type, centered on the slide. Unlike the quote layout coming up later, there's no attribution here. This is a direct assertion, not a citation.
+The statement layout strips everything unnecessary away. There is no header, footer, or section numbers. It presents a single piece of text in large display type, centered on the slide. Unlike the quote layout coming up later, there's no attribution on this layout. This is a direct assertion, not a citation.
 
 Use it sparingly. The impact comes from contrast with the content-dense slides around it. If you put one between every section it becomes wallpaper. Save it for the one thing you most want the audience to carry out of the room.
 -->
@@ -444,7 +448,7 @@ Slide discipline is the systematic control of slide content to ensure informatio
 5. **Command and Signal** — How we communicate
 
 <!--
-Back to the default layout. This slide mixes prose paragraphs, bold inline definition labels, and a numbered list — a combination that appears constantly in field manual–style content. The typographic spacing between paragraphs and list items is handled by the theme's CSS, so the vertical rhythm stays consistent as the content varies. You don't have to nudge anything.
+Back to the default layout. This slide mixes prose paragraphs, bold inline definition labels, and a numbered list. This is a combination that appears constantly in actual field manuals. The typographic spacing between paragraphs and list items is handled by the theme's CSS, so the vertical rhythm stays consistent as the content varies. You don't have to nudge anything.
 -->
 
 ---
@@ -481,7 +485,7 @@ docNumber: FM 24-SLIDE
 </template>
 
 <!--
-The two-column layout splits the content area into two equal halves with a dividing rule between them. Each column accepts any Markdown content — bullets, prose, headings, whatever you need. It's a general-purpose layout for anything that naturally falls into two parallel streams of content: two phases of a process, two sets of criteria, two bodies of supporting detail.
+The two-column layout splits the content area into two equal halves with a dividing rule between them. Each column accepts any Markdown content: bullets, prose, headings, or whatever else you might need. It's a general-purpose layout for anything that naturally falls into two parallel streams of content: two phases of a process, two sets of criteria, or two bodies of supporting detail.
 
 Column headings use the same stroke-line treatment as section headings elsewhere in the theme, which keeps the typographic hierarchy consistent across layout types without any extra styling. If what you actually want is a deliberate point-counterpoint with labeled, color-accented panels, the comparison layout coming up in a few slides is the better fit for that use case.
 -->
@@ -529,7 +533,7 @@ col3Header: PHASE III — REHEARSAL
 <!--
 This is the three-column layout. Each column gets a labeled header set in the front matter, separate from any headings you put inside the column content itself. The headers render in a smaller, monospace style to signal they're organizational labels rather than content headings.
 
-Three columns is about the practical limit for this slide aspect ratio. Past that, the line lengths get too short to read comfortably. Good for phase breakdowns, parallel processes, or any content that naturally comes in threes.
+Three columns is about the practical limit for this slide aspect ratio. Past that, the line lengths get too short to read comfortably. This works well for phase breakdowns, parallel processes, or any content that naturally comes in threes.
 -->
 
 ---
@@ -607,9 +611,9 @@ rightAccent: blue
 </template>
 
 <!--
-The comparison layout creates two labeled panels for side-by-side analysis. Each panel has its own header and an accent color — red, blue, or olive — applied to the panel's top border and label area. That color differentiation lets you signal the relationship between the two options before the audience reads a word: red for risk or disadvantage, blue for a procedural or neutral option, olive for something recommended.
+The comparison layout creates two labeled panels for side-by-side analysis. Each panel has its own header and an accent color which is applied to the panel's top border and label area. That color differentiation lets you signal the relationship between the two options before the audience reads a word: red for risk or disadvantage, blue for a procedural or neutral option, or olive for something recommended.
 
-It's structurally similar to two-column but with more visual weight between the panels, which makes it better suited for deliberate point-counterpoint content where the contrast between the two sides is the message.
+It's structurally similar to the two-column layout but with more visual weight between the panels, which makes it better suited for deliberate point-counterpoint content where the contrast between the two sides is the message.
 -->
 
 ---
@@ -623,7 +627,7 @@ sectionNumber: 2-6
 "The art of war is the art of the possible. The art of the briefing is knowing which possibles to put on the slide."
 
 <!--
-The quote layout presents a quotation in large display type with a citation line below it for name, title, and affiliation. The attribution is what distinguishes it from the statement layout — here, someone is being quoted; on a statement slide, you're making a direct assertion as the presenter.
+The quote layout presents a quotation in large display type with a citation line below it for name, title, and affiliation. The attribution is what distinguishes it from the statement layout. Here someone is being quoted. On a statement layout slide you're making a direct assertion as the presenter.
 -->
 
 ---
@@ -956,9 +960,9 @@ xychart-beta
 
 
 <!--
-Chart-left is the mirror of chart-right. The xychart-beta type you see here is Mermaid's bar and line chart renderer — good for simple data visualization that doesn't require a full charting library.
+Chart-left is the mirror of chart-right. The xychart-beta type you see here is Mermaid's bar and line chart renderer. It's good for simple data visualization that doesn't require a full charting library.
 
-Notice the text column includes a code fence showing the simplified chart syntax. You can pair a live diagram and the source that produces it on the same slide — useful when you're walking through how something works rather than just showing the output.
+Notice the text column includes a code fence showing the simplified chart syntax. You can pair a live diagram and the source that produces it on the same slide. This is useful when you're walking through how something works rather than just showing the output.
 -->
 
 ---
@@ -998,9 +1002,9 @@ $$
 </template>
 
 <!--
-Slidev includes KaTeX for mathematical notation. Enable it once with `katex: true` in the global front matter and it's available on every slide — no build step, no external dependency at presentation time.
+Slidev includes KaTeX for mathematical notation. Enable it in the global front matter and it's available on every slide. There is no build step or  external dependency at presentation time.
 
-Inline expressions use single dollar signs and flow with surrounding body text. Display blocks use double dollar signs and render centered at full width. This slide uses code-right to show the KaTeX source on the right while rendering the live equations on the left — the natural pairing for any notation system you're demonstrating to an audience that might want to reproduce it themselves.
+Inline expressions use single dollar signs and flow with surrounding body text. Display blocks use double dollar signs and render centered at full width. This slide uses the code-right layout to show the KaTeX source on the right while rendering the live equations on the left. It's a natural pairing for any notation system you're demonstrating to an audience that might want to reproduce it themselves.
 -->
 
 ---
@@ -1069,7 +1073,7 @@ ALL SYSTEMS · GREEN
 <!--
 The dashboard layout provides a four-panel grid — two columns, two rows — with a labeled header above each panel and an optional caption below. The panel labels come from the front matter. What goes inside each panel is entirely up to you: large numbers, status indicators, charts, custom styled text. The panels are neutral containers designed to get out of the way of whatever you put in them.
 
-This is less of a narrative layout and more of a display board. Good for status readouts, metrics summaries, or any content that's meant to be scanned rather than read linearly.
+This is less of a narrative layout and more of a display board. It is good for status readouts, metrics summaries, or any content that's meant to be scanned rather than read linearly.
 -->
 
 ---
@@ -1210,9 +1214,13 @@ DSN: 555-0100
 </template>
 
 <!--
-And that's Field Manual — 24 layouts covering most of what you'll need for a structured presentation, tied together by a consistent design system and a visual language that's been refined over decades of real-world use.
+The end layout is the closing slide. It has three slots: a title, a contact block, and a photo. The photo takes up the left side of the slide. The title sits prominently in the upper right. The contact block goes below it with whatever information you want to leave on screen: name, title, email, phone.
 
-If you work with Slidev, I'd also mention deck2video — another project of mine that pairs well with it. deck2video converts Markdown-based presentation decks, including Slidev decks, into narrated MP4 videos using local AI voice synthesis. It reads the speaker notes from your slides, generates narration from them using Chatterbox TTS — with optional voice cloning so the result sounds like you — and assembles everything into a finished video file. There's an interactive review mode where you can listen to and approve the audio for each slide before the final render. No manual video editing, no cloud services, everything runs locally. You can find it at github.com/pjdoland/deck2video.
+It gives the audience something to look at and reference while questions are being taken. More useful than a blank slide or a "Thank You" placeholder.
+
+And that's Field Manual, with 24 layouts covering most of what you'll need for a structured presentation, tied together by a consistent design system and a visual language that's been refined over decades of real-world use.
+
+If you work with Slidev, I'd also mention deck2video — another project of mine that pairs well with it. deck2video converts Markdown-based presentation decks, including Slidev decks, into narrated MP4 videos using local AI voice synthesis. It reads the speaker notes from your slides, generates narration from them using Chatterbox TTS — with optional voice cloning so the result sounds like you — and assembles everything into a finished video file. There's an interactive review mode where you can listen to and approve the audio for each slide before the final render. No manual video editing, no cloud services, everything runs locally. You can find it at my github page.
 
 Thanks for your time.
 -->
