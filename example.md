@@ -72,10 +72,8 @@ mermaid:
     #   plotColorPalette: '#8a7a50,#c04040,#b5a060'
 ---
 
-<!-- Slide 1 — Cover -->
-
-# FM 24-SLIDE
-## A Field Manual for the Modern Presenter
+# Field Manual 
+## A Slidev Theme for the Modern Presenter
 
 <template v-slot:subtitle>
 
@@ -86,11 +84,11 @@ CPT John Q. Presenter · Department of the Presentation
 <!--
 Hello, my name is PJ Doland. Today I'm going to walk you through the Field Manual theme for Slidev.
 
-I built this theme for a specific project. I had a very particular aesthetic in mind — something rooted in military document design — and I couldn't find an existing theme that matched it, so I built one. I figured if I was going to build it anyway, I should build it properly and share it.
+I built this theme for a project I'm working on right now. I wanted something inspired by vintage military document design. I couldn't find anything that fit the bill, so I developed this from scratch, and I figured I might as well share it with the community when I was done.
 
-The design draws from vintage US Army field manuals — the FM series, published from roughly the 1950s through the 1980s. If you've ever looked through one of those documents, the visual language is immediately recognizable: aged cream paper, bold Oswald headings, monospace body text, olive and earth tones, classification banners running top and bottom on every page. It's a typographic system that evolved for maximum clarity under demanding conditions — field use, poor lighting, readers who need to find information fast. That combination of authority and practicality turns out to translate quite well to presentations.
+The design draws from US Army field manuals — the FM series, published from roughly the 1950s through the 1980s. If you've ever looked through one of those booklets, the visual language is immediately recognizable: aged cream paper, bold condensed gothic headings, simple layout, and horizontal rules. It's a typographic system that evolved for maximum clarity under demanding conditions — field use, poor lighting, readers who need to find information fast. That combination of authority and practicality turns out to translate quite well to presentations.
 
-The theme covers 24 different layouts. There's also a dark color scheme — a night-map palette — but today we're just going to look at the light version. Let's go.
+The theme covers 24 different layouts. There's also a dark color scheme, but today we're just going to look at the light version. Let's go.
 -->
 
 ---
@@ -202,7 +200,7 @@ This manual establishes doctrine for **operations in the briefing room**. It cov
 <!--
 This is the default layout — the primary workhorse of the theme. Everything on this slide is plain Markdown: headings, bullets, bold text. No custom HTML, no special wrappers.
 
-The header and footer populate automatically from a handful of values you set in each slide's front matter — the document number, section number, and title. That metadata flows through consistently on every slide without any per-slide work. The heading gets the theme's standard stroke-line treatment: a thick rule above and a thinner one below, consistent with how headings are styled throughout real field manuals — structural punctuation rather than decoration.
+The header and footer populate automatically from a handful of values you set in the front matter — the document number, section number, and title. That metadata flows through consistently on every slide without any per-slide work. The heading gets the theme's standard stroke-line treatment.
 -->
 
 ---
@@ -228,8 +226,6 @@ The following table identifies standard equipment for a field briefing:
 
 <!--
 Same default layout, this time with a Markdown table. Tables get a treatment that feels native to the aesthetic — monospace column headers in all-caps, consistent column alignment, and understated borders that don't fight with the paper background. No wrapper, no special component required. Just write a standard Markdown table.
-
-The equipment list is fictional, by the way. I'm fairly sure you don't need to file an NSN for your HDMI cable. But if you do, I would love to know.
 -->
 
 ---
@@ -257,7 +253,7 @@ The standard briefing room seats 12–24 personnel in a classroom configuration.
 </template>
 
 <!--
-The image-right layout gives you a text column on the left and an image panel on the right. The figure caption — that "FIG. 1-1 —" label below the image — comes from two values set in the front matter: a figure number and a label. The layout renders them in a standardized format automatically.
+The image-right layout gives you a text column on the left and an image panel on the right. The figure caption — that FIG. 1-1 label below the image — comes from two values set in the front matter: a figure number and a label. The layout renders them in a standardized format automatically.
 
 If you're building a deck with a lot of figures across many slides, they all come out with exactly the same typographic treatment without any manual management. It also makes them easy to cross-reference in the body text.
 -->
@@ -309,7 +305,7 @@ Clarity is a force multiplier. Every unclear slide costs command decisions.
 </template>
 
 <!--
-The image-full layout strips away all the structural chrome — no header, no footer, no section numbers — and lets the photograph fill the entire frame. A gradient behind the title text ensures legibility regardless of what the image contains. There are two content slots: a main title in large display type and a subtitle for a supporting line beneath it.
+The image-full layout strips away almost all the structural chrome — no header, no footer, no section numbers — and lets the photograph fill the entire frame. A gradient behind the title text ensures legibility regardless of what the image contains. There are two content slots: a main title in large display type and a subtitle for a supporting line beneath it.
 
 Use this for transition moments between chapters, for dramatic context-setting before a major section, or as a visual reset to recapture the audience's attention. It's punctuation rather than content delivery. The absence of structure is the point.
 -->
@@ -390,7 +386,7 @@ The following comparison illustrates the improvement achieved by applying proper
 </template>
 
 <!--
-Two-images places two image panels side by side, each with its own independent figure caption. A shared text area above both panels provides context or framing for the pair. The natural use is before-and-after comparisons, paired photographs, or two reference diagrams that need to be seen together.
+The two-images layout places two image panels side by side, each with its own independent figure caption. A shared text area above both panels provides context or framing for the pair. The natural use is before-and-after comparisons, paired photographs, or two reference diagrams that need to be seen together.
 
 The two figure captions are numbered independently — so you might have FIG. 1-5 on the left and FIG. 1-6 on the right — which keeps each one citable individually in the text.
 -->
@@ -487,7 +483,7 @@ docNumber: FM 24-SLIDE
 <!--
 The two-column layout splits the content area into two equal halves with a dividing rule between them. Each column accepts any Markdown content — bullets, prose, headings, whatever you need. It's a general-purpose layout for anything that naturally falls into two parallel streams of content: two phases of a process, two sets of criteria, two bodies of supporting detail.
 
-Column headings use the same stroke-line treatment as section headings elsewhere in the theme — thick rule above, thinner rule below — which keeps the typographic hierarchy consistent across layout types without any extra styling. If what you actually want is a deliberate point-counterpoint with labeled, color-accented panels, the comparison layout coming up in a few slides is the better fit for that.
+Column headings use the same stroke-line treatment as section headings elsewhere in the theme, which keeps the typographic hierarchy consistent across layout types without any extra styling. If what you actually want is a deliberate point-counterpoint with labeled, color-accented panels, the comparison layout coming up in a few slides is the better fit for that use case.
 -->
 
 ---
@@ -531,7 +527,7 @@ col3Header: PHASE III — REHEARSAL
 </template>
 
 <!--
-Three-column layout — same idea as two-column, with a third panel added. Each column gets a labeled header set in the front matter, separate from any headings you put inside the column content itself. The headers render in a smaller, monospace style to signal they're organizational labels rather than content headings.
+This is the three-column layout. Each column gets a labeled header set in the front matter, separate from any headings you put inside the column content itself. The headers render in a smaller, monospace style to signal they're organizational labels rather than content headings.
 
 Three columns is about the practical limit for this slide aspect ratio. Past that, the line lengths get too short to read comfortably. Good for phase breakdowns, parallel processes, or any content that naturally comes in threes.
 -->
@@ -560,9 +556,9 @@ Several conditions are known to degrade presentation effectiveness to a dangerou
 </template>
 
 <!--
-The callout layout adds a prominent alert box to a slide that also has regular text content above it. There are four types, borrowed directly from the real field manual system where these boxes have standardized meanings: Warning in red — the most serious, for conditions that can cause real harm if ignored. Caution in amber — for conditions requiring care. Note in blue — for supplementary information worth calling out. Important in olive — for things that need attention but don't rise to a warning level.
+The callout layout adds a prominent alert box to a slide that also has regular text content above it. There are four types with standardized meanings: Warning in red — the most serious, for conditions that can cause real harm if ignored. Caution in amber — for conditions requiring care. Note in blue — for supplementary information worth calling out. Important in olive — for things that need attention but don't rise to a warning level.
 
-Each type gets a distinct color treatment so the severity is readable at a glance without having to read the label. The box occupies the lower portion of the content area with the supporting prose above it. Coming up in the appendix, you'll also see the standalone Callout component, which lets you place any of these inline within regular slide content.
+Each type gets a distinct color treatment, so the severity is readable at a glance without having to read the label. The box occupies the lower portion of the content area with the supporting prose above it. Coming up in the appendix, you'll also see the standalone Callout component, which lets you place any of these inline within regular slide content.
 -->
 
 ---
@@ -627,9 +623,7 @@ sectionNumber: 2-6
 "The art of war is the art of the possible. The art of the briefing is knowing which possibles to put on the slide."
 
 <!--
-The quote layout presents a quotation in large display type with a citation line below it for name, rank, and unit. The attribution is what distinguishes it from the statement layout — here, someone is being quoted; on a statement slide, you're making a direct assertion as the presenter.
-
-The citation props are independent from the slide's document metadata, so the unit shown in the attribution doesn't bleed into the footer. The footer still shows the deck's own document information, not the person being quoted.
+The quote layout presents a quotation in large display type with a citation line below it for name, title, and affiliation. The attribution is what distinguishes it from the statement layout — here, someone is being quoted; on a statement slide, you're making a direct assertion as the presenter.
 -->
 
 ---
@@ -738,9 +732,9 @@ LISTING 3-2 — REPLACE PLACEHOLDERS WITH OPERATIONAL VALUES
 </template>
 
 <!--
-Code-right splits the slide into explanatory text on the left and a code panel on the right — the same structural idea as image-right, just with a code panel instead of a photograph. The split is roughly 50/50.
+The code-right layout splits the slide into explanatory text on the left and a code panel on the right — the same structural idea as the image-right layout, just with a code panel instead of a photograph. The split is roughly 50/50.
 
-This is the layout for technical walkthroughs where the explanation and the listing need to be visible simultaneously. The audience shouldn't have to hold one in memory while reading the other — putting them side by side eliminates that cognitive load. Which is most of the time, honestly. Nobody reads decontextualized code happily.
+This is the layout for technical walkthroughs where the explanation and the listing need to be visible simultaneously. The audience shouldn't have to hold one in memory while reading the other — putting them side by side reduces the cognitive load.
 -->
 
 ---
@@ -829,7 +823,7 @@ export default defineConfig({
 </template>
 
 <!--
-Another code-right slide, this time with JavaScript. The language identifier in the front matter drives syntax highlighting independently for each slide — you can mix YAML, Bash, Python, JavaScript, and anything else Shiki supports freely across the deck without any global changes.
+This is another code-right layout slide, this time with JavaScript. The language identifier in the front matter drives syntax highlighting independently for each slide — you can mix YAML, Bash, Python, JavaScript, and anything else Shiki supports freely across the deck without any global changes.
 
 This particular slide is also mildly recursive: a presentation about a presentation tool, showing you how to configure the tool that's currently presenting it. Which is either charming or dizzying, depending on your tolerance for that kind of thing.
 -->
@@ -919,7 +913,7 @@ quadrantChart
 
 
 <!--
-Chart-right places explanatory text on the left and a Mermaid diagram on the right — the same split as code-right, applied to charts. This slide demonstrates the quadrantChart type, which is useful for two-axis classification matrices.
+The chart-right layout places explanatory text on the left and a Mermaid diagram on the right — the same split as the code-right layout, applied to charts. This slide demonstrates the quadrantChart type, which is useful for two-axis classification matrices.
 
 Mermaid supports a fairly wide range of diagram types: flowcharts and decision trees, quadrant matrices, sequence diagrams for interaction flows, Gantt charts for schedules and timelines, mindmaps, and bar and line charts via the xychart renderer. You pick the diagram type by changing the first keyword inside the code fence.
 -->
