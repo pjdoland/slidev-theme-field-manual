@@ -126,7 +126,7 @@ defineProps<{
 /* ── ToC entry ────────────────────────────────────────────────────────────── */
 :deep(.toc-entry) {
   display: grid;
-  grid-template-columns: 60px 1fr auto 50px;
+  grid-template-columns: 60px auto 1fr 50px;
   gap: var(--space-3);
   align-items: baseline;
   padding: var(--space-1) 0;
@@ -149,9 +149,8 @@ defineProps<{
 
 /* CSS dot leaders */
 :deep(.toc-leaders) {
-  display: block;
-  border-bottom: 2px dotted var(--c-khaki-dark);
-  margin-bottom: 4px;
+  align-self: center;
+  border-bottom: 2px dotted var(--c-khaki-pale);
   min-width: 20px;
 }
 

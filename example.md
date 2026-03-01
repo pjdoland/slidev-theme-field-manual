@@ -200,9 +200,9 @@ This manual establishes doctrine for **operations in the briefing room**. It cov
 - Maintain **section numbering** (1-1, 1-2, A-3) throughout the document
 
 <!--
-This is the default layout. It is the primary workhorse of the Field Manual theme. Everything on this slide is plain Markdown: headings, bullets, bold text. No custom HTML, no special wrappers.
+This is the default layout. It is the primary workhorse of the Field Manual theme. Everything in the content area on this slide is just plain Markdown. There is no custom HTML or special wrappers.
 
-The header and footer populate automatically from a handful of values you set in the front matter, the document number, section number, and title. That metadata flows through consistently on every slide without any per-slide work. As you can see, the heading gets the theme's standard stroke-line treatment.
+The header and footer populate automatically from a handful of values you set in the front matter. That metadata flows through consistently on every slide without any per-slide work.
 -->
 
 ---
@@ -614,13 +614,13 @@ It's structurally similar to the two-column layout but with more visual weight b
 
 ---
 layout: quote
-attribution: GEN Omar N. Bradley
-rank: GEN, USA (RET)
-unit: 12th Army Group
+attribution: Gen. Jack D. Ripper
+rank: CG, Burpelson Air Force Base
+unit: 843rd Bomb Wing
 sectionNumber: 2-6
 ---
 
-"The art of war is the art of the possible. The art of the briefing is knowing which possibles to put on the slide."
+"I can no longer sit back and allow Communist infiltration, Communist indoctrination, Communist subversion, and the international Communist conspiracy to sap and impurify all of our precious bodily fluids."
 
 <!--
 The quote layout presents a quotation in large display type with a citation line below it for name, title, and affiliation. The attribution is what distinguishes it from the statement layout. Here someone is being quoted. On a statement layout slide you're making a direct assertion as the presenter.
@@ -834,7 +834,7 @@ title: 3-5. MERMAID DIAGRAM INTEGRATION
 sectionNumber: 3-5
 docNumber: FM 24-SLIDE
 figNumber: 3-1
-figLabel: BRIEFING WORKFLOW — GENERATED INLINE FROM MERMAID SYNTAX
+figLabel: BRIEFING WORKFLOW — GENERATED INLINE FROM MERMAID
 ---
 
 <template v-slot:chart>
@@ -842,24 +842,33 @@ figLabel: BRIEFING WORKFLOW — GENERATED INLINE FROM MERMAID SYNTAX
 ```mermaid
 %%{init: {'theme': 'base', 'flowchart': {'useMaxWidth': true}, 'themeVariables': {'background': '#f5f0e0', 'primaryColor': '#ede8d0', 'primaryTextColor': '#1a1a14', 'primaryBorderColor': '#8a7a50', 'lineColor': '#4a4a2a', 'titleColor': '#3a3a1e', 'edgeLabelBackground': '#f5f0e0'}}}%%
 flowchart LR
-    A([MISSION RECEIVED]) --> B[Outline Key Messages]
-    B --> C[Build Slides]
-    C --> D{Quality Review}
-    D -- Pass --> E[Rehearsal]
-    D -- Revise --> C
-    E --> F([BRIEF EXECUTED])
+    A([MISSION RECEIVED]) --> B[Gather Intel]
+    A --> C[Assess Audience]
+    B --> D[Outline Key Messages]
+    C --> D
+    D --> E[Build Slides]
+    E --> F[Tech Check]
+    F --> G{Equipment OK?}
+    G -- No --> H[Fix Issues]
+    H --> F
+    G -- Yes --> I{Content Review}
+    I -- Revise --> E
+    I -- Pass --> J[Rehearsal]
+    J --> K{Commander Approval}
+    K -- Revise --> D
+    K -- Approved --> L([BRIEF EXECUTED])
     classDef terminal fill:#3a3a1e,stroke:#3a3a1e,color:#f5f0e0
     classDef step fill:#ede8d0,stroke:#4a4a2a,color:#1a1a14
     classDef decision fill:#d0c8a8,stroke:#8a7a50,color:#1a1a14
-    class A,F terminal
-    class B,C,E step
-    class D decision
+    class A,L terminal
+    class B,C,D,E,F,H,J step
+    class G,I,K decision
 ```
 
 </template>
 
 <template v-slot:source>
-SOURCE: MERMAID.JS — RENDERED NATIVELY BY SLIDEV — NO EXTERNAL TOOLS OR IMAGE EXPORTS REQUIRED
+SOURCE: MERMAID.JS — RENDERED NATIVELY — NO EXTERNAL TOOLS OR IMAGE EXPORTS REQUIRED
 </template>
 
 <!--
@@ -980,6 +989,10 @@ Slidev renders mathematical notation natively via **KaTeX**. Enable it with `kat
 Shannon entropy — a measure of information density per slide:
 
 $$H(X) = -\sum_{i=1}^{n} p_i \log_2 p_i$$
+
+Euler's identity, the most compact equation in mathematics:
+
+$$e^{i\pi} + 1 = 0$$
 
 <template v-slot:code>
 
@@ -1185,9 +1198,9 @@ All code listings in this manual have been tested on current production systems.
 </Callout>
 
 <!--
-Here you can see all four callout types together for direct comparison. Warning in red — the most serious. Caution in amber — for things requiring care. Note in blue — supplementary information. Important in olive — worth attention, but not alarming. The color hierarchy is consistent with how these boxes work in real field manuals, where the visual treatment carries meaning independently of the label text.
+Here you can see all four callout types together for direct comparison. Warning in red — the most serious. Caution in amber — for things requiring care. Note in blue — supplementary information. Important in olive — worth attention, but not alarming.
 
-The Callout component here is the inline version — placed directly in the content flow on the default layout. Compare this to the callout layout from Chapter 2, which embeds a single callout as a structural element at the bottom of a slide that also has a full content column above it. Both use the same visual treatment.  Choose the layout version when the callout is the primary feature of the slide, and the inline component when it's one element among several.
+The callout component here is the inline version. It is placed directly in the content flow on the default layout. Compare this to the callout layout from Chapter 2, which embeds a single callout as a structural element at the bottom of a slide that also has a full content column above it. Both use the same visual treatment.  Choose the layout version when the callout is the primary feature of the slide, and the inline component when it's one element among several.
 -->
 
 ---

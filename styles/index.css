@@ -333,7 +333,6 @@ ol li {
   counter-increment: fm-list;
   margin-bottom: var(--space-2);
   position: relative;
-  padding-left: var(--space-2);
 }
 
 ol li:last-child {
@@ -341,13 +340,10 @@ ol li:last-child {
 }
 
 ol li::before {
-  content: counter(fm-list, decimal-leading-zero) '.';
+  content: '(' counter(fm-list) ')';
   position: absolute;
-  left: -2.5em;
+  left: -2.2em;
   color: var(--color-fg-muted);
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  font-weight: 700;
 }
 
 /* ── Code Inline ──────────────────────────────────────────────────────────── */
