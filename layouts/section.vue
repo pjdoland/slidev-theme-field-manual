@@ -11,11 +11,6 @@ defineProps<{
 
 <template>
   <div class="slidev-layout layout-section">
-    <!-- Ghosted section number watermark -->
-    <div class="section-ghost-number" aria-hidden="true">
-      {{ sectionNumber ?? '1' }}
-    </div>
-
     <div class="section-body">
       <div class="section-top-rule"></div>
 
@@ -50,22 +45,6 @@ defineProps<{
   position: relative;
   overflow: hidden;
   padding: 0;
-}
-
-.section-ghost-number {
-  position: absolute;
-  right: -0.05em;
-  top: 50%;
-  transform: translateY(-55%);
-  font-family: var(--font-heading);
-  font-size: clamp(8rem, 22vw, 18rem);
-  font-weight: 900;
-  line-height: 1;
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(74, 74, 42, 0.10);
-  user-select: none;
-  pointer-events: none;
-  z-index: 0;
 }
 
 .section-body {
@@ -111,10 +90,6 @@ defineProps<{
 }
 
 /* ── Dark Mode ────────────────────────────────────────────────────────────── */
-:global(.dark) .section-ghost-number {
-  -webkit-text-stroke: 1px rgba(181, 160, 96, 0.08);
-}
-
 :global(.dark) .section-id {
   color: var(--c-khaki);
 }
