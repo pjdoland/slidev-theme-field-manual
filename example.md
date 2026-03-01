@@ -156,11 +156,9 @@ title: TABLE OF CONTENTS
 <!--
 A table of contents does more than list what's coming. It signals that the presentation has structure. People relax when they can see the shape of something before it starts.
 
-It also gives the audience a mental map. They know where they are at any given moment. They know what's still ahead.
+It gives the audience a reference point. They know where they are, and what's still ahead. For longer decks, that orientation matters.
 
-For longer or more complex decks, that orientation is especially important. It keeps the audience from getting lost. It keeps them engaged.
-
-A good TOC takes a few minutes to put together. It earns that time back many times over.
+Managing this slide is straightforward. Each entry is a small block of HTML in the markdown file. Add a row, remove one, change a page number. It takes seconds.
 -->
 
 ---
@@ -287,7 +285,7 @@ Maintain a **45-degree angle** to the screen, allowing simultaneous eye contact 
 </template>
 
 <!--
-As you would expect, the image-left layout is the mirror of image-right. The image panel moves to the left with the text to the right. You switch between the two by changing a single word in the front matter. Everything else — content, captions, figure numbers — carries over unchanged.
+As you would expect, the image-left layout is the mirror of image-right. You can switch between the two layouts by changing a single word in the front matter. Everything else — content, captions, figure numbers — carries over unchanged.
 
 Usually I decide between the two layouts based on the composition of the image.
 -->
@@ -335,9 +333,9 @@ Images and diagrams transmit information **faster than text** under combat condi
 </template>
 
 <!--
-Image-top places a photograph in a horizontal band across the upper portion of the slide, with the content area below. The figure caption sits between the image and the text, in the same standardized format as the other image layouts.
+The image-top layout places a photograph in a horizontal band across the upper portion of the slide, with the content area below. The figure caption sits between the image and the text, in the same standardized format as the other image layouts.
 
-This arrangement works well when the visual establishes the subject and the text provides the analysis. The eye naturally moves from image to caption to content — the same reading pattern as a magazine or textbook spread.
+This arrangement works well when the visual establishes the subject and the text provides the analysis. The eye naturally moves from image to caption to content. It's the same reading pattern you would find in a magazine or textbook spread.
 -->
 
 ---
@@ -364,8 +362,6 @@ The terrain model (commonly "sand table") may be photographed and incorporated i
 
 <!--
 The image-bottom layout inverts that order, rendering the text above and the image below. Use it when the argument needs to come first and the photograph is the evidence that lands at the end — the visual conclusion at the bottom of the slide rather than the premise at the top.
-
-That's all six image-bearing layouts: right, left, full, top, bottom, and coming up next, two images side by side.
 -->
 
 ---
@@ -390,7 +386,7 @@ The following comparison illustrates the improvement achieved by applying proper
 </template>
 
 <!--
-The two-images layout places two image panels side by side, each with its own independent figure caption. A shared text area above both panels provides context or framing for the pair. The natural use is before-and-after comparisons, paired photographs, or two reference diagrams that need to be seen together.
+The two-images layout is the sixth, and final image based layout. It places two image panels side by side, each with its own independent figure caption. A shared text area above both panels provides context or framing for the pair. The natural use is before-and-after comparisons, paired photographs, or two reference diagrams that need to be seen together.
 
 The two figure captions are numbered and labeled independently, which keeps each one citable individually in the text.
 -->
@@ -409,7 +405,7 @@ Doctrine for slide sequencing, content density, callout box employment, and the 
 </template>
 
 <!--
-Here you can see the same section divider layout. It has the same visual treatment, only the content changes. By now that consistent rhythm should be working as intended: you see this layout and you know immediately a new section is beginning, without having to consciously process it. That kind of structural legibility is one of the things the field manual typographic tradition does really well. Everything has a clear place in the hierarchy, and the patterns are predictable enough to be navigated without effort.
+Here you can see the same section divider layout. It has the same visual treatment. Only the content changes. By now that consistent rhythm should be working as intended: you see this layout and you know immediately a new section is beginning, without having to consciously process it. That kind of structural legibility is one of the things the field manual typographic tradition does really well. Everything has a clear place in the hierarchy, and the patterns are predictable enough to be navigated without effort.
 -->
 
 ---
@@ -1189,9 +1185,9 @@ All code listings in this manual have been tested on current production systems.
 </Callout>
 
 <!--
-All four callout types together for direct comparison. Warning in red — the most serious. Caution in amber — for things requiring care. Note in blue — supplementary information. Important in olive — worth attention, but not alarming. The color hierarchy is consistent with how these boxes work in real field manuals, where the visual treatment carries meaning independently of the label text.
+Here you can see all four callout types together for direct comparison. Warning in red — the most serious. Caution in amber — for things requiring care. Note in blue — supplementary information. Important in olive — worth attention, but not alarming. The color hierarchy is consistent with how these boxes work in real field manuals, where the visual treatment carries meaning independently of the label text.
 
-The Callout component here is the inline version — placed directly in the content flow on the default layout. Compare this to the callout layout from Chapter 2, which embeds a single callout as a structural element at the bottom of a slide that also has a full content column above it. Both use the same visual treatment; choose the layout version when the callout is the primary feature of the slide, and the inline component when it's one element among several.
+The Callout component here is the inline version — placed directly in the content flow on the default layout. Compare this to the callout layout from Chapter 2, which embeds a single callout as a structural element at the bottom of a slide that also has a full content column above it. Both use the same visual treatment.  Choose the layout version when the callout is the primary feature of the slide, and the inline component when it's one element among several.
 -->
 
 ---
@@ -1214,13 +1210,13 @@ DSN: 555-0100
 </template>
 
 <!--
-The end layout is the closing slide. It has three slots: a title, a contact block, and a photo. The photo takes up the left side of the slide. The title sits prominently in the upper right. The contact block goes below it with whatever information you want to leave on screen: name, title, email, phone.
+The end layout is the closing slide. It has three slots: a title, a contact block, and a photo. The photo takes up the left side of the slide. The title sits prominently in the upper right. The contact block goes below it with whatever information you want to leave on the screen. This might include the presenter  name, title, email, or phone.
 
 It gives the audience something to look at and reference while questions are being taken. More useful than a blank slide or a "Thank You" placeholder.
 
 And that's Field Manual, with 24 layouts covering most of what you'll need for a structured presentation, tied together by a consistent design system and a visual language that's been refined over decades of real-world use.
 
-If you work with Slidev, I'd also mention deck2video — another project of mine that pairs well with it. deck2video converts Markdown-based presentation decks, including Slidev decks, into narrated MP4 videos using local AI voice synthesis. It reads the speaker notes from your slides, generates narration from them using Chatterbox TTS — with optional voice cloning so the result sounds like you — and assembles everything into a finished video file. There's an interactive review mode where you can listen to and approve the audio for each slide before the final render. No manual video editing, no cloud services, everything runs locally. You can find it at my github page.
+If you work with Slidev, I'd also mention deck2video, which is another project of mine that pairs well with it. deck2video converts Markdown-based presentation decks, including Slidev decks, into narrated MP4 videos using local AI voice synthesis. It reads the speaker notes from your slides, generates narration from them using Chatterbox TTS — with optional voice cloning so the result sounds like you. It assembles everything into a finished video file. There's even an interactive review mode where you can listen to and approve the audio for each slide before the final render. No manual video editing, no cloud services, everything runs locally. You can find it at my github page.
 
 Thanks for your time.
 -->
