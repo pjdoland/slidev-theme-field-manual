@@ -1,5 +1,6 @@
 <!-- Layout: image-top — Image spans full width top ~40%, content below with FIG. caption treatment -->
 <script setup lang="ts">
+import FieldManualHeader from '../components/FieldManualHeader.vue'
 import FieldManualFooter from '../components/FieldManualFooter.vue'
 import FigureCaption from '../components/FigureCaption.vue'
 
@@ -15,6 +16,12 @@ defineProps<{
 
 <template>
   <div class="slidev-layout layout-image-top">
+    <FieldManualHeader
+      :title="title ?? ''"
+      :section-number="sectionNumber ?? ''"
+      :doc-number="docNumber ?? 'FM 24-SLIDE'"
+    />
+
     <!-- Top image band -->
     <div class="it-image-band">
       <div class="it-image-frame">
