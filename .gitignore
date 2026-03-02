@@ -9,7 +9,6 @@ dist/
 *.pdf
 *.png
 *.pptx
-screenshots/
 
 # macOS
 .DS_Store
