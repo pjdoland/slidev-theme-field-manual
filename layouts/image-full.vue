@@ -109,7 +109,7 @@ defineProps<{
 .if-title {
   font-family: var(--font-heading);
   color: var(--c-khaki-light);
-  font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+  font-size: 2.6rem;
   font-weight: 900;
   line-height: 1.1;
   margin: 0 0 var(--space-3);

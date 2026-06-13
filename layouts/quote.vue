@@ -60,7 +60,7 @@ defineProps<{
 /* Giant decorative opening quotation mark */
 .quote-mark {
   font-family: var(--font-heading);
-  font-size: clamp(6rem, 15vw, 11rem);
+  font-size: 11rem;
   font-weight: 900;
   color: var(--c-olive);
   opacity: 0.18;
@@ -87,7 +87,7 @@ defineProps<{
 
 .quote-text {
   font-family: var(--font-heading);
-  font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+  font-size: 2.2rem;
   font-style: italic;
   font-weight: 700;
   line-height: 1.35;

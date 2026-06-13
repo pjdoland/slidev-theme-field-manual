@@ -99,7 +99,7 @@ defineProps<{
 
 .end-title {
   font-family: var(--font-heading);
-  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-size: 3.4rem;
   font-weight: 900;
   color: var(--c-ink);
   margin: 0 0 var(--space-5);

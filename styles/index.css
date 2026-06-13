@@ -62,16 +62,17 @@
   --font-label:           'Courier Prime', 'Courier New', monospace;
   --font-condensed-sans:  'Oswald', 'Arial Narrow', sans-serif;
 
-  /* Type scale — clamp(min, preferred, max) */
-  --text-xs:    clamp(0.60rem, 0.9vw, 0.70rem);
-  --text-sm:    clamp(0.70rem, 1.1vw, 0.85rem);
-  --text-base:  clamp(0.85rem, 1.4vw, 1.05rem);
-  --text-md:    clamp(1.00rem, 1.6vw, 1.20rem);
-  --text-lg:    clamp(1.20rem, 2.0vw, 1.60rem);
-  --text-xl:    clamp(1.60rem, 2.8vw, 2.20rem);
-  --text-2xl:   clamp(2.00rem, 3.6vw, 3.00rem);
-  --text-3xl:   clamp(2.80rem, 5.0vw, 4.20rem);
-  --text-4xl:   clamp(4.00rem, 8.0vw, 7.00rem);
+  /* Type scale: fixed sizes; the 960x540 canvas is scaled as a whole
+     by Slidev's transform, so viewport-relative units must not be used */
+  --text-xs:    0.70rem;
+  --text-sm:    0.85rem;
+  --text-base:  1.05rem;
+  --text-md:    1.20rem;
+  --text-lg:    1.60rem;
+  --text-xl:    2.20rem;
+  --text-2xl:   3.00rem;
+  --text-3xl:   4.20rem;
+  --text-4xl:   7.00rem;
 
   /* Spacing */
   --space-1:  0.25rem;
@@ -209,8 +210,16 @@ h2:not([class]) {
   padding: var(--space-2) 0;
   margin-bottom: var(--space-4);
 }
-h3 { font-size: var(--text-lg); margin-bottom: var(--space-2); }
-h4 { font-size: var(--text-md); margin-bottom: var(--space-2); }
+h3 { font-size: var(--text-lg); font-weight: 700; margin-bottom: var(--space-2); }
+h4 {
+  font-family: var(--font-condensed-sans);
+  font-size: var(--text-base);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-fg-muted);
+  margin-bottom: var(--space-2);
+}
 
 /* Heading top margins when following body content */
 p + h2, ul + h2, ol + h2, blockquote + h2,
@@ -222,7 +231,7 @@ h2 + h3, h3 + h4 {
 /* Cover slide — override global heading fonts */
 .layout-cover h1 {
   font-family: var(--font-condensed-sans);
-  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  font-size: 4.2rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   line-height: 1.0;
@@ -233,7 +242,7 @@ h2 + h3, h3 + h4 {
 
 .layout-cover h2 {
   font-family: var(--font-condensed-sans);
-  font-size: clamp(1.1rem, 2.0vw, 1.6rem);
+  font-size: 1.6rem;
   font-weight: 400;
   letter-spacing: 0.08em;
   line-height: 1.2;
@@ -247,7 +256,7 @@ h2 + h3, h3 + h4 {
 /* Section slide — reversed hierarchy: h1 reads like cover h2, h2 reads like cover h1 */
 .layout-section h1 {
   font-family: var(--font-condensed-sans);
-  font-size: clamp(1.1rem, 2.0vw, 1.6rem);
+  font-size: 1.6rem;
   font-weight: 400;
   letter-spacing: 0.08em;
   line-height: 1.2;
@@ -260,7 +269,7 @@ h2 + h3, h3 + h4 {
 
 .layout-section h2 {
   font-family: var(--font-condensed-sans);
-  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  font-size: 4.2rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   line-height: 1.0;

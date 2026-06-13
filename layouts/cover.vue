@@ -160,7 +160,7 @@ defineProps<{
 
 .cover-title {
   font-family: var(--font-condensed-sans);
-  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  font-size: 4.2rem;
   font-weight: 700;
   line-height: 1.0;
   color: var(--c-ink);

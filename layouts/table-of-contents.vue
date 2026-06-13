@@ -81,14 +81,14 @@ defineProps<{
 .toc-rule {
   height: var(--rule-thick);
   background: var(--color-rule);
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-2);
 }
 
 .toc-title {
   font-family: var(--font-heading);
   font-size: var(--text-xl);
   font-weight: 900;
-  margin: 0 0 var(--space-4);
+  margin: 0 0 var(--space-3);
   line-height: 1.1;
   letter-spacing: 0.02em;
 }
@@ -129,8 +129,9 @@ defineProps<{
   grid-template-columns: 60px auto 1fr 50px;
   gap: var(--space-3);
   align-items: baseline;
-  padding: var(--space-1) 0;
+  padding: 0.15rem 0;
   border-bottom: 1px dotted var(--c-paper-shadow);
+  line-height: 1.35;
 }
 
 :deep(.toc-entry-num) {
@@ -170,7 +171,7 @@ defineProps<{
 /* Chapter-level entry (bold, olive background) */
 :deep(.toc-entry--chapter) {
   background: var(--c-olive-ghost);
-  padding: var(--space-1) 0;
+  padding: 0.15rem 0;
   padding-left: var(--space-3);
   border-bottom: 1px solid var(--c-khaki-dark);
 }

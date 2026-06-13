@@ -57,7 +57,7 @@ defineProps<{
 .statement-content :deep(h2),
 .statement-content :deep(p) {
   font-family: var(--font-heading);
-  font-size: clamp(1.6rem, 3.4vw, 2.8rem);
+  font-size: 2.8rem;
   font-weight: 700;
   line-height: 1.2;
   color: var(--c-ink);
