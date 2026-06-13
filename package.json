@@ -11,6 +11,11 @@
     "technical"
   ],
   "homepage": "https://github.com/pjdoland/slidev-theme-field-manual",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pjdoland/slidev-theme-field-manual.git"
+  },
+  "license": "MIT",
   "author": "pjdoland",
   "files": [
     "layouts/",

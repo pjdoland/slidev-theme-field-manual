@@ -152,6 +152,18 @@ title: TABLE OF CONTENTS
   <span class="toc-leaders"></span>
   <span class="toc-entry-page">22</span>
 </div>
+<div class="toc-entry">
+  <span class="toc-entry-num">A-4</span>
+  <span class="toc-entry-title">Typography and Heading Hierarchy</span>
+  <span class="toc-leaders"></span>
+  <span class="toc-entry-page">25</span>
+</div>
+<div class="toc-entry">
+  <span class="toc-entry-num">A-5</span>
+  <span class="toc-entry-title">Lists and Mixed Formatting</span>
+  <span class="toc-leaders"></span>
+  <span class="toc-entry-page">26</span>
+</div>
 
 <!--
 A table of contents does more than list what's coming. It signals that the presentation has structure. People relax when they can see the shape of something before it starts.
@@ -440,8 +452,7 @@ Slide discipline is the systematic control of slide content to ensure informatio
 1. **Situation** — What is happening
 2. **Mission** — What we are doing about it
 3. **Execution** — How we are doing it
-4. **Service Support** — What we need
-5. **Command and Signal** — How we communicate
+4. **Svc Support / Command** — What we need and how we communicate
 
 <!--
 Back to the default layout. This slide mixes prose paragraphs, bold inline definition labels, and a numbered list. This is a combination that appears constantly in actual field manuals. The typographic spacing between paragraphs and list items is handled by the theme's CSS, so the vertical rhythm stays consistent as the content varies. You don't have to nudge anything.
@@ -746,15 +757,7 @@ docNumber: FM 24-SLIDE
 
 ## 3-3. The CodeBlock Component
 
-The `<CodeBlock>` component provides styling for inline code displays on any layout. It accepts the following props:
-
-| PROP | TYPE | DEFAULT | DESCRIPTION |
-|------|------|---------|-------------|
-| `lang` | string | — | Language identifier (bash, python, js, yaml…) |
-| `title` | string | — | Title bar text (ALL CAPS by convention) |
-| `lineNumbers` | boolean | true | Show line number gutter |
-| `rulers` | boolean | false | Faint rule every 5 lines |
-| `caption` | string | — | Footer caption text |
+The `<CodeBlock>` component provides styled code displays on any layout. Props: `lang` (language), `title` (header text), `lineNumbers` (boolean), `rulers` (faint rule every 5 lines), and `caption` (footer text).
 
 <CodeBlock lang="python" title="LISTING 3-3 — EXAMPLE PYTHON PROCEDURE" :lineNumbers="true">
 
@@ -763,7 +766,7 @@ def calculate_slide_density(words: int, bullets: int) -> str:
     """Assess slide content load — FM 24-SLIDE para 2-1."""
     density = words / max(bullets, 1)
     if density > 20: return "NON-COMPLIANT — reduce word count"
-    return "MARGINAL — review recommended" if density > 12 else "COMPLIANT"
+    return "MARGINAL" if density > 12 else "COMPLIANT"
 ```
 
 </CodeBlock>
@@ -810,7 +813,7 @@ export default defineConfig({
       css: {
         additionalData: `
           :root {
-            /* Override: use unit red instead of signal red */
+            /* Use unit red, not signal red */
             --c-red: #6b0000;
           }
         `
@@ -989,10 +992,6 @@ Slidev renders mathematical notation natively via **KaTeX**. Enable it with `kat
 Shannon entropy — a measure of information density per slide:
 
 $$H(X) = -\sum_{i=1}^{n} p_i \log_2 p_i$$
-
-Euler's identity, the most compact equation in mathematics:
-
-$$e^{i\pi} + 1 = 0$$
 
 <template v-slot:code>
 
@@ -1201,6 +1200,54 @@ All code listings in this manual have been tested on current production systems.
 Here you can see all four callout types together for direct comparison. Warning in red — the most serious. Caution in amber — for things requiring care. Note in blue — supplementary information. Important in olive — worth attention, but not alarming.
 
 The callout component here is the inline version. It is placed directly in the content flow on the default layout. Compare this to the callout layout from Chapter 2, which embeds a single callout as a structural element at the bottom of a slide that also has a full content column above it. Both use the same visual treatment.  Choose the layout version when the callout is the primary feature of the slide, and the inline component when it's one element among several.
+-->
+
+---
+layout: default
+title: A-4. TYPOGRAPHY AND HEADING HIERARCHY
+sectionNumber: A-4
+docNumber: FM 24-SLIDE
+---
+
+## A-4. Typography and Heading Hierarchy
+
+### Subsection Heading (H3)
+
+Body text is set in **Source Serif 4** at the base size. Use **bold** for emphasis, *italics* for terms of art, and `inline code` for technical identifiers like `--color-fg`.
+
+#### Minor Heading (H4)
+
+Each heading level reduces in size and weight. The H2 receives top and bottom rules automatically. Links like [Slidev](https://sli.dev) use the accent-alt color.
+
+> "Good typography is invisible. Bad typography is everywhere."
+
+<!--
+This slide demonstrates the typographic hierarchy: H2 as section title with border rules, H3 and H4 stepping down in size and weight. Bold, italic, inline code, blockquotes, and links are all shown. Everything is styled by the theme's global CSS — no custom HTML required.
+-->
+
+---
+layout: default
+title: A-5. LISTS AND MIXED FORMATTING
+sectionNumber: A-5
+docNumber: FM 24-SLIDE
+---
+
+## A-5. Lists and Mixed Formatting
+
+- First-level items use an **em dash** marker in the accent color
+- Items can contain `inline code`, **bold**, and *italic* text
+  - Second-level items indent and follow the same pattern
+  - Nested items inherit the marker style
+- Back to the first level
+
+1. Ordered items use **parenthesized numerals**
+2. Each item auto-increments via a CSS counter
+3. Useful for procedures, sequences, and rankings
+
+Set `colorSchema: light` for the aged-paper palette or `dark` for the night-map variant. All design tokens live in `styles/index.css` as CSS custom properties.
+
+<!--
+This slide covers the list system and mixed formatting. Unordered lists use em dash markers, ordered lists use parenthesized numerals, and both support nesting. The slide also demonstrates inline code mixed with body text. Together with the previous slide, these two pages provide a complete reference for the theme's Markdown formatting capabilities.
 -->
 
 ---
