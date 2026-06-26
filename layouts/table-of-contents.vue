@@ -15,11 +15,12 @@ defineProps<{
 
 <template>
   <div class="slidev-layout layout-toc">
-    <ClassificationBanner :text="classification ?? 'FOR TRAINING USE ONLY'" />
+    <ClassificationBanner :text="classification" />
     <FieldManualHeader
       :title="title ?? 'TABLE OF CONTENTS'"
       :section-number="sectionNumber ?? ''"
-      :doc-number="docNumber ?? 'FM 24-SLIDE'"
+      :doc-number="docNumber"
+      :classification="classification"
     />
 
     <div class="toc-body">
@@ -53,7 +54,7 @@ defineProps<{
       </div>
     </div>
 
-    <FieldManualFooter :section-number="sectionNumber ?? ''" :unit="unit ?? ''" />
+    <FieldManualFooter :section-number="sectionNumber ?? ''" :unit="unit" />
   </div>
 </template>
 

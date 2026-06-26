@@ -7,7 +7,7 @@ defineProps<{
 
 <template>
   <div :class="['classification-banner', variant === 'alert' ? 'classification-banner--alert' : '']">
-    <span class="classification-banner__text">{{ text ?? 'FOR TRAINING USE ONLY' }}</span>
+    <span class="classification-banner__text">{{ text ?? $slidev?.configs?.classification ?? 'FOR TRAINING USE ONLY' }}</span>
   </div>
 </template>
 

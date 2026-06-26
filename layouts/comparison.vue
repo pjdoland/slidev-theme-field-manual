@@ -9,6 +9,7 @@ defineProps<{
   rightHeader?: string
   sectionNumber?: string
   docNumber?: string
+  classification?: string
   unit?: string
   leftAccent?: 'red' | 'blue' | 'olive'
   rightAccent?: 'red' | 'blue' | 'olive'
@@ -20,7 +21,8 @@ defineProps<{
     <FieldManualHeader
       :title="title ?? ''"
       :section-number="sectionNumber ?? ''"
-      :doc-number="docNumber ?? 'FM 24-SLIDE'"
+      :doc-number="docNumber"
+      :classification="classification"
     />
 
     <!-- Main title rule -->
@@ -64,7 +66,7 @@ defineProps<{
       </div>
     </div>
 
-    <FieldManualFooter :section-number="sectionNumber ?? ''" :unit="unit ?? ''" />
+    <FieldManualFooter :section-number="sectionNumber ?? ''" :unit="unit" />
   </div>
 </template>
 

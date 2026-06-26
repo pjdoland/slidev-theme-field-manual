@@ -10,10 +10,10 @@ defineProps<{
 <template>
   <header class="fm-header">
     <div class="fm-header__inner">
-      <span class="fm-header__doc fm-label">{{ docNumber ?? 'FM 24-SLIDE' }}</span>
+      <span class="fm-header__doc fm-label">{{ docNumber ?? $slidev?.configs?.docNumber ?? 'FM 24-SLIDE' }}</span>
       <span v-if="title" class="fm-header__title">{{ title }}</span>
       <span class="fm-header__class fm-label fm-label-accent">
-        {{ classification ?? 'UNCLASSIFIED' }}
+        {{ classification ?? $slidev?.configs?.classification ?? 'UNCLASSIFIED' }}
       </span>
     </div>
     <div class="fm-header__rule"></div>

@@ -13,7 +13,7 @@ defineProps<{
 
 <template>
   <div class="slidev-layout layout-end">
-    <ClassificationBanner :text="classification ?? 'FOR TRAINING USE ONLY'" />
+    <ClassificationBanner :text="classification" />
 
     <div class="end-body">
       <!-- Presenter photo (optional) -->
@@ -36,13 +36,13 @@ defineProps<{
           </slot>
         </div>
         <div class="end-doc fm-label">
-          {{ docNumber ?? 'FM 24-SLIDE' }}
-          <span v-if="unit"> · {{ unit }}</span>
+          {{ docNumber ?? $slidev?.configs?.docNumber ?? 'FM 24-SLIDE' }}
+          <span v-if="unit ?? $slidev?.configs?.unit"> · {{ unit ?? $slidev?.configs?.unit }}</span>
         </div>
       </div>
     </div>
 
-    <ClassificationBanner :text="classification ?? 'FOR TRAINING USE ONLY'" />
+    <ClassificationBanner :text="classification" />
   </div>
 </template>
 

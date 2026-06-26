@@ -17,7 +17,7 @@ defineProps<{
       </div>
       <div class="statement-rule-bottom"></div>
     </div>
-    <FieldManualFooter :section-number="sectionNumber ?? ''" :unit="unit ?? ''" />
+    <FieldManualFooter :section-number="sectionNumber ?? ''" :unit="unit" />
   </div>
 </template>
 

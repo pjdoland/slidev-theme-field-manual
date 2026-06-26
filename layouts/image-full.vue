@@ -23,14 +23,14 @@ defineProps<{
 
     <!-- Classification banner preserved on top -->
     <ClassificationBanner
-      :text="classification ?? 'FOR TRAINING USE ONLY'"
+      :text="classification"
       class="if-banner"
     />
 
     <!-- Text block anchored bottom-left -->
     <div class="if-text-block">
       <div class="if-text-rule"></div>
-      <div class="if-doc-label fm-label">{{ docNumber ?? 'FM 24-SLIDE' }}</div>
+      <div class="if-doc-label fm-label">{{ docNumber ?? $slidev?.configs?.docNumber ?? 'FM 24-SLIDE' }}</div>
       <div class="if-title">
         <slot />
       </div>

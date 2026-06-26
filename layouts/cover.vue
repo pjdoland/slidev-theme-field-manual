@@ -14,7 +14,7 @@ defineProps<{
     <!-- Paper grain is applied via ::before in global styles -->
 
     <!-- Classification banner top -->
-    <ClassificationBanner :text="classification ?? 'FOR TRAINING USE ONLY'" />
+    <ClassificationBanner :text="classification" />
 
     <!-- Corner reticles -->
     <div class="cover-reticle cover-reticle--tl">
@@ -50,7 +50,7 @@ defineProps<{
 
         <!-- Doc number -->
         <div class="cover-doc-number fm-label">
-          {{ docNumber ?? 'FM 24-SLIDE' }}
+          {{ docNumber ?? $slidev?.configs?.docNumber ?? 'FM 24-SLIDE' }}
         </div>
 
         <!-- Thick top rule -->
@@ -80,7 +80,7 @@ defineProps<{
     </div>
 
     <!-- Classification banner bottom -->
-    <ClassificationBanner :text="classification ?? 'FOR TRAINING USE ONLY'" />
+    <ClassificationBanner :text="classification" />
   </div>
 </template>
 

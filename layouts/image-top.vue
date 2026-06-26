@@ -9,6 +9,7 @@ defineProps<{
   sectionNumber?: string
   unit?: string
   docNumber?: string
+  classification?: string
   figNumber?: string | number
   figLabel?: string
 }>()
@@ -19,7 +20,8 @@ defineProps<{
     <FieldManualHeader
       :title="title ?? ''"
       :section-number="sectionNumber ?? ''"
-      :doc-number="docNumber ?? 'FM 24-SLIDE'"
+      :doc-number="docNumber"
+      :classification="classification"
     />
 
     <!-- Top image band -->
@@ -45,7 +47,7 @@ defineProps<{
       </div>
     </div>
 
-    <FieldManualFooter :section-number="sectionNumber ?? ''" :unit="unit ?? ''" />
+    <FieldManualFooter :section-number="sectionNumber ?? ''" :unit="unit" />
   </div>
 </template>
 
