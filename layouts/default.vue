@@ -7,6 +7,7 @@ defineProps<{
   title?: string
   sectionNumber?: string
   docNumber?: string
+  classification?: string
   unit?: string
 }>()
 </script>
@@ -16,7 +17,8 @@ defineProps<{
     <FieldManualHeader
       :title="title ?? $slidev?.configs?.title ?? ''"
       :section-number="sectionNumber ?? ''"
-      :doc-number="docNumber ?? 'FM 24-SLIDE'"
+      :doc-number="docNumber"
+      :classification="classification"
     />
 
     <main class="layout-default__body">
@@ -34,7 +36,7 @@ defineProps<{
 
     <FieldManualFooter
       :section-number="sectionNumber ?? '1-1'"
-      :unit="unit ?? ''"
+      :unit="unit"
     />
   </div>
 </template>

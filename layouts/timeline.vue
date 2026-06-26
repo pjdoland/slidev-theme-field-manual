@@ -7,6 +7,7 @@ defineProps<{
   title?: string
   sectionNumber?: string
   docNumber?: string
+  classification?: string
   unit?: string
   direction?: 'horizontal' | 'vertical'
 }>()
@@ -17,7 +18,8 @@ defineProps<{
     <FieldManualHeader
       :title="title ?? ''"
       :section-number="sectionNumber ?? ''"
-      :doc-number="docNumber ?? 'FM 24-SLIDE'"
+      :doc-number="docNumber"
+      :classification="classification"
     />
 
     <div class="tl-body">
@@ -43,7 +45,7 @@ defineProps<{
       </div>
     </div>
 
-    <FieldManualFooter :section-number="sectionNumber ?? ''" :unit="unit ?? ''" />
+    <FieldManualFooter :section-number="sectionNumber ?? ''" :unit="unit" />
   </div>
 </template>
 

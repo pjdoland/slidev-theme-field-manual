@@ -15,7 +15,7 @@ defineProps<{
       <div class="section-top-rule"></div>
 
       <div class="section-id fm-label">
-        {{ docNumber ?? 'FM 24-SLIDE' }}
+        {{ docNumber ?? $slidev?.configs?.docNumber ?? 'FM 24-SLIDE' }}
         <span v-if="sectionNumber"> · SECTION {{ sectionNumber }}</span>
       </div>
 
@@ -32,7 +32,7 @@ defineProps<{
 
     <FieldManualFooter
       :section-number="sectionNumber ?? '1'"
-      :unit="unit ?? ''"
+      :unit="unit"
     />
   </div>
 </template>
