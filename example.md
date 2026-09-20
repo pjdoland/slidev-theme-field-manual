@@ -498,6 +498,47 @@ Column headings use the same stroke-line treatment as section headings elsewhere
 -->
 
 ---
+layout: two-cols-header
+title: 2-2A. RISK ASSESSMENT MATRIX
+sectionNumber: 2-2a
+docNumber: FM 24-SLIDE
+---
+
+Every operation carries risk. The matrix below breaks likelihood and severity into two supporting lists so the audience can scan probability on the left and consequence on the right before the briefer states the mitigation plan.
+
+<template v-slot:left>
+
+## LIKELIHOOD
+
+- Frequent — expected during execution
+- Likely — will probably occur
+- Occasional — could occur at some point
+- Seldom — unlikely but possible
+
+</template>
+
+<template v-slot:right>
+
+## SEVERITY
+
+- Catastrophic — death or loss of unit capability
+- Critical — severe injury or major damage
+- Marginal — minor injury or damage
+- Negligible — first aid or minimal damage
+
+</template>
+
+<template v-slot:bottom>
+
+**Residual risk: MODERATE.** Mitigation measures below reduce likelihood to Seldom; commander accepts remaining risk per unit SOP.
+
+</template>
+
+<!--
+two-cols-header mirrors Slidev's built-in layout of the same name: a default slot spans the full width above the columns (useful for a lead-in sentence or shared context), left/right slots split the body with the same dividing rule as two-column, and an optional bottom slot spans the full width below the columns for a closing statement — a residual-risk call, a summary line, or a citation. Omit any of the three slots and the layout collapses cleanly around what's left.
+-->
+
+---
 layout: three-column
 title: 2-3. THE THREE PHASES OF PREPARATION
 sectionNumber: 2-3

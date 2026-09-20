@@ -47,7 +47,7 @@ classification: FOR TRAINING USE ONLY
 - Four-font system: Playfair Display (display serif) · Oswald (condensed sans) · Source Serif 4 (body) · Courier Prime (mono/label)
 - Paper grain texture overlay with `mix-blend-mode: multiply`
 - CSS-drawn corner brackets, crosshair reticles, dot leaders, and thick rule dividers — no images required
-- 24 purposefully designed layouts covering every common briefing structure
+- 25 purposefully designed layouts covering every common briefing structure
 - Custom Shiki syntax highlighting in both light and dark modes — earth-tone palette matches the paper background
 - `CodeBlock` component: title bar, language badge, line-number gutter, optional ruler lines, caption
 - `Callout` component: Warning · Caution · Note · Important — each with distinct color treatment
@@ -340,6 +340,11 @@ Equal halves with a center dividing rule. Any `h2` inside a column gets the Oswa
 
 Slots: `left`, `right`
 
+#### `two-cols-header`
+Full-width header content spanning both columns, then an equal two-column body with a center dividing rule, then an optional full-width footer content area. Mirrors Slidev's built-in `two-cols-header` layout.
+
+Slots: default (header, spans both columns), `left`, `right`, `bottom` (spans both columns)
+
 #### `three-column`
 Three equal panels each with a labeled header.
 
@@ -555,7 +560,7 @@ The theme fully supports `colorSchema: dark` — a night-map palette with dark o
 colorSchema: dark
 ```
 
-All 24 layouts include dark-mode overrides. Layout-specific rules that would be invisible against the dark paper background (near-black olive vars) are overridden in `styles/index.css` using high-specificity selectors, supplemented by scoped `:global(.dark)` rules in `cover.vue` and `section.vue`.
+All 25 layouts include dark-mode overrides. Layout-specific rules that would be invisible against the dark paper background (near-black olive vars) are overridden in `styles/index.css` using high-specificity selectors, supplemented by scoped `:global(.dark)` rules in `cover.vue` and `section.vue`.
 
 **Mermaid diagrams** require manual palette switching — set a separate `%%{init}%%` directive per diagram for dark, or swap the `themeVariables` block in your global front matter. There is no Slidev-native mechanism to branch mermaid config by color schema.
 
@@ -569,7 +574,7 @@ npx slidev build example.md    # static build
 npx slidev export example.md   # export to PDF/PNG
 ```
 
-The `example.md` file is a 33-slide showcase demonstrating every layout, component, and feature in the theme.
+The `example.md` file is a 34-slide showcase demonstrating every layout, component, and feature in the theme.
 
 ---
 
